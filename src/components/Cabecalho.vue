@@ -11,7 +11,7 @@
           <b-nav-item href="/contato">Contato</b-nav-item>
           <b-nav-item href="/faq">Perguntas Frequentes</b-nav-item>
           <!--<b-nav-item href="/inscricao">Inscrição</b-nav-item>TALVEZ REMOVER-->
-          <b-nav-item href="/inscricao" v-if="adm != null">Inscrições 2019</b-nav-item><!--Apenas candidato e ADM-->
+          <b-nav-item href="/formulario/inscricao" v-if="adm != null">Inscrições 2019</b-nav-item><!--Apenas candidato e ADM-->
           <b-nav-item href="/inscritos" v-if="adm == 1">Administrador</b-nav-item><!--Apenas ADM-->
           <b-nav-item href="/cadastro">Cadastre-se</b-nav-item>
         </b-navbar-nav>
