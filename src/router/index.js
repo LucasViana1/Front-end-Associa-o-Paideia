@@ -10,6 +10,7 @@ import Inscricao from '@/components/formulario/Inscricao.vue'
 import Login from '@/components/Login.vue'
 import Inscritos from '@/components/adm/Inscritos.vue'
 import Cadastro from '@/components/Cadastro.vue'
+import Detalhes from '@/components/adm/Detalhes.vue'
 
 import TodosDepoimentos from '@/components/principal/TodosDepoimentos.vue'
 
@@ -67,6 +68,11 @@ export default new Router({
           name: 'Cadastro',
           path: '/cadastro',
           component: Cadastro
+        }, 
+        {
+          name: 'Detalhes',
+          path: '/detalhes',
+          component: Detalhes
         }
       ]   
 });
