@@ -7,7 +7,7 @@
                     <h3>FORMAÇÃO E ESTUDOS</h3>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="1) Como fez seus estudos de ensino fundamental (1º ao 9º ano)?">
                         <b-form-radio v-model="dados.ensino_fundamental" name="" value="Integralmente em escola pública">
                             Integralmente em escola pública.</b-form-radio>
@@ -20,7 +20,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="2) Concluiu o ENSINO FUNDAMENTAL (1º ao 9º ano) em:">
                         <b-form-radio v-model="dados.conclusao_fundamental" name="" value="Curso regular">
                             Curso regular.</b-form-radio>
@@ -29,7 +29,7 @@
                     </b-form-group>
                 </b-col>
                 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="3) Como fez seus estudos de ensino médio (1º ao 3º ano)?">
                         <b-form-radio v-model="dados.ensino_medio" name="" value="Integralmente em escola pública">
                            Integralmente em escola pública.</b-form-radio>
@@ -44,7 +44,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="4) Concluiu o ENSINO MÉDIO (antigo 2º grau) em:">
                         <b-form-radio v-model="dados.conclusao_medio" name="" value="Curso regular">
                             Curso regular.</b-form-radio>
@@ -53,7 +53,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="5) Em que turno você fez o ENSINO MÉDIO?">
                         <b-form-radio v-model="dados.turno_medio" name="" value="Todo diurno">
                            Todo diurno.</b-form-radio>
@@ -68,7 +68,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="6) Em que ano concluiu o ENSINO MÉDIO (3º GRAU)?">
                         <b-form-radio v-model="dados.ano_medio" name="" value="2017">
                            2017.</b-form-radio>
@@ -83,7 +83,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="7) Você já realizou algum CURSO TÉCNICO?">
                         <b-form-radio v-model="dados.tecnico" name="" value="Sim">
                             Sim.</b-form-radio>
@@ -92,7 +92,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="8) Você já frequentou algum cursinho preparatório para o vestibular?">
                         <b-form-radio v-model="dados.fez_cursinho" name="" value="Sim, por menos de um semestre">
                            Sim, por menos de um semestre.</b-form-radio>
@@ -107,7 +107,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="9) Que tipo cursinho preparatório para o vestibular você realizou?">
                         <b-form-radio v-model="dados.tipo_cursinho" name="" value="Cursinho comunitário (mantido por ONGs)">
                            Cursinho comunitário (mantido por ONGs).</b-form-radio>
@@ -122,7 +122,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="10) Caso tenha feito cursinho PARTICULAR:">
                         <b-form-radio v-model="dados.cursinho_particular" name="" value="25%">
                            Com bolsa de 25%.</b-form-radio>
@@ -137,7 +137,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="11) Quantas vezes você já prestou concurso vestibular?">
                         <b-form-radio v-model="dados.fez_vestibular" name="" value="Nenhuma">
                            Nenhuma.</b-form-radio>
@@ -152,7 +152,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="12) Você já iniciou algum curso superior?">
                         <b-form-radio v-model="dados.superior" name="" value="Sim, mas não conclui">
                            Sim, mas não conclui.</b-form-radio>
@@ -165,31 +165,31 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="">
+                <b-col sm="6">
                     <b-form-group label="13) Área desejada (Ciências Humanas, Biológicas ou Exatas):">
                         <b-form-input v-model="dados.area_desejo" type="text" required placeholder=""></b-form-input>
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="">
+                <b-col sm="6">
                     <b-form-group label="14) PRIMEIRA OPÇÃO (Curso e Universidade):">
                         <b-form-input v-model="dados.curso_univ1" type="text" required placeholder=""></b-form-input>
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="">
+                <b-col sm="6">
                     <b-form-group label="15) SEGUNDA OPÇÃO (Curso e Universidade):">
                         <b-form-input v-model="dados.curso_univ2" type="text" required placeholder=""></b-form-input>
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="">
+                <b-col sm="6">
                     <b-form-group label="16) TERCEIRA OPÇÃO (Curso e Universidade):">
                         <b-form-input v-model="dados.curso_univ3" type="text" required placeholder=""></b-form-input>
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="">
+                <b-col sm="12">
                     <b-form-group label="17) Você tem interesse em quais vestibulares abaixo? (Pode ser escolhido mais de uma opção)">
                         
                         <b-form-radio v-model="dados.fuvest" name="" value="1">

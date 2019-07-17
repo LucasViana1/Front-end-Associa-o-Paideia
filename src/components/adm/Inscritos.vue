@@ -32,15 +32,22 @@
 
         <tbody>
             <tr v-for="item in listagem.dados" :key="item">
-                <td>{{cont++}}</td>
+                <td>{{cont}}</td>
                 <td>{{ item.nome }}</td>
                 <td>{{ item.email }}</td>
                 <td>{{ item.cpf }}</td>
                 <td>{{ item.cidadao }}</td>
                 <td>ok/espera/recusado</td>
                 <td>
-                    <a href="http://"></a>
-                    link detalhes
+                    <!--<a :href="link+item.id">
+                        link detalhes                   
+                    </a>-->
+                    <!--<b-button v-on:click="detalhes(item.id)">-->
+                        <a v-on:click="detalhes(item.id)" :href="link">
+                            detalhes
+                        </a>                    
+                    <!--</b-button>-->
+                    <!--<p :onclick="detalhes(item.id)">detalhes</p>-->
                 </td>
             </tr>
         </tbody>
@@ -59,32 +66,17 @@ export default {
             listagem: {},
             adm: window.localStorage.getItem('nivel'),
             nomeUser: window.localStorage.getItem('nome'),
-            cont: -199 //pq começa do 200?
+            cont: -199, //pq começa do 200?
+            link: '/detalhes/'
         }
     },
     methods: {
-        //pega os dados do servidor para listalos METODO DESCONTINUADO ABAIXO
-        listarDados(){
-            this.$inscritosService.getInscritos().then(response => {
-                if(response.erro){
-                    console.log("Ocorreu um erro");
-                } else{
-                    //"map" recebe os itens e monta um array
-                    this.listagem = response.dados.map(function(objeto){
-                        return {
-                            id: objeto.id,
-                            nome: objeto.nome,
-                            email: objeto.email,
-                            senha: objeto.senha,
-                            ativo: objeto.ativo,
-                            espera: objeto.espera
-                        }
-                    }, this.$server);
-                }
-            }).catch(response => {
-                console.log("Ocorreu um erro");
-            });
-        }
+        detalhes(id){
+            //alert(id)
+           console.log(id)
+           window.localStorage.setItem('idDetalhes', id)
+        },
+    
     },
     //realiza a montagem dos dados definidos
     mounted() {
@@ -95,12 +87,12 @@ export default {
                 window.location.href = "/"
             }
             else{
-                console.log(response.data);
+                //console.log(response.data);
                 this.listagem = response.data;   
             }          
     })
     .catch((error) => {
-        console.log(error);
+       // console.log(error);
     });
     },
 

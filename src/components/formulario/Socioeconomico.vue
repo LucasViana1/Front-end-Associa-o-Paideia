@@ -7,7 +7,7 @@
                     <h3>SOCIOECONÔMICO</h3>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="18) Quantas pessoas moram com você? (incluindo filhos, irmãos, parentes e amigos)">
                         <b-form-radio v-model="dados.qtd_pessoas" name="" value="Moro sozinho">
                            Moro sozinho.</b-form-radio>
@@ -22,7 +22,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="19) Quantos (as) filhos (as) você tem?">
                         <b-form-radio v-model="dados.qtd_filhos" name="" value="1">
                            Um (a).</b-form-radio>
@@ -37,7 +37,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="20) A casa onde você mora é?">
                         <b-form-radio v-model="dados.casa" name="" value="Própria">
                            Própria.</b-form-radio>
@@ -48,7 +48,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="3">
                     <b-form-group label="21) Sua casa está localizada em?">
                         <b-form-radio v-model="dados.local_casa" name="" value="Zona rural">
                            Zona rural.</b-form-radio>
@@ -61,7 +61,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="3">
                     <b-form-group label="22) Como você se deslocaria até o Focus Cursinho?">
                         <b-form-radio v-model="dados.transporte" name="" value="Transporte público">
                            Transporte público.</b-form-radio>
@@ -74,7 +74,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="3">
                     <b-form-group label="23) Qual é o nível de escolaridade do seu pai?">
                         <b-form-radio v-model="dados.escol_pai" name="" value="Da 1ª à 4ª série do Ensino Fundamental (antigo primário)">
                            Da 1ª à 4ª série do Ensino Fundamental (antigo primário).</b-form-radio>
@@ -93,7 +93,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="3">
                     <b-form-group label="24) Qual é o nível de escolaridade do sua mãe?">
                         <b-form-radio v-model="dados.escol_mae" name="" value="Da 1ª à 4ª série do Ensino Fundamental (antigo primário)">
                            Da 1ª à 4ª série do Ensino Fundamental (antigo primário).</b-form-radio>
@@ -112,7 +112,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="25) Em que seu pai trabalha ou trabalhou, na maior parte da vida?">
                         <b-form-radio v-model="dados.trab_pai" name="" value="Na agricultura, no campo, em fazenda ou na pesca.">
                            Na agricultura, no campo, em fazenda ou na pesca.</b-form-radio>
@@ -149,7 +149,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="26) Em que sua mãe trabalha ou trabalhou, na maior parte da vida?">
                         <b-form-radio v-model="dados.trab_mae" name="" value="Na agricultura, no campo, em fazenda ou na pesca.">
                            Na agricultura, no campo, em fazenda ou na pesca.</b-form-radio>
@@ -184,7 +184,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="27) Em que você trabalha atualmente?">
                         <b-form-radio v-model="dados.trab_candidato" name="" value="Na agricultura, no campo, em fazenda ou na pesca.">
                            Na agricultura, no campo, em fazenda ou na pesca.</b-form-radio>
@@ -219,7 +219,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="6">
                     <b-form-group label="28) Quantas pessoas contribuem para a obtenção dessa renda familiar?">
                         <b-form-radio v-model="dados.pessoas_renda" name="" value="1">
                            Uma.</b-form-radio>
@@ -234,7 +234,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="6">
                     <b-form-group label="29) Somando a sua renda com a renda das pessoas que moram com você, quanto é,aproximadamente, a renda familiar mensal?">
                         <b-form-radio v-model="dados.renda_total" name="" value="Nenhuma renda">
                            Nenhuma renda.</b-form-radio>
@@ -255,48 +255,53 @@
 
                     </b-form-group>
                 </b-col>
-
-                <b-col sm="">
-                    <b-form-group label="30) Quais e quantos dos itens abaixo há em sua casa?" label-for=""></b-form-group>
-                    <b-form-group label="TV" label-for="">
-                        <b-form-select v-model="dados.tv" :options="optionsItens"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Computador/Notebook" label-for="">
-                        <b-form-select v-model="dados.pc" :options="optionsItens"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Geladeira" label-for="">
-                        <b-form-select v-model="dados.geladeira" :options="optionsItens"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Acesso a Internet" label-for="">
-                        <b-form-select v-model="dados.acesso_internet" :options="optionsItens"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Videocassete e/ou DVD." label-for="">
-                        <b-form-select v-model="dados.dvd" :options="optionsItens"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Automóvel" label-for="">
-                        <b-form-select v-model="dados.automovel" :options="optionsItens"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Telefone Fixo" label-for="">
-                        <b-form-select v-model="dados.tel_fixo" :options="optionsItens"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="TV por Assinatura" label-for="">
-                        <b-form-select v-model="dados.tv_ass" :options="optionsItens"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Rádio" label-for="">
-                        <b-form-select v-model="dados.radio" :options="optionsItens"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Máquina de lavar roupa" label-for="">
-                        <b-form-select v-model="dados.lava_roupa" :options="optionsItens"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Celular" label-for="">
-                        <b-form-select v-model="dados.celular" :options="optionsItens"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Máquina Lavar Louça" label-for="">
-                        <b-form-select v-model="dados.lava_louca" :options="optionsItens"></b-form-select>
-                    </b-form-group>
+                <!--CONTINUAR DAQ-->
+                <b-form-group sm="12" label="30) Quais e quantos dos itens abaixo há em sua casa?" label-for=""></b-form-group>
+                <b-col sm="12">
+                    <center>
+                    <b-row>
+                        <b-form-group sm="4" label="TV" class="ml-3">
+                            <b-form-select v-model="dados.tv" :options="optionsItens"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Computador/Notebook" class="ml-3">
+                            <b-form-select v-model="dados.pc" :options="optionsItens"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Geladeira" class="ml-3">
+                            <b-form-select v-model="dados.geladeira" :options="optionsItens"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Acesso a Internet" class="ml-3">
+                            <b-form-select v-model="dados.acesso_internet" :options="optionsItens"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Videocassete e/ou DVD." class="ml-3">
+                            <b-form-select v-model="dados.dvd" :options="optionsItens"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Automóvel" class="ml-3">
+                            <b-form-select v-model="dados.automovel" :options="optionsItens"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Telefone Fixo" class="ml-3">
+                            <b-form-select v-model="dados.tel_fixo" :options="optionsItens"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="TV por Assinatura" class="ml-3">
+                            <b-form-select v-model="dados.tv_ass" :options="optionsItens"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Rádio" class="ml-3">
+                            <b-form-select v-model="dados.radio" :options="optionsItens"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Máquina de lavar roupa" class="ml-3">
+                            <b-form-select v-model="dados.lava_roupa" :options="optionsItens"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Celular" class="ml-3">
+                            <b-form-select v-model="dados.celular" :options="optionsItens"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Máquina Lavar Louça" class="ml-3">
+                            <b-form-select v-model="dados.lava_louca" :options="optionsItens"></b-form-select>
+                        </b-form-group>
+                    </b-row>
+                    </center>
+                    
                 </b-col>
 
-                <b-col>
+                <b-col sm="12">
                     <b-form-group label="31) Você trabalha ou já trabalhou?">
                         <b-form-radio v-model="dados.trab_atual" name="" value="Sim">
                            Sim.</b-form-radio>
@@ -305,26 +310,30 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="">
-                    <b-form-group label="32) Indique o grau de importância de cada um dos motivos abaixo na sua decisão de trabalhar:" label-for=""></b-form-group>
-                    <b-form-group label="Ajudar nas despesas com a casa" label-for="">
-                        <b-form-select v-model="dados.trab_despesas" :options="optionsImportancia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Sustentar minha família (esposo/a, filhos/as etc.)" label-for="">
-                        <b-form-select v-model="dados.trab_sustento" :options="optionsImportancia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Ser independente (ganhar meu próprio dinheiro)" label-for="">
-                        <b-form-select v-model="dados.trab_independente" :options="optionsImportancia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Adquirir experiência" label-for="">
-                        <b-form-select v-model="dados.trab_experi" :options="optionsImportancia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Custear/ pagar meus estudos" label-for="">
-                        <b-form-select v-model="dados.trab_p_estudos" :options="optionsImportancia"></b-form-select>
-                    </b-form-group>
+                 <b-form-group label="32) Indique o grau de importância de cada um dos motivos abaixo na sua decisão de trabalhar:" label-for=""></b-form-group>
+                <b-col sm="12">
+                    <center>
+                    <b-row>
+                        <b-form-group sm="4" label="Ajudar nas despesas com a casa" class="ml-3">
+                            <b-form-select v-model="dados.trab_despesas" :options="optionsImportancia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Adquirir experiência" class="ml-3">
+                            <b-form-select v-model="dados.trab_experi" :options="optionsImportancia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Custear/ pagar meus estudos" class="ml-3">
+                            <b-form-select v-model="dados.trab_p_estudos" :options="optionsImportancia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Sustentar minha família (esposo/a, filhos/as etc.)" class="ml-3">
+                            <b-form-select v-model="dados.trab_sustento" :options="optionsImportancia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="4" label="Ser independente (ganhar meu próprio dinheiro)" class="ml-3">
+                            <b-form-select v-model="dados.trab_independente" :options="optionsImportancia"></b-form-select>
+                        </b-form-group>
+                    </b-row>
+                    </center>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="33) Quantas horas semanais você trabalha?">
                         <b-form-radio v-model="dados.trab_horas" name="" value="Sem jornada fixa, até 10 horas semanais">
                            Sem jornada fixa, até 10 horas semanais.</b-form-radio>
@@ -339,7 +348,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="34) Como você avalia ter estudado e trabalhado durante seus estudos?">
                         <b-form-radio v-model="dados.estuda_e_trab" name="" value="Atrapalhou meus estudos">
                            Atrapalhou meus estudos.</b-form-radio>
@@ -352,7 +361,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="35) Qual principal motivo faria você voltar a estudar ou continuar estudando?">
                         <b-form-radio v-model="dados.motivo_estudar" name="" value="Conseguir um emprego">
                            Conseguir um emprego.</b-form-radio>
@@ -369,7 +378,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="36) Você cursa ou já cursou a Educação de Jovens e Adultos – EJA?">
                         <b-form-radio v-model="dados.eja" name="" value="Sim">
                            Sim.</b-form-radio>
@@ -378,7 +387,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="37) Como é ou era o curso de EJA que você frequenta ou frequentou?">
                         <b-form-radio v-model="dados.eja_tipo" name="" value="Curso presencial em escola pública">
                            Curso presencial em escola pública.</b-form-radio>
@@ -397,7 +406,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="38) Possui internet na sua casa?">
                         <b-form-radio v-model="dados.tem_internet" name="" value="Sim">
                            Sim.</b-form-radio>
@@ -406,7 +415,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="39) Possui computador na sua casa?">
                         <b-form-radio v-model="dados.tem_computador" name="" value="Não possuo computador">
                            Não possuo computador.</b-form-radio>
@@ -421,7 +430,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col>
+                <b-col sm="4">
                     <b-form-group label="40) Como acessa a internet?">
                         <b-form-radio v-model="dados.acesso_internet" name="" value="Não tenho acesso">
                            Não tenho acesso.</b-form-radio>
@@ -436,7 +445,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="">
+                <b-col sm="4">
                     <b-form-group label="41) Assinale, no quadro abaixo, a(s) atividade(s) ou o(s) curso(s) que você realiza ou realizou.">
                         <b-form-radio v-model="dados.curso_lingua" name="" value="1">
                            Curso de língua estrangeira.</b-form-radio>
@@ -451,108 +460,119 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="">
-                    <b-form-group label="42) Com qual frequência você lê:" label-for=""></b-form-group>
-                    <b-form-group label="Jornais" label-for="">
-                        <b-form-select v-model="dados.jornal" :options="optionsLer"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Sites e matérias na Internet." label-for="">
-                        <b-form-select v-model="dados.sites" :options="optionsLer"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Dicionários, enciclopédias e manuais." label-for="">
-                        <b-form-select v-model="dados.manuais" :options="optionsLer"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Livros de ficção (romances, contos, poesias etc.)." label-for="">
-                        <b-form-select v-model="dados.ficcao" :options="optionsLer"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Revistas sobre saúde (Boa Saúde, Saúde, Vida Simples etc.)." label-for="">
-                        <b-form-select v-model="dados.saude" :options="optionsLer"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Revistas sobre religião (Sophia, Missões, Gospel, Orixás, Delfos etc.)." label-for="">
-                        <b-form-select v-model="dados.religiao" :options="optionsLer"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Revistas de humor, quadrinhos ou jogos (Casseta e Planeta, Turma da Mônica, PC Gamer etc.)." label-for="">
-                        <b-form-select v-model="dados.humor" :options="optionsLer"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Revistas de informação geral (Carta Capital, Veja, Istoé, Época, Exame, Caros Amigos, Piauí, Forum etc.)" label-for="">
-                        <b-form-select v-model="dados.info_geral" :options="optionsLer"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Livros de não-ficção e biografias (reportagens, livros científicos, filosóficos, históricos, documentários etc.)." label-for="">
-                        <b-form-select v-model="dados.nao_ficcao" :options="optionsLer"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Revistas sobre comportamento, moda, estilo e decoração (Cláudia, Marie Claire, Pais e Filhos, Casa e Jardim, Bons Fluídos etc.)." label-for="">
-                        <b-form-select v-model="dados.estilo" :options="optionsLer"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Revistas sobre educação e estudos (Educação, Guia do Estudante, Almanaque Abril, Sociologia, Língua Portuguesa, Speak Up etc.)." label-for="">
-                        <b-form-select v-model="dados.educa" :options="optionsLer"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Revistas para adolescentes ou sobre TV, cinema, música, celebridades (Viração, TPM, Set, Rolling Stones, Capricho, Contigo, Caras, etc.)." label-for="">
-                        <b-form-select v-model="dados.adolecente" :options="optionsLer"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Revistas sobre automóveis, esportes e lazer (Quatro Rodas, Duas Rodas, Placar, Pesca e Cia., Náutica, Revista do Vôlei, Viagem e Turismo, Terra etc.)." label-for="">
-                        <b-form-select v-model="dados.lazer" :options="optionsLer"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Revistas de divulgação científica, tecnológica, filosófica ou artística (Ciência Hoje, Geo, Galileu, Mente e Cérebro, Linux Magazine, PC Magazine, Filosofia, Cult, História Viva, Entrelivros etc.)." label-for="">
-                        <b-form-select v-model="dados.cientifica" :options="optionsLer"></b-form-select>
-                    </b-form-group>
+                <!--AJUSTAR ESSE TRECHO-->
+                <b-form-group label="42) Com qual frequência você lê:" label-for=""></b-form-group>
+                <b-col sm="12">
+                    <center>
+                    <b-row>
+                        <b-form-group sm="5" label="Jornais" class="ml-3">
+                            <b-form-select v-model="dados.jornal" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Sites e matérias na Internet." class="ml-3">
+                            <b-form-select v-model="dados.sites" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Dicionários, enciclopédias e manuais." class="ml-3">
+                            <b-form-select v-model="dados.manuais" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Livros de ficção (romances, contos, poesias etc.)." class="ml-3">
+                            <b-form-select v-model="dados.ficcao" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Revistas sobre saúde (Boa Saúde, Saúde, Vida Simples etc.)." class="ml-3">
+                            <b-form-select v-model="dados.saude" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Revistas sobre religião (Sophia, Missões, Gospel, Orixás, Delfos etc.)." class="ml-3">
+                            <b-form-select v-model="dados.religiao" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Revistas de humor, quadrinhos ou jogos (Casseta e Planeta, Turma da Mônica, PC Gamer etc.)." class="ml-3">
+                            <b-form-select v-model="dados.humor" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Revistas de informação geral (Carta Capital, Veja, Istoé, Época, Exame, Caros Amigos, Piauí, Forum etc.)" class="ml-3">
+                            <b-form-select v-model="dados.info_geral" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Livros de não-ficção e biografias (reportagens, livros científicos, filosóficos, históricos, documentários etc.)." class="ml-3">
+                            <b-form-select v-model="dados.nao_ficcao" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Revistas sobre comportamento, moda, estilo e decoração (Cláudia, Marie Claire, Pais e Filhos, Casa e Jardim, Bons Fluídos etc.)." class="ml-3">
+                            <b-form-select v-model="dados.estilo" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Revistas sobre educação e estudos (Educação, Guia do Estudante, Almanaque Abril, Sociologia, Língua Portuguesa, Speak Up etc.)." class="ml-3">
+                            <b-form-select v-model="dados.educa" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Revistas para adolescentes ou sobre TV, cinema, música, celebridades (Viração, TPM, Set, Rolling Stones, Capricho, Contigo, Caras, etc.)." class="ml-3">
+                            <b-form-select v-model="dados.adolecente" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Revistas sobre automóveis, esportes e lazer (Quatro Rodas, Duas Rodas, Placar, Pesca e Cia., Náutica, Revista do Vôlei, Viagem e Turismo, Terra etc.)." class="ml-3">
+                            <b-form-select v-model="dados.lazer" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Revistas de divulgação científica, tecnológica, filosófica ou artística (Ciência Hoje, Geo, Galileu, Mente e Cérebro, Linux Magazine, PC Magazine, Filosofia, Cult, História Viva, Entrelivros etc.)." class="ml-3">
+                            <b-form-select v-model="dados.cientifica" :options="optionsLer"></b-form-select>
+                        </b-form-group>
+                    </b-row>
+                    </center> 
                 </b-col>
 
-                <b-col sm="">
-                    <b-form-group label="43) Faça uma avaliação da escola em que você realiza ou realizou o Ensino Médio." label-for=""></b-form-group>
-                    <b-form-group label="Trabalho de grupo." label-for="">
-                        <b-form-select v-model="dados.aval_grupo" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Práticas de esporte." label-for="">
-                        <b-form-select v-model="dados.aval_esporte" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="A biblioteca da escola." label-for="">
-                        <b-form-select v-model="dados.aval_biblioteca" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="A localização da escola." label-for="">
-                        <b-form-select v-model="dados.aval_local" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="O respeito à diversidade." label-for="">
-                        <b-form-select v-model="dados.aval_respeito" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="As condições dos laboratórios." label-for="">
-                        <b-form-select v-model="dados.aval_laboratorio" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="As condições das salas de aula." label-for="">
-                        <b-form-select v-model="dados.aval_sala" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="O ensino de língua estrangeira." label-for="">
-                        <b-form-select v-model="dados.aval_lingua" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="O interesse dos (as) estudantes." label-for="">
-                        <b-form-select v-model="dados.aval_interesse" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="A atenção às questões ambientais." label-for="">
-                        <b-form-select v-model="dados.aval_ambiental" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="A organização dos horários de aulas." label-for="">
-                        <b-form-select v-model="dados.aval_horario" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Segurança (iluminação, policiamento etc.)" label-for="">
-                        <b-form-select v-model="dados.aval_segurancao" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="Acesso a computadores e outros recursos de Informática." label-for="">
-                        <b-form-select v-model="dados.aval_informatica" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="A atenção e o respeito dos (as) funcionários(as) e dos(as) professores(as)." label-for="">
-                        <b-form-select v-model="dados.aval_atencao" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="O conhecimento que os (as) professores (as) têm das matérias e a maneira de transmiti-lo." label-for="">
-                        <b-form-select v-model="dados.aval_conhecimento_prof" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="A dedicação dos (as) professores (as) para preparar aulas e atender aos (às) estudantes." label-for="">
-                        <b-form-select v-model="dados.aval_dedica_prof" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="As iniciativas da escola para realizar excursões, passeios culturais, estudos do meio ambiente." label-for="">
-                        <b-form-select v-model="dados.aval_passeios" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
-                    <b-form-group label="A acessibilidade física e os recursos e os materiais para estudantes com deficiência (rampas, corrimãos, lupas etc.)." label-for="">
-                        <b-form-select v-model="dados.aval_acessibilidade" :options="optionsAvalia"></b-form-select>
-                    </b-form-group>
+                <!--AJUSTAR ESSE TRECHO-->
+                <b-form-group label="43) Faça uma avaliação da escola em que você realiza ou realizou o Ensino Médio." label-for=""></b-form-group>
+                <b-col sm="12">
+                    <center>
+                    <b-row>
+                        <b-form-group sm="5" label="Trabalho de grupo." label-for="">
+                            <b-form-select v-model="dados.aval_grupo" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Práticas de esporte." label-for="">
+                            <b-form-select v-model="dados.aval_esporte" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="A biblioteca da escola." label-for="">
+                            <b-form-select v-model="dados.aval_biblioteca" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="A localização da escola." label-for="">
+                            <b-form-select v-model="dados.aval_local" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="O respeito à diversidade." label-for="">
+                            <b-form-select v-model="dados.aval_respeito" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="As condições dos laboratórios." label-for="">
+                            <b-form-select v-model="dados.aval_laboratorio" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="As condições das salas de aula." label-for="">
+                            <b-form-select v-model="dados.aval_sala" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="O ensino de língua estrangeira." label-for="">
+                            <b-form-select v-model="dados.aval_lingua" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="O interesse dos (as) estudantes." label-for="">
+                            <b-form-select v-model="dados.aval_interesse" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="A atenção às questões ambientais." label-for="">
+                            <b-form-select v-model="dados.aval_ambiental" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="A organização dos horários de aulas." label-for="">
+                            <b-form-select v-model="dados.aval_horario" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Segurança (iluminação, policiamento etc.)" label-for="">
+                            <b-form-select v-model="dados.aval_segurancao" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="Acesso a computadores e outros recursos de Informática." label-for="">
+                            <b-form-select v-model="dados.aval_informatica" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="A atenção e o respeito dos (as) funcionários(as) e dos(as) professores(as)." label-for="">
+                            <b-form-select v-model="dados.aval_atencao" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="O conhecimento que os (as) professores (as) têm das matérias e a maneira de transmiti-lo." label-for="">
+                            <b-form-select v-model="dados.aval_conhecimento_prof" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="A dedicação dos (as) professores (as) para preparar aulas e atender aos (às) estudantes." label-for="">
+                            <b-form-select v-model="dados.aval_dedica_prof" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="As iniciativas da escola para realizar excursões, passeios culturais, estudos do meio ambiente." label-for="">
+                            <b-form-select v-model="dados.aval_passeios" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                        <b-form-group sm="5" label="A acessibilidade física e os recursos e os materiais para estudantes com deficiência (rampas, corrimãos, lupas etc.)." label-for="">
+                            <b-form-select v-model="dados.aval_acessibilidade" :options="optionsAvalia"></b-form-select>
+                        </b-form-group>
+                    </b-row>
+                    </center>
+                    
                 </b-col>
 
             </b-row>

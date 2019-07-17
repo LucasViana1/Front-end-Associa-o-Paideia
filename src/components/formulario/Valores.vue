@@ -7,7 +7,7 @@
                     <h3>VALORES</h3>
                 </b-col>
 
-                <b-col sm="">
+                <b-col sm="6">
                     <b-form-group label="44) Você se considera racista?">
                         <b-form-radio v-model="dados.racista" name="" value="Sim">
                            Sim.</b-form-radio>
@@ -16,10 +16,9 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="">
+                <b-col sm="6">
                     <b-form-group label="45) Você conhece alguém racista? (Pode ser escolhido mais de uma opção)">
-                        <b-form-radio v-model="dados.parente" name="" value="1">
-                           Parentes.</b-form-radio>
+                        
                         <b-form-radio v-model="dados.amigo" name="" value="1">
                            Amigos (as) ou colegas de escola e/ou de trabalho.</b-form-radio>
                         <b-form-radio v-model="dados.vizinho" name="" value="1">
@@ -31,7 +30,16 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="">
+                <!--MODELO A SEGUIR SERÁ ALTERADO NAS QUESTOES QUE PERMITE MAIS DE UMA RESPOSTA-->
+                <b-col sm="6">
+                    <b-form-group label="45) Você conhece alguém racista? (Pode ser escolhido mais de uma opção)">
+                        <b-form-checkbox  v-model="dados.parente" value="1" unchecked-value="0">
+                            Parentes
+                        </b-form-checkbox>
+                    </b-form-group>
+                </b-col>
+
+                <b-col sm="6">
                     <b-form-group label="46) Você já sofreu algum tipo de discriminação? (Pode ser escolhido mais de uma opção)">
                         <b-form-radio v-model="dados.sofreu_econo" name="" value="1">
                            Discriminação econômica.</b-form-radio>
@@ -58,7 +66,7 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="">
+                <b-col sm="6">
                     <b-form-group label="47) Você já presenciou algum tipo de discriminação? (Pode ser escolhido mais de uma opção)">
                         <b-form-radio v-model="dados.pre_econo" name="" value="1">
                            Discriminação econômica.</b-form-radio>
