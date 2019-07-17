@@ -58,11 +58,14 @@ export default {
           }
           else{
             //guardar na sessao nome e nivel de acesso
+            window.localStorage.setItem('id', retornoString[0].id)
             window.localStorage.setItem('nome', retornoString[0].nome)
             window.localStorage.setItem('nivel', retornoString[0].adm)
+            var id = window.localStorage.getItem('id'); 
             var nome = window.localStorage.getItem('nome'); 
             var nivel = window.localStorage.getItem('nivel'); 
             //window.localStorage.removeItem('nivel');
+            alert(id)
             alert(nome)
             alert(nivel)
           }

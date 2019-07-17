@@ -22,6 +22,10 @@ import Sobre from './components/Sobre.vue'*/
 Vue.use(BootstrapVue)
 /*Vue.use(VueRouter)//talvez add na pasta de rota*/
 
+import VueTheMask from 'vue-the-mask'
+Vue.use(VueTheMask)
+
+
 Vue.config.productionTip = false
 //array de objetos representando cada rota (config de rotas)
 /*const routes = [

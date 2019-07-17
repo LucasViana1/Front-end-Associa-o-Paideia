@@ -104,6 +104,10 @@
     </center>-->
     
     <DadosPessoais/>
+    <Estudos/>
+    <Socioeconomico/>
+    <Valores/>
+    <Arquivos/>
     
 
   </b-container>
