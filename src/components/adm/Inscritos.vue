@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <h1><center>INSCRITOS</center></h1>
+    <h1><center>BEM VINDO(A) {{nomeUser}}</center></h1>
     <br>
     <!--<div v-for="item in listagem">
         <p>{{item.id}}</p>
@@ -16,6 +16,35 @@
             {{ item }}
         </li>
     </ul>
+
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <th>Nº</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>CPF</th>
+                <th>Cartão Cidadão</th>
+                <th>Status</th>
+                <th>Detalhes</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr v-for="item in listagem.dados" :key="item">
+                <td>{{cont++}}</td>
+                <td>{{ item.nome }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.cpf }}</td>
+                <td>{{ item.cidadao }}</td>
+                <td>ok/espera/recusado</td>
+                <td>
+                    <a href="http://"></a>
+                    link detalhes
+                </td>
+            </tr>
+        </tbody>
+    </table>
     
   </b-container>
 </template>
@@ -28,7 +57,9 @@ export default {
     data (){
         return{
             listagem: {},
-            adm: window.localStorage.getItem('nivel')
+            adm: window.localStorage.getItem('nivel'),
+            nomeUser: window.localStorage.getItem('nome'),
+            cont: -199 //pq começa do 200?
         }
     },
     methods: {
