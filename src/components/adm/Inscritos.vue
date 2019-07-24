@@ -2,20 +2,6 @@
   <b-container>
     <h1><center>BEM VINDO(A) {{nomeUser}}</center></h1>
     <br>
-    <!--<div v-for="item in listagem">
-        <p>{{item.id}}</p>
-        <p>{{item.nome}}</p>
-        <p>{{item.email}}</p>
-        <p>{{item.senha}}</p>
-        <p>{{item.ativo}}</p>
-        <p>{{item.espera}}</p>
-    </div>-->
-    <!--<p>{{ listagem.dados[0].id }}</p>-->
-    <ul>
-        <li v-for="item in listagem.dados" :key="item">
-            {{ item }}
-        </li>
-    </ul>
 
     <table class="table table-striped table-dark">
         <thead>
@@ -31,13 +17,17 @@
         </thead>
 
         <tbody>
-            <tr v-for="item in listagem.dados" :key="item">
-                <td>{{cont}}</td>
+            <tr v-for="(item,index) in listagem.dados" :key="item">
+                <td>{{index+1}}</td>
                 <td>{{ item.nome }}</td>
                 <td>{{ item.email }}</td>
                 <td>{{ item.cpf }}</td>
                 <td>{{ item.cidadao }}</td>
-                <td>ok/espera/recusado</td>
+                <td>
+                    <div v-if="item.espera == 1">Em Espera</div>
+                    <div v-if="item.espera == 0">Lista Regular</div>
+                    <!--BLACK LIST: INSCRITO CANCELADO PELO ADM-->
+                </td>
                 <td>
                     <!--<a :href="link+item.id">
                         link detalhes                   
@@ -58,6 +48,7 @@
 
 <script>
 import axios from 'axios';
+import config from '../../../config'
 
 export default {
     name: 'Inscritos',
@@ -66,7 +57,7 @@ export default {
             listagem: {},
             adm: window.localStorage.getItem('nivel'),
             nomeUser: window.localStorage.getItem('nome'),
-            cont: -199, //pq começa do 200?
+            cont: 0, //pq começa do 200?
             link: '/detalhes/'
         }
     },
@@ -81,7 +72,7 @@ export default {
     //realiza a montagem dos dados definidos
     mounted() {
         //this.listarDados();
-        axios.get('http://localhost:3000/inscritos')
+        axios.get(config.server()+'inscritos')
         .then((response) =>{
             if(this.adm != 1){
                 window.location.href = "/"

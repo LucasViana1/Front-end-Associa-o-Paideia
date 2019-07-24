@@ -64,7 +64,7 @@
         recebido nenhuma mensagem, observe o <b>Calendário de Inscrição</b> e compareça a <b>Reunião de Confirmação de Matrícula conforme a 
         data e horário previstos no MANUAL DO CANDIDATO</b>.
       </p>
-      <b-alert show variant="danger">CUIDADO! NÃO PREENCHA a FICHA DE INSCRIÇÃO novamente.</b-alert>
+      <b-alert show variant="danger">CUIDADO! NÃO PREENCHA A FICHA DE INSCRIÇÃO NOVAMENTE.</b-alert>
       <b-alert show variant="warning">
         FIQUE LIGADO(A)! Na inscrição NÃO UTILIZE e-mail que não seja do(a) próprio(a) candidato(a).
       </b-alert>

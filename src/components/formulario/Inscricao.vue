@@ -1,8 +1,16 @@
 <template>
   <b-container>
     <h1><center>INSCRIÇÃO</center></h1>
+
+    <!--fim das inscrições-->
+    <b-col v-if="this.listagem[0].fim == 1">
+      <center>
+        <h4>Todas as vagas foram preenchidas, inscrições finalizadas.</h4>
+      </center>
+    </b-col>
+
     <!--termo de responsabilidade-->
-    <b-col><!--ocultar-->
+    <b-col v-if="this.listagem[0].fim == 0">
       <h3>TERMO DE RESPONSABILIDADE - REGRAS DE FREQUÊNCIA E CONDUTA</h3>
       <b>Ao se inscrever no CURSINHO FOCUS da ASSOCIAÇÃO PAIDEIA, o (a) aluno (a) assume a responsabilidade de cumprir e
          respeitar as seguintes normas:</b> 
@@ -96,54 +104,43 @@
       <b-form-checkbox id="" v-model="aceitar" name="" >
         Li e aceito os termos de responsabilidade.
       </b-form-checkbox>
+    
+      <center> 
+        <b-button class="mt-3" variant="success" disabled v-if="!aceitar">Avançar</b-button>
+        <b-button class="mt-3" variant="success" @click.prevent="proximo()" v-else>Avançar</b-button>
+      </center>
     </b-col>
-
-    <!--<center> 
-      <b-button class="mt-3" variant="success" disabled v-if="!aceitar">Avançar</b-button>
-      <b-button class="mt-3" variant="success" @click.prevent="proximo()" v-else>Avançar</b-button>
-    </center>-->
-    
-    <DadosPessoais/>
-    <Estudos/>
-    <Socioeconomico/>
-    <Valores/>
-    <Arquivos/>
-    
 
   </b-container>
 </template>
 
 <script>
-import DadosPessoais from '@/components/formulario/DadosPessoais.vue'
-import Estudos from '@/components/formulario/Estudos.vue'
-import Socioeconomico from '@/components/formulario/Socioeconomico.vue'
-import Valores from '@/components/formulario/Valores.vue'
-import Arquivos from '@/components/formulario/Arquivos.vue'
+import axios from 'axios';
+import config from '../../../config'
 
 export default {
-   name: 'Inscricao',
-   components: {
-      DadosPessoais,
-      Estudos,
-      Socioeconomico,
-      Valores,
-      Arquivos
-    },
+    name: 'Inscricao',
     data() {
       return {
-        //etapa: 1,
-        
-        //habilita: true,
+        listagem: {},
         aceitar: false
       }
     },
+    mounted() {
+      axios.get(config.server()+'inscricao')
+      .then((response) =>{
+          this.listagem = response.data;   
+                
+      })
+      .catch((error) => {
+        // console.log(error);
+      });
+    },
     methods: {
+      //talvez excluir
       proximo(){
-        this.etapa++
+        window.location.href = config.website()+'inscricao/pessoal'
       }
-     /* enviar(){
-        
-      }*/
   }
 }
 </script>

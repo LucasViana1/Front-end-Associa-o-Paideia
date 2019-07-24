@@ -3,17 +3,105 @@
         
          <b-form v-on:submit.prevent="enviarArquivos">
             <!--dados pessoais-->
-            <b-row>
+            <b-row align-h="center">
                 <b-col sm="12">
-                    <h3>ARQUIVOS</h3>
+                    <center>
+                        <h2>ARQUIVOS (DOCUMENTOS)</h2>
+                    </center>  
                 </b-col>
 
-                <b-col>
-                    <b-form-file class="mt-3" plain v-on:change="encodeImageFileAsURL('rgCandidato', 1)" id="rgCandidato"></b-form-file>
+                <b-col sm="5">
+                    <b-form-group label="RG:" class="labelCampo" label-for="">
+                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('rgCandidato', 1)" id="rgCandidato" required></b-form-file>
+                    </b-form-group>
+                </b-col>
+
+               <b-col sm="5">
+                    <b-form-group label="CPF:" class="labelCampo" label-for="">
+                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('cpfCandidato', 2)" id="cpfCandidato" required></b-form-file>
+                    </b-form-group>
                </b-col>
 
-               <b-col>
-                    <b-form-file class="mt-3" plain v-on:change="encodeImageFileAsURL('cpfCandidato', 2)" id="cpfCandidato"></b-form-file>
+                <b-col sm="11">
+                    <div class="separa"></div>
+                </b-col>
+
+               <b-col sm="5">
+                    <b-form-group label="Histórico Escolar:" class="labelCampo" label-for="">
+                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('historico', 3)" id="historico" required></b-form-file>
+                    </b-form-group>
+               </b-col>
+
+                <b-col sm="5">
+                    <b-form-group label="Cartão cidadão:" class="labelCampo" label-for="">
+                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('cidadao', 9)" id="cidadao" required></b-form-file>
+                    </b-form-group>
+               </b-col>
+
+               <b-col sm="11">
+                    <div class="separa"></div>
+                </b-col>
+
+                <b-col sm="5">
+                    <b-form-group label="Comprovante de endereço:" class="labelCampo" label-for="">
+                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('endereco', 7)" id="endereco" required></b-form-file>
+                    </b-form-group>
+               </b-col>
+
+               <b-col sm="5">
+                    <b-form-group label="Atestado médico:" class="labelCampo" label-for="">
+                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('medico', 6)" id="medico"></b-form-file>
+                    </b-form-group>
+               </b-col>
+
+               <b-col sm="11">
+                    <div class="separa"></div>
+                </b-col>
+
+               <b-col sm="5">
+                    <b-form-group label="Comprovante 3º período EJA:" class="labelCampo" label-for="">
+                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('eja', 5)" id="eja"></b-form-file>
+                    </b-form-group>
+               </b-col>
+
+               <b-col sm="5">
+                    <b-form-group label="Foto:" class="labelCampo" label-for="">
+                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('foto', 8)" id="foto"></b-form-file>
+                    </b-form-group>
+               </b-col>
+
+                <b-col sm="11">
+                    <div class="separa"></div>
+                </b-col>
+
+               <b-col sm="5">
+                    <b-form-group label="Comprovante de bolsa (caso bolsista):" class="labelCampo" label-for="">
+                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('bolsa', 4)" id="bolsa"></b-form-file>
+                    </b-form-group>
+               </b-col>
+
+               <b-col sm="5">
+                    <b-form-group label="Comprovante de matrícula ou conclusão do ensino médio:" class="labelCampo" label-for="">
+                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('ensinoMedio', 10)" id="ensinoMedio"></b-form-file>
+                    </b-form-group>
+               </b-col>
+
+               <b-col sm="11">
+                    <div class="separa"></div>
+                </b-col>
+
+               <b-col sm="5">
+                    <b-form-group label="RG (Responsável):" class="labelCampo" label-for="">
+                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('rgResponsavel', 11)" id="rgResponsavel"></b-form-file>
+                        <b-form-text>Campo obrigatório para menores de idade!</b-form-text>
+                    </b-form-group>
+               </b-col>
+
+               <b-col sm="5">
+                    <b-form-group label="CPF (Responsável):" class="labelCampo" label-for="">
+                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('cpfResponsavel', 12)" id="cpfResponsavel"></b-form-file>
+                        <b-form-text>Campo obrigatório para menores de idade!</b-form-text>
+                    </b-form-group>
                </b-col>
 
               <!-- <b-col>
@@ -22,8 +110,12 @@
              
 
             </b-row>
-            <br><br><br>
-            <b-button type="submit" variant="primary">Enviar arquivos</b-button>
+            <br>
+            <!--<div id="base64"></div>-->
+            <center>
+                <b-button type="submit" class="ml-sm-4" variant="primary">Enviar arquivos</b-button>
+            </center>
+            
         </b-form>
             
     </b-container>
@@ -31,6 +123,7 @@
 
 <script>
 import axios from 'axios';
+import config from '../../../config'
 
 export default {
     name: 'Arquivos',
@@ -48,12 +141,26 @@ export default {
             var fileToLoad = filesSelected[0];
       
             var fileReader = new FileReader();
+            
+            /*REMOVE LOCALSTORAGE SETADOS
+            window.localStorage.removeItem('rgCandidato')
+            window.localStorage.removeItem('cpfCandidato')
+            window.localStorage.removeItem('historico')
+            window.localStorage.removeItem('bolsa')
+            window.localStorage.removeItem('eja')
+            window.localStorage.removeItem('medico')
+            window.localStorage.removeItem('endereco')
+            window.localStorage.removeItem('foto')
+            window.localStorage.removeItem('cidadao')
+            window.localStorage.removeItem('ensinoMedio')
+            window.localStorage.removeItem('rgResponsavel')
+            window.localStorage.removeItem('cpfResponsavel')*/
       
             fileReader.onload = function(fileLoadedEvent) {
                 var srcData = fileLoadedEvent.target.result; // <--- data: base64
 
-                /*window.localStorage.setItem('rg', srcData)
-                alert(window.localStorage.getItem('rg'))*/
+                //window.localStorage.setItem('rg', srcData)
+                /*alert(window.localStorage.getItem('rg'))*/
 
                 switch (cont) {
                     case 1:
@@ -110,7 +217,7 @@ export default {
                 //alert(srcData);
                 //this.rgFile64 = srcData;
                 //alert(this.rgFile64);
-                //document.getElementById("base64").innerHTML = srcData;
+                //document.getElementById("base64").innerHTML = window.localStorage.getItem('rg');
             }
             fileReader.readAsDataURL(fileToLoad);
           }
@@ -118,11 +225,22 @@ export default {
         enviarArquivos(){
             var idUser = window.localStorage.getItem('id'); 
             //var rg64 = window.localStorage.getItem('rg');
-            axios.post('http://localhost:3000/insereDadosArquivos', {
+            axios.post(config.server()+'insereDadosArquivos', {
                 idUser: idUser,
                 //tipo: 'RG',
                 rgCandidato: window.localStorage.getItem('rgCandidato'),
-                cpfCandidato: window.localStorage.getItem('cpfCandidato')
+                cpfCandidato: window.localStorage.getItem('cpfCandidato'),
+
+                historico: window.localStorage.getItem('historico'),
+                bolsa: window.localStorage.getItem('bolsa'),
+                eja: window.localStorage.getItem('eja'),
+                medico: window.localStorage.getItem('medico'),
+                endereco: window.localStorage.getItem('endereco'),
+                foto: window.localStorage.getItem('foto'),
+                cidadao: window.localStorage.getItem('cidadao'),
+                ensinoMedio: window.localStorage.getItem('ensinoMedio'),
+                rgResponsavel: window.localStorage.getItem('rgResponsavel'),
+                cpfResponsavel: window.localStorage.getItem('cpfResponsavel'),
             })
             .then((response) =>{
                 console.log(response);
@@ -130,10 +248,34 @@ export default {
             .catch((error) => {
                 console.log(error);
             });
-            alert("registro inserido com sucesso!")
+            window.location.href = config.website()+'inscricao/estudos'
+            //alert("registro inserido com sucesso!")
             //DIRECIONAR O USUARIO PARA AS ETAPAS DE INSCRIÇÃO
             //TRATAMENTO DE ERRO IMPEDINDO CADASTRO DE DOIS EMAILS
         }
     }
 }
 </script>
+
+<style lang="scss">
+@import '../../style.scss';
+
+.labelCampo{
+    font-size: 109%;
+    color: $verdeEscuro;
+    font-weight: bold;
+    margin-top: 13px;
+}
+.separa{
+    border-top: 1px $rosa solid;
+}
+/*
+.pessoalForm{
+    margin-left: 58px;
+}
+@media (max-width: 767px){
+    #pessoalForm{
+        margin-left: auto;
+    }
+}*/
+</style>

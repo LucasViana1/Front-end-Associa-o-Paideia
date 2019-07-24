@@ -14,6 +14,16 @@ import Detalhes from '@/components/adm/Detalhes.vue'
 
 import TodosDepoimentos from '@/components/principal/TodosDepoimentos.vue'
 
+import DadosPessoais from '@/components/formulario/DadosPessoais.vue'
+import Arquivos from '@/components/formulario/Arquivos.vue'
+import Estudos from '@/components/formulario/Estudos.vue'
+import Socioeconomico from '@/components/formulario/Socioeconomico.vue'
+import Valores from '@/components/formulario/Valores.vue'
+import ConcluiInscricao from '@/components/formulario/ConcluiInscricao.vue'
+
+import Valida from '@/components/Valida.vue'
+
+
 Vue.use(Router);
 
 export default new Router({
@@ -73,6 +83,41 @@ export default new Router({
           name: 'Detalhes',
           path: '/detalhes',
           component: Detalhes
-        }
+        }, 
+        {
+          name: 'Arquivos',
+          path: '/inscricao/arquivos',
+          component: Arquivos
+        }, 
+        {
+          name: 'DadosPessoais',
+          path: '/inscricao/pessoal',
+          component: DadosPessoais
+        }, 
+        {
+          name: 'Estudos',
+          path: '/inscricao/estudos',
+          component: Estudos
+        }, 
+        {
+          name: 'Socioeconomico',
+          path: '/inscricao/socioeconomico',
+          component: Socioeconomico
+        }, 
+        {
+          name: 'Valores',
+          path: '/inscricao/valores',
+          component: Valores
+        }, 
+        {
+          name: 'ConcluiInscricao',
+          path: '/inscricao/conclui',
+          component: ConcluiInscricao
+        }, 
+        {
+          name: 'Valida',
+          path: '/valida',
+          component: Valida
+        }  
       ]   
 });

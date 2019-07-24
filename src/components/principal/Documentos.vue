@@ -7,7 +7,7 @@
         <b-col sm="4" class="mt-5">
           <center>
             <!--<a :href="infodoc" target="_blank">-->
-              <a href="http://localhost:3000/informacoes" target="_blank">            
+              <a :href="urlInfo" target="_blank">            
               <b-col cols="12">
                 <b-img :src="infoIcon"></b-img>
               </b-col>
@@ -19,7 +19,7 @@
         </b-col>
         <b-col sm="4" class="mt-5">
           <center>
-            <a href="http://localhost:3000/edital" target="_blank">  
+            <a :href="urlEdital" target="_blank">  
               <b-col cols="12">
                 <b-img :src="editalIcon"></b-img>
               </b-col>
@@ -31,7 +31,7 @@
         </b-col>
         <b-col sm="4" class="mt-5">
           <center>
-            <a href="http://localhost:3000/requerimento" target="_blank">  
+            <a :href="urlRequerimento" target="_blank">  
               <b-col cols="12">
                 <b-img :src="requerimentoIcon"></b-img>
               </b-col>
@@ -43,7 +43,7 @@
         </b-col>
         <b-col cols="12" class="mt-5 mb-2">
           <center>
-            <a href="http://localhost:8080/faq" target="_blank">  
+            <a :href="urlFaq" target="_blank">  
               <b-col cols="12">
                 <b-img :src="perguntasIcon"></b-img>
               </b-col>
@@ -59,6 +59,7 @@
 
 <script>
   import {fs} from 'fs';
+  import config from '../../../config'
   /*fs.readdir("informacoes.pdf", function(err, files){
    console.log(files);
  });*/
@@ -67,6 +68,11 @@
   name:'Documentos',
   data() {
     return{
+      urlRequerimento: config.server()+'requerimento',
+      urlFaq: config.server()+'faq',
+      urlEdital: config.server()+'edital',
+      urlInfo: config.server()+'informacoes',
+
       infoIcon: require('@/assets/informacoes/info_basica.png'),
       editalIcon: require('@/assets/informacoes/edital.png'),
       requerimentoIcon: require('@/assets/informacoes/requerimento.png'),

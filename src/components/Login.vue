@@ -7,15 +7,15 @@
     <br>
     <b-row align-h="center">
       <b-col sm="6" align-v="center">
-        <center><b-alert show variant="danger">Cadastro válido somente durante o periodo de inscrição!</b-alert></center><br>
+       <!-- <center><b-alert show variant="danger">Cadastro válido somente durante o periodo de inscrição!</b-alert></center><br>-->
         <b-form v-on:submit.prevent="loginUser">
 
-          <b-form-group id="input-group-1" label="Email:" label-for="input-1">
+          <b-form-group id="input-group-1" class="rotulo" label="Email:" label-for="input-1">
               <b-form-input id="input-1" v-model="user.email" type="email" required placeholder="Digite seu email"></b-form-input>
           </b-form-group>
 
-          <b-form-group id="input-group-2" label="Senha:" label-for="input-2">
-              <b-form-input id="input-2" v-model="user.senha" required placeholder="Digite sua senha"></b-form-input>
+          <b-form-group id="input-group-2" class="rotulo" label="Senha:" label-for="input-2">
+              <b-form-input id="input-2" v-model="user.senha" type="password" required placeholder="Digite sua senha"></b-form-input>
           </b-form-group>
 
           <b-button type="submit" variant="primary">Entrar</b-button>
@@ -23,12 +23,13 @@
         </b-form>
       </b-col> 
     </b-row>
-    {{retorno}}
+    
   </b-container>
 </template>
 
 <script>
 import axios from 'axios';
+import config from '../../config'
 
 export default {
     name: 'Login',
@@ -42,7 +43,7 @@ export default {
       //this.listarDados();
       loginUser(){
         //alert("funcionou")
-        axios.post('http://localhost:3000/login', {
+        axios.post(config.server()+'login', {
           email: this.user.email,
           senha: this.user.senha
         })
@@ -54,20 +55,32 @@ export default {
           //alert(retornoString[0].nome)
           //console.log(retornoString[0].nome)
           if(this.retorno == 'E-mail ou senha inválidos!'){
-            alert('sem registros')
+            alert('E-mail ou senha inválidos!')
+          }
+          else if(retornoString[0].ativo == 0){
+            //validação de email
+            window.localStorage.setItem('id', retornoString[0].id)
+            window.localStorage.setItem('nome', retornoString[0].nome)
+            window.location.href = '/valida'
+
           }
           else{
             //guardar na sessao nome e nivel de acesso
             window.localStorage.setItem('id', retornoString[0].id)
             window.localStorage.setItem('nome', retornoString[0].nome)
             window.localStorage.setItem('nivel', retornoString[0].adm)
+            window.localStorage.setItem('email', retornoString[0].email)
             var id = window.localStorage.getItem('id'); 
             var nome = window.localStorage.getItem('nome'); 
             var nivel = window.localStorage.getItem('nivel'); 
+            var email = window.localStorage.getItem('email'); 
             //window.localStorage.removeItem('nivel');
-            alert(id)
+            /*alert(id)
             alert(nome)
             alert(nivel)
+            alert(email)*/
+
+            window.location.href = '/'
           }
         })
         .catch((error) => {
@@ -82,8 +95,14 @@ export default {
 
 <style lang="scss">
 @import "../style.scss";
+
 label{
   color: $verdeEscuro;
+  font-weight: bold;
+  font-size: 120%;
+}
+.rotulo{
+  color: #527A25;
   font-weight: bold;
   font-size: 120%;
 }

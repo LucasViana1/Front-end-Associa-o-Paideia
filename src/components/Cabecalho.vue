@@ -1,7 +1,7 @@
 <template>  
   <b-container>
     <b-img :src="logo" fluid></b-img><!--logo-->
-    <b-navbar toggleable="lg" type="dark" variant="info">
+    <b-navbar toggleable="lg" type="dark"  id="cabecalho">
       <b-navbar-brand href="/">Início</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
@@ -13,7 +13,7 @@
           <!--<b-nav-item href="/inscricao">Inscrição</b-nav-item>TALVEZ REMOVER-->
           <b-nav-item href="/inscricao" v-if="adm != null">Inscrições 2019</b-nav-item><!--Apenas candidato e ADM-->
           <b-nav-item href="/inscritos" v-if="adm == 1">Administrador</b-nav-item><!--Apenas ADM-->
-          <b-nav-item href="/cadastro">Cadastre-se</b-nav-item>
+          <b-nav-item href="/cadastro" v-if="adm == null">Cadastre-se</b-nav-item>
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
@@ -52,6 +52,7 @@ export default {
       window.localStorage.removeItem('nome')
       window.localStorage.removeItem('nivel')
       window.localStorage.removeItem('id')
+      window.localStorage.removeItem('email')
       location.reload();//RECARREGA A PAGINA
     }
   }
@@ -59,6 +60,10 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style <style lang="scss">
+@import "../style.scss";
 
+#cabecalho{
+  background-color: $verdeClaro;
+}
 </style>
