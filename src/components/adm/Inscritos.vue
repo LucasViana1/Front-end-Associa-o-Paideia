@@ -58,7 +58,7 @@ export default {
             adm: window.localStorage.getItem('nivel'),
             nomeUser: window.localStorage.getItem('nome'),
             cont: 0, //pq começa do 200?
-            link: '/detalhes/'
+            link: '#/detalhes/'
         }
     },
     methods: {

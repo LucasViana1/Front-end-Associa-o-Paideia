@@ -27,7 +27,8 @@ import Valida from '@/components/Valida.vue'
 Vue.use(Router);
 
 export default new Router({
-    mode: 'history',//TALVEZ ALTERAR PARA HASHMODE (#) EM PRODUÇÃO
+    //suppressTransitionError: true,
+    mode: 'hash',//TALVEZ ALTERAR PARA HASHMODE (#) EM PRODUÇÃO
     routes: [
         {
           name: 'Inicio',

@@ -7,5 +7,5 @@ exports.server = function(){
 }
 
 exports.website = function(){
-    return 'http://localhost:8080/'
+    return 'http://localhost:8080/#/'
 }

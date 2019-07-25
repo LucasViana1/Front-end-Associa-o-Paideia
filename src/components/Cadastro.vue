@@ -80,7 +80,7 @@ export default {
                 console.log(error);
             });
             alert("cadastro realizado com sucesso!")
-            window.location.href = '/login'
+            window.location.href = '#/login'
             //DIRECIONAR O USUARIO PARA AS ETAPAS DE INSCRIÇÃO
             //TRATAMENTO DE ERRO IMPEDINDO CADASTRO DE DOIS EMAILS
         }
