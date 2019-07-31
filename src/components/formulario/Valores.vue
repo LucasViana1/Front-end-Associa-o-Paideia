@@ -10,7 +10,7 @@
                 </b-col>
 
                 <b-col sm="6">
-                    <b-form-group label="44) Você se considera racista?">
+                    <b-form-group label="43) Você se considera racista?">
                         <b-form-radio v-model="dados.racista" name="" value="Sim">
                            Sim.</b-form-radio>
                         <b-form-radio v-model="dados.racista" name="" value="Não">
@@ -20,7 +20,7 @@
 
                 <!--MODELO A SEGUIR SERÁ ALTERADO NAS QUESTOES QUE PERMITE MAIS DE UMA RESPOSTA-->
                 <b-col sm="6">
-                    <b-form-group label="45) Você conhece alguém racista? (Pode ser escolhido mais de uma opção)">
+                    <b-form-group label="44) Você conhece alguém racista? (Pode ser escolhido mais de uma opção)">
                         <b-form-checkbox  v-model="dados.parente" value="1" unchecked-value="0">
                             Parentes.
                         </b-form-checkbox>
@@ -40,7 +40,7 @@
                 </b-col>
 
                 <b-col sm="6">
-                    <b-form-group label="46) Você já sofreu algum tipo de discriminação? (Pode ser escolhido mais de uma opção)">
+                    <b-form-group label="45) Você já sofreu algum tipo de discriminação? (Pode ser escolhido mais de uma opção)">
                         <b-form-checkbox  v-model="dados.sofreu_econo" value="1" unchecked-value="0">
                             Discriminação econômica.
                         </b-form-checkbox>
@@ -51,7 +51,7 @@
                             Discriminação de gênero.
                         </b-form-checkbox>
                         <b-form-checkbox  v-model="dados.sofreu_lgbt" value="1" unchecked-value="0">
-                             Por ser ou ter sido identificado como LGBTQ+ (lésbica, gay, bissexual, travesti e transexual, intersexual).
+                             Por ser ou ter sido identificado como LGBTQIA+ (lésbica, gay, bissexual, travesti e transexual, queer, intersexual, assexual e outrxs).
                         </b-form-checkbox>
                         <b-form-checkbox  v-model="dados.sofreu_religiao" value="1" unchecked-value="0">
                             Por causa de sua religião.
@@ -78,7 +78,7 @@
                 </b-col>
 
                 <b-col sm="6">
-                    <b-form-group label="47) Você já presenciou algum tipo de discriminação? (Pode ser escolhido mais de uma opção)">
+                    <b-form-group label="46) Você já presenciou algum tipo de discriminação? (Pode ser escolhido mais de uma opção)">
                         <b-form-checkbox  v-model="dados.pre_econo" value="1" unchecked-value="0">
                             Discriminação econômica.
                         </b-form-checkbox>
@@ -89,7 +89,7 @@
                             Discriminação contra mulheres.
                         </b-form-checkbox>
                         <b-form-checkbox  v-model="dados.pre_lgbt" value="1" unchecked-value="0">
-                             Por ser ou ter sido identificado como LGBTQ+ (lésbica, gay, bissexual, travesti e transexual, intersexual).
+                             Por ser ou ter sido identificado como LGBTQIA+ (lésbica, gay, bissexual, travesti e transexual, queer, intersexual, assexual e outrxs).
                         </b-form-checkbox>
                         <b-form-checkbox  v-model="dados.pre_religiosa" value="1" unchecked-value="0">
                            Discriminação religiosa.
@@ -113,7 +113,7 @@
                             Por causa da aparência física.
                         </b-form-checkbox>
                         <b-form-checkbox  v-model="dados.pre_moradia" value="1" unchecked-value="0">
-                            Por causa da aparência física.Por causa do lugar de moradia.
+                            Por causa do lugar de moradia.
                         </b-form-checkbox>
                     </b-form-group>
                 </b-col>

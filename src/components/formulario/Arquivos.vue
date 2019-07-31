@@ -10,6 +10,14 @@
                     </center>  
                 </b-col>
 
+                <b-col sm="12" class="text-center">
+                    <b-form-group class="">
+                        <div class="opcaoSelecao">Você é menor de idade?</div>
+                        <b-form-radio v-model="menor" value="sim">Sim</b-form-radio>
+                        <b-form-radio v-model="menor" value="nao">Não</b-form-radio>
+                    </b-form-group>
+                </b-col>
+
                 <b-col sm="5">
                     <b-form-group label="RG:" class="labelCampo" label-for="">
                         <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('rgCandidato', 1)" id="rgCandidato" required></b-form-file>
@@ -90,16 +98,16 @@
                     <div class="separa"></div>
                 </b-col>
 
-               <b-col sm="5">
+               <b-col sm="5" v-if="menor == 'sim'">
                     <b-form-group label="RG (Responsável):" class="labelCampo" label-for="">
-                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('rgResponsavel', 11)" id="rgResponsavel"></b-form-file>
+                        <b-form-file class="mt-3 form-control-sm" required style="color: black;" plain v-on:change="encodeImageFileAsURL('rgResponsavel', 11)" id="rgResponsavel"></b-form-file>
                         <b-form-text>Campo obrigatório para menores de idade!</b-form-text>
                     </b-form-group>
                </b-col>
 
-               <b-col sm="5">
+               <b-col sm="5" v-if="menor == 'sim'">
                     <b-form-group label="CPF (Responsável):" class="labelCampo" label-for="">
-                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('cpfResponsavel', 12)" id="cpfResponsavel"></b-form-file>
+                        <b-form-file class="mt-3 form-control-sm" required style="color: black;" plain v-on:change="encodeImageFileAsURL('cpfResponsavel', 12)" id="cpfResponsavel"></b-form-file>
                         <b-form-text>Campo obrigatório para menores de idade!</b-form-text>
                     </b-form-group>
                </b-col>
@@ -130,6 +138,7 @@ export default {
     data() {
         return {
             dados: {},
+            menor: '',
             rgFile: null,
             rgFile64: null
         }
@@ -227,7 +236,6 @@ export default {
             //var rg64 = window.localStorage.getItem('rg');
             axios.post(config.server()+'insereDadosArquivos', {
                 idUser: idUser,
-                //tipo: 'RG',
                 rgCandidato: window.localStorage.getItem('rgCandidato'),
                 cpfCandidato: window.localStorage.getItem('cpfCandidato'),
 

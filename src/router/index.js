@@ -11,6 +11,7 @@ import Login from '@/components/Login.vue'
 import Inscritos from '@/components/adm/Inscritos.vue'
 import Cadastro from '@/components/Cadastro.vue'
 import Detalhes from '@/components/adm/Detalhes.vue'
+import DadosCompletos from '@/components/adm/DadosCompletos.vue'
 
 import TodosDepoimentos from '@/components/principal/TodosDepoimentos.vue'
 
@@ -22,6 +23,7 @@ import Valores from '@/components/formulario/Valores.vue'
 import ConcluiInscricao from '@/components/formulario/ConcluiInscricao.vue'
 
 import Valida from '@/components/Valida.vue'
+import RecuperaSenha from '@/components/RecuperaSenha.vue'
 
 
 Vue.use(Router);
@@ -119,6 +121,20 @@ export default new Router({
           name: 'Valida',
           path: '/valida',
           component: Valida
-        }  
+        }, 
+        {
+          name: 'RecuperaSenha',
+          path: '/recuperacao',
+          component: RecuperaSenha
+        }, 
+        {
+          name: 'DadosCompletos',
+          path: '/completo',
+          component: DadosCompletos
+        }    
+        
+        
+
+        
       ]   
 });

@@ -77,6 +77,8 @@
                             Dependo da ajuda de vizinhos, parentes ou amigos.</b-form-radio>
                         <b-form-radio v-model="dados.transporte" name="" value="A pé">
                             A pé.</b-form-radio>
+                        <b-form-radio v-model="dados.transporte" name="" value="Outro">
+                            Outro.</b-form-radio>
                     </b-form-group>
                 </b-col>
 
@@ -88,8 +90,10 @@
                             Da 5ª à 8ª série do Ensino Fundamental (antigo ginásio).</b-form-radio>
                         <b-form-radio v-model="dados.escol_pai" name="" value="Ensino Médio (antigo 2º grau)">
                            Ensino Médio (antigo 2º grau).</b-form-radio>
-                        <b-form-radio v-model="dados.escol_pai" name="" value="Ensino Superior">
-                            Ensino Superior.</b-form-radio>
+                        <b-form-radio v-model="dados.escol_pai" name="" value="Ensino Superior Incompleto">
+                            Ensino Superior Incompleto.</b-form-radio>
+                        <b-form-radio v-model="dados.escol_pai" name="" value="Ensino Superior Completo">
+                            Ensino Superior Completo.</b-form-radio>
                         <b-form-radio v-model="dados.escol_pai" name="" value="Especialização">
                             Especialização.</b-form-radio>
                         <b-form-radio v-model="dados.escol_pai" name="" value="Não estudou">
@@ -107,8 +111,10 @@
                             Da 5ª à 8ª série do Ensino Fundamental (antigo ginásio).</b-form-radio>
                         <b-form-radio v-model="dados.escol_mae" name="" value="Ensino Médio (antigo 2º grau)">
                            Ensino Médio (antigo 2º grau).</b-form-radio>
-                        <b-form-radio v-model="dados.escol_mae" name="" value="Ensino Superior">
-                            Ensino Superior.</b-form-radio>
+                        <b-form-radio v-model="dados.escol_mae" name="" value="Ensino Superior Incompleto">
+                            Ensino Superior Incompleto.</b-form-radio>
+                            <b-form-radio v-model="dados.escol_mae" name="" value="Ensino Superior Completo">
+                            Ensino Superior Completo.</b-form-radio>
                         <b-form-radio v-model="dados.escol_mae" name="" value="Especialização">
                             Especialização.</b-form-radio>
                         <b-form-radio v-model="dados.escol_mae" name="" value="Não estudou">
@@ -245,65 +251,123 @@
                         <b-form-radio v-model="dados.renda_total" name="" value="Nenhuma renda">
                            Nenhuma renda.</b-form-radio>
                         <b-form-radio v-model="dados.renda_total" name="" value="Até 1 salário mínimo (até R$ 954,00)">
-                            Até 1 salário mínimo (até R$ 954,00).</b-form-radio>
+                            Até 1 salário mínimo (até R$ 998,00).</b-form-radio>
                         <b-form-radio v-model="dados.renda_total" name="" value="De 1 a 3 salários mínimos (de R$ 954,00 até R$ 2.862,00)">
-                            De 1 a 3 salários mínimos (de R$ 954,00 até R$ 2.862,00).</b-form-radio>
+                            De 1 a 3 salários mínimos (de R$ 998,00 até R$ 2.994,00).</b-form-radio>
                         <b-form-radio v-model="dados.renda_total" name="" value="De 3 a 6 salários mínimos (de R$ 2.862,01 até R$ 5.724,00)">
-                            De 3 a 6 salários mínimos (de R$ 2.862,01 até R$ 5.724,00).</b-form-radio>
+                            De 3 a 6 salários mínimos (de R$ 2.994,01 até R$ 5.988,00).</b-form-radio>
                         <b-form-radio v-model="dados.renda_total" name="" value="De 6 a 9 salários mínimos (de R$ 5.724,01 até R$ 8.586,00)">
-                           De 6 a 9 salários mínimos (de R$ 5.724,01 até R$ 8.586,00).</b-form-radio>
+                           De 6 a 9 salários mínimos (de R$ 5.988,01 até R$ 8.982,00).</b-form-radio>
                         <b-form-radio v-model="dados.renda_total" name="" value="De 9 a 12 salários mínimos (de R$ 8.586,01 até R$ 11.448,00)">
-                            De 9 a 12 salários mínimos (de R$ 8.586,01 até R$ 11.448,00).</b-form-radio>
+                            De 9 a 12 salários mínimos (de R$ 8.982,01 até R$ 11.976,00).</b-form-radio>
                         <b-form-radio v-model="dados.renda_total" name="" value="De 12 a 15 salários mínimos (de R$ 11.448,01 até R$ 14.310,00)">
-                            De 12 a 15 salários mínimos (de R$ 11.448,01 até R$ 14.310,00).</b-form-radio>
+                            De 12 a 15 salários mínimos (de R$ 11.976,01 até R$ 14.970,00).</b-form-radio>
                         <b-form-radio v-model="dados.renda_total" name="" value="Mais de 15 salários mínimos (mais de R$ 14.310,01)">
-                            Mais de 15 salários mínimos (mais de R$ 14.310,01).</b-form-radio>
+                            Mais de 15 salários mínimos (mais de R$ 14.970,01).</b-form-radio>
 
                     </b-form-group>
                 </b-col>
+
                 <!--CONTINUAR DAQ-->
                 <b-form-group sm="12" label="30) Quais e quantos dos itens abaixo há em sua casa?*" label-for=""></b-form-group>
                 <b-col sm="12">
-                    <center>
                     <b-row>
-                        <b-form-group sm="4" label="TV" class="ml-3" >
-                            <b-form-select required v-model="dados.tv" :options="optionsItens" class=""></b-form-select>
+                        <b-form-group class="col-sm-4" >
+                            <div class="opcaoSelecao"><b>a)</b> TV:</div>
+                            <b-form-radio v-model="dados.tv" value="1">1</b-form-radio>
+                            <b-form-radio v-model="dados.tv" value="2">2</b-form-radio>
+                            <b-form-radio v-model="dados.tv" value="3 ou mais">3 ou mais</b-form-radio>
+                            <b-form-radio v-model="dados.tv" value="Não possuo">Não possuo</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="Computador/Notebook" class="ml-3">
-                            <b-form-select required v-model="dados.pc" :options="optionsItens"></b-form-select>
+                        
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>b)</b> Computador/Notebook:</div>
+                            <b-form-radio v-model="dados.pc" value="1">1</b-form-radio>
+                            <b-form-radio v-model="dados.pc" value="2">2</b-form-radio>
+                            <b-form-radio v-model="dados.pc" value="3 ou mais">3 ou mais</b-form-radio>
+                            <b-form-radio v-model="dados.pc" value="Não possuo">Não possuo</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="Geladeira" class="ml-3">
-                            <b-form-select required v-model="dados.geladeira" :options="optionsItens"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>c)</b> Geladeira:</div>
+                            <b-form-radio v-model="dados.geladeira" value="1">1</b-form-radio>
+                            <b-form-radio v-model="dados.geladeira" value="2">2</b-form-radio>
+                            <b-form-radio v-model="dados.geladeira" value="3 ou mais">3 ou mais</b-form-radio>
+                            <b-form-radio v-model="dados.geladeira" value="Não possuo">Não possuo</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="Acesso a Internet" class="ml-3">
-                            <b-form-select required v-model="dados.acesso_internet" :options="optionsItens"></b-form-select>
+
+                        <!--<b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>d)</b> Acesso a Internet:</div>
+                            <b-form-radio v-model="dados.acesso_internet" value="1">1</b-form-radio>
+                            <b-form-radio v-model="dados.acesso_internet" value="2">2</b-form-radio>
+                            <b-form-radio v-model="dados.acesso_internet" value="3 ou mais">3 ou mais</b-form-radio>
+                            <b-form-radio v-model="dados.acesso_internet" value="Não possuo">Não possuo</b-form-radio>
+                        </b-form-group>-->
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>d)</b>Videocassete e/ou DVD:</div>
+                            <b-form-radio v-model="dados.dvd" value="1">1</b-form-radio>
+                            <b-form-radio v-model="dados.dvd" value="2">2</b-form-radio>
+                            <b-form-radio v-model="dados.dvd" value="3 ou mais">3 ou mais</b-form-radio>
+                            <b-form-radio v-model="dados.dvd" value="Não possuo">Não possuo</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="Videocassete e/ou DVD." class="ml-3">
-                            <b-form-select required v-model="dados.dvd" :options="optionsItens"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>e)</b> Automóvel:</div>
+                            <b-form-radio v-model="dados.automovel" value="1">1</b-form-radio>
+                            <b-form-radio v-model="dados.automovel" value="2">2</b-form-radio>
+                            <b-form-radio v-model="dados.automovel" value="3 ou mais">3 ou mais</b-form-radio>
+                            <b-form-radio v-model="dados.automovel" value="Não possuo">Não possuo</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="Automóvel" class="ml-3">
-                            <b-form-select required v-model="dados.automovel" :options="optionsItens"></b-form-select>
+
+                        <b-form-group  class="col-sm-4">
+                            <div class="opcaoSelecao"><b>f)</b> Telefone Fixo:</div>
+                            <b-form-radio v-model="dados.tel_fixo" value="1">1</b-form-radio>
+                            <b-form-radio v-model="dados.tel_fixo" value="2">2</b-form-radio>
+                            <b-form-radio v-model="dados.tel_fixo" value="3 ou mais">3 ou mais</b-form-radio>
+                            <b-form-radio v-model="dados.tel_fixo" value="Não possuo">Não possuo</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="Telefone Fixo" class="ml-3">
-                            <b-form-select required v-model="dados.tel_fixo" :options="optionsItens"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>g)</b>TV por Assinatura:</div>
+                            <b-form-radio v-model="dados.tv_ass" value="1">1</b-form-radio>
+                            <b-form-radio v-model="dados.tv_ass" value="2">2</b-form-radio>
+                            <b-form-radio v-model="dados.tv_ass" value="3 ou mais">3 ou mais</b-form-radio>
+                            <b-form-radio v-model="dados.tv_ass" value="Não possuo">Não possuo</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="TV por Assinatura" class="ml-3">
-                            <b-form-select required v-model="dados.tv_ass" :options="optionsItens"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>h)</b> Rádio:</div>
+                            <b-form-radio v-model="dados.radio" value="1">1</b-form-radio>
+                            <b-form-radio v-model="dados.radio" value="2">2</b-form-radio>
+                            <b-form-radio v-model="dados.radio" value="3 ou mais">3 ou mais</b-form-radio>
+                            <b-form-radio v-model="dados.radio" value="Não possuo">Não possuo</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="Rádio" class="ml-3">
-                            <b-form-select required v-model="dados.radio" :options="optionsItens"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>i)</b> Máquina de lavar roupa:</div>
+                            <b-form-radio v-model="dados.lava_roupa" value="1">1</b-form-radio>
+                            <b-form-radio v-model="dados.lava_roupa" value="2">2</b-form-radio>
+                            <b-form-radio v-model="dados.lava_roupa" value="3 ou mais">3 ou mais</b-form-radio>
+                            <b-form-radio v-model="dados.lava_roupa" value="Não possuo">Não possuo</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="Máquina de lavar roupa" class="ml-3">
-                            <b-form-select required v-model="dados.lava_roupa" :options="optionsItens"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>j)</b> Celular:</div>
+                            <b-form-radio v-model="dados.celular" value="1">1</b-form-radio>
+                            <b-form-radio v-model="dados.celular" value="2">2</b-form-radio>
+                            <b-form-radio v-model="dados.celular" value="3 ou mais">3 ou mais</b-form-radio>
+                            <b-form-radio v-model="dados.celular" value="Não possuo">Não possuo</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="Celular" class="ml-3">
-                            <b-form-select required v-model="dados.celular" :options="optionsItens"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>k)</b> Máquina Lavar Louça:</div>
+                            <b-form-radio v-model="dados.lava_louca" value="1">1</b-form-radio>
+                            <b-form-radio v-model="dados.lava_louca" value="2">2</b-form-radio>
+                            <b-form-radio v-model="dados.lava_louca" value="3 ou mais">3 ou mais</b-form-radio>
+                            <b-form-radio v-model="dados.lava_louca" value="Não possuo">Não possuo</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="Máquina Lavar Louça" class="ml-3">
-                            <b-form-select required v-model="dados.lava_louca" :options="optionsItens"></b-form-select>
-                        </b-form-group>
-                    </b-row>
-                    </center>   
+                    </b-row>  
                 </b-col>
 
                 <b-col sm="12 mt-4">
@@ -311,76 +375,112 @@
                         <b-form-radio v-model="dados.trab_atual" name="" value="Sim">
                            Sim.</b-form-radio>
                         <b-form-radio v-model="dados.trab_atual" name="" value="Não">
-                            Não.</b-form-radio>
+                           Não.</b-form-radio>
                     </b-form-group>
                 </b-col>
 
-                 <b-form-group label="32) Indique o grau de importância de cada um dos motivos abaixo na sua decisão de trabalhar:" label-for=""></b-form-group>
-                <b-col sm="12">
-                    <center>
+                <b-col v-show="this.dados.trab_atual != 'Não'" cols="12"> 
+                    <b-form-group label="32) Indique o grau de importância de cada um dos motivos abaixo na sua decisão de trabalhar:" label-for=""></b-form-group>
+                    <b-col sm="12">
+                        <b-row>
+                            <b-form-group class="col-sm-6">
+                                <div class="opcaoSelecao"><b>a)</b> Ajudar nas despesas com a casa:</div>
+                                <b-form-radio v-model="dados.trab_despesas" value="0 (nenhuma importância)">0 (nenhuma importância)</b-form-radio>
+                                <b-form-radio v-model="dados.trab_despesas" value="1">1</b-form-radio>
+                                <b-form-radio v-model="dados.trab_despesas" value="2">2</b-form-radio>
+                                <b-form-radio v-model="dados.trab_despesas" value="3">3</b-form-radio>
+                                <b-form-radio v-model="dados.trab_despesas" value="4">4</b-form-radio>
+                                <b-form-radio v-model="dados.trab_despesas" value="5 (maior importância)">5 (maior importância)</b-form-radio>
+                            </b-form-group>
+                            
+                            <b-form-group class="col-sm-6">
+                                <div class="opcaoSelecao"><b>b)</b> Adquirir experiência:</div>
+                                <b-form-radio v-model="dados.trab_experi" value="0 (nenhuma importância)">0 (nenhuma importância)</b-form-radio>
+                                <b-form-radio v-model="dados.trab_experi" value="1">1</b-form-radio>
+                                <b-form-radio v-model="dados.trab_experi" value="2">2</b-form-radio>
+                                <b-form-radio v-model="dados.trab_experi" value="3">3</b-form-radio>
+                                <b-form-radio v-model="dados.trab_experi" value="4">4</b-form-radio>
+                                <b-form-radio v-model="dados.trab_experi" value="5 (maior importância)">5 (maior importância)</b-form-radio>
+                            </b-form-group>
+                            
+                            <b-form-group class="col-sm-6">
+                                <div class="opcaoSelecao"><b>c)</b> Custear/ pagar meus estudos:</div>
+                                <b-form-radio v-model="dados.trab_despesas" value="0 (nenhuma importância)">0 (nenhuma importância)</b-form-radio>
+                                <b-form-radio v-model="dados.trab_despesas" value="1">1</b-form-radio>
+                                <b-form-radio v-model="dados.trab_despesas" value="2">2</b-form-radio>
+                                <b-form-radio v-model="dados.trab_despesas" value="3">3</b-form-radio>
+                                <b-form-radio v-model="dados.trab_despesas" value="4">4</b-form-radio>
+                                <b-form-radio v-model="dados.trab_despesas" value="5 (maior importância)">5 (maior importância)</b-form-radio>
+                            </b-form-group>
+                            
+                            <b-form-group class="col-sm-6">
+                                <div class="opcaoSelecao"><b>d)</b> Sustentar minha família (esposo/a, filhos/as etc.):</div>
+                                <b-form-radio v-model="dados.trab_sustento" value="0 (nenhuma importância)">0 (nenhuma importância)</b-form-radio>
+                                <b-form-radio v-model="dados.trab_sustento" value="1">1</b-form-radio>
+                                <b-form-radio v-model="dados.trab_sustento" value="2">2</b-form-radio>
+                                <b-form-radio v-model="dados.trab_sustento" value="3">3</b-form-radio>
+                                <b-form-radio v-model="dados.trab_sustento" value="4">4</b-form-radio>
+                                <b-form-radio v-model="dados.trab_sustento" value="5 (maior importância)">5 (maior importância)</b-form-radio>
+                            </b-form-group>
+                            
+                            <b-form-group class="col-sm-6">
+                                <div class="opcaoSelecao"><b>e)</b> Ser independente (ganhar meu próprio dinheiro):</div>
+                                <b-form-radio v-model="dados.trab_independente" value="0 (nenhuma importância)">0 (nenhuma importância)</b-form-radio>
+                                <b-form-radio v-model="dados.trab_independente" value="1">1</b-form-radio>
+                                <b-form-radio v-model="dados.trab_independente" value="2">2</b-form-radio>
+                                <b-form-radio v-model="dados.trab_independente" value="3">3</b-form-radio>
+                                <b-form-radio v-model="dados.trab_independente" value="4">4</b-form-radio>
+                                <b-form-radio v-model="dados.trab_independente" value="5 (maior importância)">5 (maior importância)</b-form-radio>
+                            </b-form-group>
+                        </b-row>
+                    </b-col>
+
                     <b-row>
-                        <b-form-group sm="4" label="Ajudar nas despesas com a casa" class="ml-3">
-                            <b-form-select v-model="dados.trab_despesas" :options="optionsImportancia"></b-form-select>
-                        </b-form-group>
-                        <b-form-group sm="4" label="Adquirir experiência" class="ml-3">
-                            <b-form-select v-model="dados.trab_experi" :options="optionsImportancia"></b-form-select>
-                        </b-form-group>
-                        <b-form-group sm="4" label="Custear/ pagar meus estudos" class="ml-3">
-                            <b-form-select v-model="dados.trab_p_estudos" :options="optionsImportancia"></b-form-select>
-                        </b-form-group>
-                        <b-form-group sm="4" label="Sustentar minha família (esposo/a, filhos/as etc.)" class="ml-3">
-                            <b-form-select v-model="dados.trab_sustento" :options="optionsImportancia"></b-form-select>
-                        </b-form-group>
-                        <b-form-group sm="4" label="Ser independente (ganhar meu próprio dinheiro)" class="ml-3">
-                            <b-form-select v-model="dados.trab_independente" :options="optionsImportancia"></b-form-select>
-                        </b-form-group>
+                        <b-col sm="4">
+                            <b-form-group label="33) Quantas horas semanais você trabalha?">
+                                <b-form-radio v-model="dados.trab_horas" name="" value="Sem jornada fixa, até 10 horas semanais">
+                                Sem jornada fixa, até 10 horas semanais.</b-form-radio>
+                                <b-form-radio v-model="dados.trab_horas" name="" value="De 11 a 20 horas semanais">
+                                    De 11 a 20 horas semanais.</b-form-radio>
+                                <b-form-radio v-model="dados.trab_horas" name="" value="De 21 a 30 horas semanais">
+                                    De 21 a 30 horas semanais.</b-form-radio>
+                                <b-form-radio v-model="dados.trab_horas" name="" value="De 31 a 40 horas semanais">
+                                    De 31 a 40 horas semanais.</b-form-radio>
+                                <b-form-radio v-model="dados.trab_horas" name="" value="Mais de 40 horas semanais">
+                                    Mais de 40 horas semanais.</b-form-radio>
+                            </b-form-group>
+                        </b-col>
+
+                        <b-col sm="4">
+                            <b-form-group label="34) Como você avalia ter estudado e trabalhado durante seus estudos?">
+                                <b-form-radio v-model="dados.estuda_e_trab" name="" value="Atrapalhou meus estudos">
+                                Atrapalhou meus estudos.</b-form-radio>
+                                <b-form-radio v-model="dados.estuda_e_trab" name="" value="Possibilitou meus estudos">
+                                    Possibilitou meus estudos</b-form-radio>
+                                <b-form-radio v-model="dados.estuda_e_trab" name="" value="Possibilitou meu crescimento pessoal">
+                                    Possibilitou meu crescimento pessoal</b-form-radio>
+                                <b-form-radio v-model="dados.estuda_e_trab" name="" value="Não atrapalhou meus estudos">
+                                    Não atrapalhou meus estudos.</b-form-radio>
+                            </b-form-group>
+                        </b-col>
+
+                        <b-col sm="4">
+                            <b-form-group label="35) Qual principal motivo faria você voltar a estudar ou continuar estudando?">
+                                <b-form-radio v-model="dados.motivo_estudar" name="" value="Conseguir um emprego">
+                                Conseguir um emprego.</b-form-radio>
+                                <b-form-radio v-model="dados.motivo_estudar" name="" value="Progredir no emprego atual">
+                                    Progredir no emprego atual</b-form-radio>
+                                <b-form-radio v-model="dados.motivo_estudar" name="" value="Conseguir um emprego melhor">
+                                    Conseguir um emprego melhor</b-form-radio>
+                                <b-form-radio v-model="dados.motivo_estudar" name="" value="Adquirir mais conhecimento, ficar atualizado">
+                                    Adquirir mais conhecimento, ficar atualizado.</b-form-radio>
+                                <b-form-radio v-model="dados.motivo_estudar" name="" value="Atender à expectativa de meus familiares sobre meus estudos">
+                                    Atender à expectativa de meus familiares sobre meus estudos.</b-form-radio>
+                                <b-form-radio v-model="dados.motivo_estudar" name="" value="Não pretendo voltar a estudar">
+                                    Não pretendo voltar a estudar.</b-form-radio>
+                            </b-form-group>
+                        </b-col>
                     </b-row>
-                    </center>
-                </b-col>
-
-                <b-col sm="4">
-                    <b-form-group label="33) Quantas horas semanais você trabalha?">
-                        <b-form-radio v-model="dados.trab_horas" name="" value="Sem jornada fixa, até 10 horas semanais">
-                           Sem jornada fixa, até 10 horas semanais.</b-form-radio>
-                        <b-form-radio v-model="dados.trab_horas" name="" value="De 11 a 20 horas semanais">
-                            De 11 a 20 horas semanais.</b-form-radio>
-                        <b-form-radio v-model="dados.trab_horas" name="" value="De 21 a 30 horas semanais">
-                            De 21 a 30 horas semanais.</b-form-radio>
-                        <b-form-radio v-model="dados.trab_horas" name="" value="De 31 a 40 horas semanais">
-                            De 31 a 40 horas semanais.</b-form-radio>
-                        <b-form-radio v-model="dados.trab_horas" name="" value="Mais de 40 horas semanais">
-                            Mais de 40 horas semanais.</b-form-radio>
-                    </b-form-group>
-                </b-col>
-
-                <b-col sm="4">
-                    <b-form-group label="34) Como você avalia ter estudado e trabalhado durante seus estudos?">
-                        <b-form-radio v-model="dados.estuda_e_trab" name="" value="Atrapalhou meus estudos">
-                           Atrapalhou meus estudos.</b-form-radio>
-                        <b-form-radio v-model="dados.estuda_e_trab" name="" value="Possibilitou meus estudos">
-                            Possibilitou meus estudos</b-form-radio>
-                        <b-form-radio v-model="dados.estuda_e_trab" name="" value="Possibilitou meu crescimento pessoal">
-                            Possibilitou meu crescimento pessoal</b-form-radio>
-                        <b-form-radio v-model="dados.estuda_e_trab" name="" value="Não atrapalhou meus estudos">
-                            Não atrapalhou meus estudos.</b-form-radio>
-                    </b-form-group>
-                </b-col>
-
-                <b-col sm="4">
-                    <b-form-group label="35) Qual principal motivo faria você voltar a estudar ou continuar estudando?">
-                        <b-form-radio v-model="dados.motivo_estudar" name="" value="Conseguir um emprego">
-                           Conseguir um emprego.</b-form-radio>
-                        <b-form-radio v-model="dados.motivo_estudar" name="" value="Progredir no emprego atual">
-                            Progredir no emprego atual</b-form-radio>
-                        <b-form-radio v-model="dados.motivo_estudar" name="" value="Conseguir um emprego melhor">
-                            Conseguir um emprego melhor</b-form-radio>
-                        <b-form-radio v-model="dados.motivo_estudar" name="" value="Adquirir mais conhecimento, ficar atualizado">
-                            Adquirir mais conhecimento, ficar atualizado.</b-form-radio>
-                        <b-form-radio v-model="dados.motivo_estudar" name="" value="Atender à expectativa de meus familiares sobre meus estudos">
-                            Atender à expectativa de meus familiares sobre meus estudos.</b-form-radio>
-                        <b-form-radio v-model="dados.motivo_estudar" name="" value="Não pretendo voltar a estudar">
-                            Não pretendo voltar a estudar.</b-form-radio>
-                    </b-form-group>
                 </b-col>
 
                 <b-col sm="4">
@@ -420,6 +520,7 @@
                     </b-form-group>
                 </b-col>
 
+<!--
                 <b-col sm="4">
                     <b-form-group label="39) Possui computador na sua casa?*">
                         <b-form-radio v-model="dados.tem_computador" name="" value="Não possuo computador">
@@ -434,9 +535,9 @@
                             Possuo mais de um com acesso à internet.</b-form-radio>
                     </b-form-group>
                 </b-col>
-
+-->
                 <b-col sm="4">
-                    <b-form-group label="40) Como acessa a internet?*">
+                    <b-form-group label="39) Como acessa a internet?*">
                         <b-form-radio v-model="dados.acesso_internet" name="" value="Não tenho acesso">
                            Não tenho acesso.</b-form-radio>
                         <b-form-radio v-model="dados.acesso_internet" name="" value="Tenho acesso pelo meu celular móvel, apenas">
@@ -451,7 +552,7 @@
                 </b-col>
 
                 <b-col sm="4">
-                    <b-form-group label="41) Assinale abaixo a(s) atividade(s) ou o(s) curso(s) que você realiza ou realizou.">
+                    <b-form-group label="40) Assinale abaixo a(s) atividade(s) ou o(s) curso(s) que você realiza ou realizou.">
                         <b-form-checkbox  v-model="dados.curso_lingua" value="1" unchecked-value="0">
                             Curso de língua estrangeira.
                         </b-form-checkbox>
@@ -470,178 +571,257 @@
                     </b-form-group>
                 </b-col>
 
-                <b-form-group label="42) Com qual frequência você lê:*" label-for=""></b-form-group>
+                
                 <b-col sm="12">
-                    <center>
-                    <b-row align-h="center">
+                    <b-row>
+                        <b-form-group class="col-12" label="41) Com qual frequência você lê:*"></b-form-group>
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>a)</b> Jornais:</div>
+                            <b-form-radio v-model="dados.jornal" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.jornal" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.jornal" value="Nunca">Nunca</b-form-radio>
+                        </b-form-group>
                         
-                        <b-form-group sm="4" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao">Jornais.</div>
-   
-                                <b-form-select required v-model="dados.jornal" :options="optionsLer"></b-form-select>
-                           
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>b)</b> Sites e matérias na Internet:</div>
+                            <b-form-radio v-model="dados.sites" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.sites" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.sites" value="Nunca">Nunca</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao">Sites e matérias na Internet.</div>
-                            <b-col sm="">
-                                <b-form-select required v-model="dados.sites" :options="optionsLer"></b-form-select>
-                            </b-col>
+                        
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>c)</b> Dicionários, enciclopédias e manuais:</div>
+                            <b-form-radio v-model="dados.manuais" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.manuais" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.manuais" value="Nunca">Nunca</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao">Dicionários, enciclopédias e manuais.</div>
-                            <b-col sm="10">
-                                <b-form-select required v-model="dados.manuais" :options="optionsLer"></b-form-select>
-                            </b-col>
+                        
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>d)</b> Livros de ficção (romances, contos, poesias etc.):</div>
+                            <b-form-radio v-model="dados.ficcao" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.ficcao" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.ficcao" value="Nunca">Nunca</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao">Livros de ficção (romances, contos, poesias etc.).</div>
-                            <b-col sm="9">
-                                <b-form-select required v-model="dados.ficcao" :options="optionsLer"></b-form-select>
-                            </b-col>
+                        
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>e)</b> Revistas sobre saúde (Boa Saúde, Saúde, Vida Simples etc.):</div>
+                            <b-form-radio v-model="dados.saude" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.saude" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.saude" value="Nunca">Nunca</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao">Revistas sobre saúde <br>(Boa Saúde, Saúde, Vida Simples etc.).</div>
-                            <b-col sm="9">
-                                <b-form-select required v-model="dados.saude" :options="optionsLer"></b-form-select>
-                            </b-col>
+                        
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>f)</b> Revistas sobre religião (Sophia, Missões, Gospel, Orixás, Delfos etc.):</div>
+                            <b-form-radio v-model="dados.religiao" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.religiao" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.religiao" value="Nunca">Nunca</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao">Revistas sobre religião <br>(Sophia, Missões, Gospel, Orixás, Delfos etc.).</div>
-                            <b-col sm="9">
-                                <b-form-select required v-model="dados.religiao" :options="optionsLer"></b-form-select>
-                            </b-col>
+                        
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>g)</b> Revistas de humor, quadrinhos ou jogos (Casseta e Planeta, Turma da Mônica, PC Gamer etc.):</div>
+                            <b-form-radio v-model="dados.humor" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.humor" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.humor" value="Nunca">Nunca</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="4" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao">Revistas de humor, quadrinhos ou jogos <br>(Casseta e Planeta, Turma da Mônica, PC Gamer etc.).</div>
-                            <b-col sm="9">
-                                <b-form-select required v-model="dados.humor" :options="optionsLer"></b-form-select>
-                            </b-col>
+                        
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>h)</b> Revistas de informação geral (Carta Capital, Veja, Istoé, Época, Exame, Caros Amigos, Piauí, Forum etc.):</div>
+                            <b-form-radio v-model="dados.info_geral" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.info_geral" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.info_geral" value="Nunca">Nunca</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao col-sm-11">Revistas de informação geral (Carta Capital, Veja,<br> Istoé, Época, Exame, Caros Amigos, Piauí, Forum etc.)</div>
-                            <b-col sm="8">
-                                <b-form-select required v-model="dados.info_geral" :options="optionsLer"></b-form-select>
-                            </b-col>
+                        
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>i)</b> Livros de não-ficção e biografias (reportagens, livros científicos, filosóficos, históricos, documentários etc.):</div>
+                            <b-form-radio v-model="dados.nao_ficcao" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.nao_ficcao" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.nao_ficcao" value="Nunca">Nunca</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao col-sm-11">Livros de não-ficção e biografias (reportagens, <br>livros científicos, filosóficos, históricos, documentários etc.).</div>
-                            <b-col sm="8">
-                                <b-form-select required v-model="dados.nao_ficcao" :options="optionsLer"></b-form-select>
-                            </b-col>
+                        
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>j)</b> Revistas sobre comportamento, moda, estilo e decoração (Cláudia, Marie Claire, Pais e Filhos, Casa e Jardim, Bons Fluídos etc.):</div>
+                            <b-form-radio v-model="dados.estilo" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.estilo" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.estilo" value="Nunca">Nunca</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="6" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao col-sm-11">Revistas sobre comportamento, moda, estilo e decoração (Cláudia,<br> Marie Claire, Pais e Filhos, Casa e Jardim, Bons Fluídos etc.).</div>
-                            <b-col sm="7">
-                                <b-form-select required v-model="dados.estilo" :options="optionsLer"></b-form-select>
-                            </b-col>
+                        
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>k)</b> Revistas sobre educação e estudos (Educação, Guia do Estudante, Almanaque Abril, Sociologia, Língua Portuguesa, Speak Up etc.):</div>
+                            <b-form-radio v-model="dados.educa" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.educa" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.educa" value="Nunca">Nunca</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="6" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao col-sm-11">Revistas sobre educação e estudos (Educação, Guia do Estudante,<br> Almanaque Abril, Sociologia, Língua Portuguesa, Speak Up etc.).</div>
-                            <b-col sm="7">
-                                <b-form-select required v-model="dados.educa" :options="optionsLer"></b-form-select>
-                            </b-col>
+                        
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>l)</b> Revistas para adolescentes ou sobre TV, cinema, música, celebridades (Viração, TPM, Set, Rolling Stones, Capricho, Contigo, Caras, etc.):</div>
+                            <b-form-radio v-model="dados.adolecente" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.adolecente" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.adolecente" value="Nunca">Nunca</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="6" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao col-sm-11">Revistas para adolescentes ou sobre TV, <br>cinema, música, celebridades (Viração, TPM, Set, Rolling Stones,<br> Capricho, Contigo, Caras, etc.).</div>
-                            <b-col sm="7">
-                                <b-form-select required v-model="dados.adolecente" :options="optionsLer"></b-form-select>
-                            </b-col>
+                        
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>m)</b> Revistas sobre automóveis, esportes e lazer (Quatro Rodas, Duas Rodas, Placar, Pesca e Cia., Náutica, Revista do Vôlei, Viagem e Turismo, Terra etc.):</div>
+                            <b-form-radio v-model="dados.lazer" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.lazer" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.lazer" value="Nunca">Nunca</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="6" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao col-sm-11">Revistas sobre automóveis, esportes e lazer <br> (Quatro Rodas, Duas Rodas, Placar, Pesca e Cia., Náutica,<br> Revista do Vôlei, Viagem e Turismo, Terra etc.).</div>
-                            <b-col sm="7">
-                                <b-form-select required v-model="dados.lazer" :options="optionsLer"></b-form-select>
-                            </b-col>
-                        </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3 mt-4">
-                            <div class="opcaoSelecao">Revistas de divulgação científica, tecnológica, filosófica ou artística (Ciência Hoje, Geo, Galileu,<br> Mente e Cérebro, Linux Magazine, PC Magazine, Filosofia, Cult, História Viva, Entrelivros etc.).</div>
-                            <b-col sm="5">
-                                <b-form-select required v-model="dados.cientifica" :options="optionsLer"></b-form-select>
-                            </b-col>
+                        
+                        <b-form-group class="col-sm-6">
+                            <div class="opcaoSelecao"><b>n)</b> Revistas de divulgação científica, tecnológica, filosófica ou artística (Ciência Hoje, Geo, Galileu, Mente e Cérebro, Linux Magazine, PC Magazine, Filosofia, Cult, História Viva, Entrelivros etc.):</div>
+                            <b-form-radio v-model="dados.cientifica" value="Frequentemente">Frequentemente</b-form-radio>
+                            <b-form-radio v-model="dados.cientifica" value="Às vezes">Às vezes</b-form-radio>
+                            <b-form-radio v-model="dados.cientifica" value="Nunca">Nunca</b-form-radio>
                         </b-form-group>
                     </b-row>
-                    </center> 
                 </b-col>
 
-                <b-form-group class="mt-2" label="43) Faça uma avaliação da escola em que você realiza ou realizou o Ensino Médio.*" label-for=""></b-form-group>
+                <b-form-group class="mt-2" label="42) Faça uma avaliação da escola em que você realiza ou realizou o Ensino Médio.*" label-for=""></b-form-group>
                 <b-col sm="12">
-                    <center>
-                    <b-row align-h="center">
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">Trabalho de grupo.</div>
-                            <b-form-select required v-model="dados.aval_grupo" :options="optionsAvalia"></b-form-select>
+                    <b-row>
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>a)</b> Trabalho de grupo:</div>
+                            <b-form-radio v-model="dados.aval_grupo" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_grupo" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_grupo" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_grupo" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">Práticas de esporte.</div>
-                            <b-form-select required v-model="dados.aval_esporte" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>b)</b> Práticas de esporte:</div>
+                            <b-form-radio v-model="dados.aval_esporte" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_esporte" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_esporte" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_esporte" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">A biblioteca da escola.</div>
-                            <b-form-select required v-model="dados.aval_biblioteca" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>c)</b> A biblioteca da escola:</div>
+                            <b-form-radio v-model="dados.aval_biblioteca" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_biblioteca" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_biblioteca" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_biblioteca" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">A localização da escola.</div>
-                            <b-form-select required v-model="dados.aval_local" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>d)</b> A localização da escola:</div>
+                            <b-form-radio v-model="dados.aval_local" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_local" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_local" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_local" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">O respeito à diversidade.</div>
-                            <b-form-select required v-model="dados.aval_respeito" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>e)</b> O respeito à diversidade:</div>
+                            <b-form-radio v-model="dados.aval_respeito" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_respeito" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_respeito" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_respeito" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">As condições dos laboratórios.</div>
-                            <b-form-select required v-model="dados.aval_laboratorio" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>f)</b> As condições dos laboratórios:</div>
+                            <b-form-radio v-model="dados.aval_laboratorio" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_laboratorio" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_laboratorio" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_laboratorio" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">As condições das salas de aula.</div>
-                            <b-form-select required v-model="dados.aval_sala" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>g)</b> As condições das salas de aula:</div>
+                            <b-form-radio v-model="dados.aval_sala" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_sala" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_sala" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_sala" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">O ensino de língua estrangeira.</div>
-                            <b-form-select required v-model="dados.aval_lingua" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>h)</b> O ensino de língua estrangeira:</div>
+                            <b-form-radio v-model="dados.aval_lingua" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_lingua" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_lingua" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_lingua" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">O interesse dos (as) estudantes.</div>
-                            <b-form-select required v-model="dados.aval_interesse" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>i)</b> O interesse dos (as) estudantes:</div>
+                            <b-form-radio v-model="dados.aval_interesse" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_interesse" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_interesse" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_interesse" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">A atenção às questões ambientais.</div>
-                            <b-form-select required v-model="dados.aval_ambiental" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>j)</b> A atenção às questões ambientais:</div>
+                            <b-form-radio v-model="dados.aval_ambiental" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_ambiental" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_ambiental" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_ambiental" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">A organização dos horários de aulas.</div>
-                            <b-form-select required v-model="dados.aval_horario" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>k)</b> A organização dos horários de aulas:</div>
+                            <b-form-radio v-model="dados.aval_horario" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_horario" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_horario" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_horario" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">Segurança (iluminação, policiamento etc.)</div>
-                            <b-form-select required v-model="dados.aval_segurancao" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>l)</b> Segurança (iluminação, policiamento, etc.):</div>
+                            <b-form-radio v-model="dados.aval_segurancao" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_segurancao" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_segurancao" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_segurancao" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">Acesso a computadores e outros recursos de Informática.</div>
-                            <b-form-select class="col-sm-9" required v-model="dados.aval_informatica" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>m)</b> Acesso a computadores e outros recursos de Informática:</div>
+                            <b-form-radio v-model="dados.aval_informatica" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_informatica" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_informatica" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_informatica" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">A atenção e o respeito dos (as) funcionários(as) e dos(as) professores(as).</div>
-                            <b-form-select class="col-sm-9" required v-model="dados.aval_atencao" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>n)</b> A atenção e o respeito dos (as) funcionários(as) e dos(as) professores(as):</div>
+                            <b-form-radio v-model="dados.aval_atencao" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_atencao" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_atencao" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_atencao" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">O conhecimento que os (as) professores (as)<br> têm das matérias e a maneira de transmiti-lo.</div>
-                            <b-form-select class="col-sm-9" required v-model="dados.aval_conhecimento_prof" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>o)</b> O conhecimento que os (as) professores (as) têm das matérias e a maneira de transmiti-lo:</div>
+                            <b-form-radio v-model="dados.aval_conhecimento_prof" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_conhecimento_prof" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_conhecimento_prof" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_conhecimento_prof" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">A dedicação dos (as) professores (as) para <br>preparar aulas e atender aos (às) estudantes.</div>
-                            <b-form-select class="col-sm-9" required v-model="dados.aval_dedica_prof" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>p)</b> A dedicação dos (as) professores (as) para preparar aulas e atender aos (às) estudantes:</div>
+                            <b-form-radio v-model="dados.aval_dedica_prof" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_dedica_prof" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_dedica_prof" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_dedica_prof" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">As iniciativas da escola para realizar excursões,<br> passeios culturais, estudos do meio ambiente.</div>
-                            <b-form-select class="col-sm-9" required v-model="dados.aval_passeios" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>q)</b> As iniciativas da escola para realizar excursões, passeios culturais, estudos do meio ambiente:</div>
+                            <b-form-radio v-model="dados.aval_passeios" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_passeios" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_passeios" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_passeios" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
-                        <b-form-group sm="5" label="" class="ml-3" label-for="">
-                            <div class="opcaoSelecao">A acessibilidade física e os recursos e os materiais<br> para estudantes com deficiência (rampas, corrimãos, lupas etc.).</div>
-                            <b-form-select class="col-sm-9" required v-model="dados.aval_acessibilidade" :options="optionsAvalia"></b-form-select>
+
+                        <b-form-group class="col-sm-4">
+                            <div class="opcaoSelecao"><b>r)</b> A acessibilidade física e os recursos e os materiais para estudantes com deficiência (rampas, corrimãos, lupas etc.):</div>
+                            <b-form-radio v-model="dados.aval_acessibilidade" value="Excelente">Excelente</b-form-radio>
+                            <b-form-radio v-model="dados.aval_acessibilidade" value="Bom">Bom</b-form-radio>
+                            <b-form-radio v-model="dados.aval_acessibilidade" value="Regular">Regular</b-form-radio>
+                            <b-form-radio v-model="dados.aval_acessibilidade" value="Insuficiente">Insuficiente</b-form-radio>
                         </b-form-group>
                     </b-row>
-                    </center>
-                    
                 </b-col>
 
             </b-row>
@@ -662,6 +842,7 @@ export default {
     name: 'Socioeconomico',
     data() {
         return {
+            //remover "options" abaixo
             optionsItens: [
                 { value: '1', text: '1' },
                 { value: '2', text: '2' },
@@ -710,8 +891,6 @@ export default {
             this.dados.eja == null ||
             this.dados.eja_tipo == null ||
             this.dados.tem_internet == null ||
-            this.dados.tem_computador == null ||
-            this.dados.acesso_internet == null ||
             this.dados.acesso_internet == null){
                 alert('PREENCHA TODOS OS CAMPOS OBRIGATÓRIOS!')
             }
@@ -757,7 +936,7 @@ export default {
                 eja: this.dados.eja,
                 eja_tipo: this.dados.eja_tipo,
                 tem_internet: this.dados.tem_internet,                                
-                tem_computador: this.dados.tem_computador,
+                //tem_computador: this.dados.tem_computador,
                 acesso_internet: this.dados.acesso_internet, 
         
                 curso_lingua: this.dados.curso_lingua,
@@ -832,7 +1011,7 @@ legend{
     font-weight: bold;
 }
 .opcaoSelecao{
-    color: black;
+    color: $verdeDark;
     font-weight: initial;
     margin-bottom: 8px;
     font-size: 105%;

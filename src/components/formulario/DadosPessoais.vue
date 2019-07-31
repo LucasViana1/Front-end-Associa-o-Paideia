@@ -23,7 +23,8 @@
                 
                 <b-col sm="4">
                     <b-form-group label="Data Nascimento:" class="labelCampo">
-                        <b-form-input v-model="dados.data" type="date" required placeholder=""></b-form-input>
+                        <b-form-input v-model="dados.data" type="text" required v-mask="'##/##/####'" placeholder="dd/mm/aaaa">
+                        </b-form-input>
                     </b-form-group>
                 </b-col>
 
@@ -63,14 +64,14 @@
                 <b-col sm="4">
                     <b-form-group label="RG:" class="labelCampo" label-for="">
                         <b-form-input v-model="dados.rg" type="text" required v-mask="'##.###.###-#'" placeholder="00.000.000-0"></b-form-input>
-                        <b-form-text>Caso o dígito do seu RG termine em "x", coloque "0" no lugar</b-form-text>
+                        <b-form-text>Caso o dígito do seu RG termine em "x", coloque "0" no lugar.</b-form-text>
                     </b-form-group>
                 </b-col>
 
                 <b-col sm="4">
                     <b-form-group label="Cartão Cidadão:" class="labelCampo" label-for="">
                         <b-form-input v-model="dados.cidadao" type="text" required v-mask="'###########'" placeholder=""></b-form-input>
-                        <b-form-text>O cartão não pode estar vencido, se estiver, toda inscrição será invalidada</b-form-text>
+                        <b-form-text>O cartão não pode estar vencido, se estiver, toda inscrição será invalidada.</b-form-text>
                     </b-form-group>
                 </b-col>
             </b-row>

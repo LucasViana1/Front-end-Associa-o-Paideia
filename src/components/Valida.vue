@@ -10,7 +10,7 @@
                 <b-form v-on:submit.prevent="validaUser">
 
                 <b-form-group id="input-group-1" label="Código de acesso:" label-for="input-1">
-                    <b-form-input id="input-1" v-model="user.codigo" type="text" required placeholder="Digite o código de 5 dígitos enviado por e-mail"></b-form-input>
+                    <b-form-input id="input-1" v-model="user.codigo" type="text" required placeholder="Digite o código enviado por e-mail"></b-form-input>
                 </b-form-group>
 
                 <center><b-button type="submit" variant="primary">Validar</b-button></center>

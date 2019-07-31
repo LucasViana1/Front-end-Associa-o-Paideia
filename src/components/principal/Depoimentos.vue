@@ -23,7 +23,7 @@
           </b-container>
         </b-col>
         <b-col sm="12" class="mt-2 text-center">
-          <a href="/depoimentos"><b-button id="botao">Ver mais depoimentos</b-button></a>
+          <a href="#/depoimentos"><b-button id="botao">Ver mais depoimentos</b-button></a>
         </b-col>
         </b-row>
         

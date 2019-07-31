@@ -14,8 +14,12 @@
                     <li><b>RG:</b> {{listagem.dados[0].rg}}</li>
                     <li><b>Cartão Cidadão:</b> {{listagem.dados[0].cidadao}}</li>
                     <!--IMPLEMENTAR AÇÃO DO BOTÃO ABAIXO-->
-                    <li><a v-on:click="detalhes(item.id)" :href="link" class="btn btn-primary mt-3 ml-4">
-                        DADOS COMPLETOS</a> </li>
+                    <li>
+                        <a :href="link" class="btn btn-primary mt-3 ml-4">DADOS COMPLETOS</a> 
+                    </li>
+                    <li>
+                        <b-button v-on:click="cancelaInscrito()" variant="danger" class="mt-3 ml-4">CANCELAR</b-button>
+                    </li>
                 </ul>
             </b-col>
 
@@ -63,11 +67,27 @@ export default {
             listagem: {},
             adm: window.localStorage.getItem('nivel'),
             nomeUser: window.localStorage.getItem('nome'),
-            cont: -199, //pq começa do 200?
-            link: '#/detalhes/'
+            link: '#/completo/'
         }
     },
     methods: {
+        
+        cancelaInscrito(){
+            if(confirm("Tem certeza que deseja cancelar este inscrito?")){
+                axios.post(config.server()+'cancelaInscrito', {
+                    idUser: this.listagem.dados[0].idUser,
+                })
+                .then((response) =>{
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+                window.location.href = '#/inscritos'
+            }
+           
+        },
+
         encodeImageFileAsURL(srcData) {
       
           /*var filesSelected = document.getElementById("inputFileToLoad").files;
@@ -105,10 +125,12 @@ export default {
                 console.log(response.data);
                 this.listagem = response.data;   
             }          
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+
     },
 
 }

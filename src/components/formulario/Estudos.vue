@@ -75,13 +75,13 @@
                 <b-col sm="4">
                     <b-form-group label="6) Em que ano concluiu o ENSINO MÉDIO (3º GRAU)?*">
                         <b-form-radio v-model="dados.ano_medio" name="" value="2017">
-                           2017.</b-form-radio>
+                           2018.</b-form-radio>
                         <b-form-radio v-model="dados.ano_medio" name="" value="2016">
-                            2016.</b-form-radio>
+                            2017.</b-form-radio>
                         <b-form-radio v-model="dados.ano_medio" name="" value="2015">
-                            2015.</b-form-radio>
+                            2016.</b-form-radio>
                         <b-form-radio v-model="dados.ano_medio" name="" value="2014">
-                            2014.</b-form-radio>
+                            2015.</b-form-radio>
                         <b-form-radio v-model="dados.ano_medio" name="" value="Outro">
                             Outro.</b-form-radio>
                     </b-form-group>
@@ -169,25 +169,25 @@
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="6">
+                <b-col sm="12">
                     <b-form-group label="13) Área desejada (Ciências Humanas, Biológicas ou Exatas):*">
-                        <b-form-input v-model="dados.area_desejo" type="text" required placeholder=""></b-form-input>
+                        <b-form-select v-model="dados.area_desejo" :options="optionsItens" size="sm" class="mt-1"></b-form-select>
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="6">
+                <b-col sm="12">
                     <b-form-group label="14) PRIMEIRA OPÇÃO (Curso e Universidade):*">
                         <b-form-input v-model="dados.curso_univ1" type="text" required placeholder=""></b-form-input>
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="6">
+                <b-col sm="12">
                     <b-form-group label="15) SEGUNDA OPÇÃO (Curso e Universidade):*">
                         <b-form-input v-model="dados.curso_univ2" type="text" required placeholder=""></b-form-input>
                     </b-form-group>
                 </b-col>
 
-                <b-col sm="6">
+                <b-col sm="12">
                     <b-form-group label="16) TERCEIRA OPÇÃO (Curso e Universidade):*">
                         <b-form-input v-model="dados.curso_univ3" type="text" required placeholder=""></b-form-input>
                     </b-form-group>
@@ -229,7 +229,12 @@ export default {
     name: 'Estudos',
     data() {
         return {
-            dados: {}
+            dados: {},
+            optionsItens: [
+                { value: 'Exatas', text: 'Exatas' },
+                { value: 'Humanas', text: 'Humanas' },
+                { value: 'Biológicas', text: 'Biológicas' }
+            ],
         }
     },
     methods: {

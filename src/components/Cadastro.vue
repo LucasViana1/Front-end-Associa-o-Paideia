@@ -13,7 +13,8 @@
         <b-col v-if="ver">
             <center>
                 O cadastro ao sistema deve ser feito para poder realizar a inscrição no projeto. <br>
-                Após realizar o cadastro, você receberá um e-mail com o código de confirmação, e após validar o código no site, poderá acessar sua conta para fazer a inscrição<br>
+                Após realizar o cadastro, você receberá um e-mail com o código de confirmação, e após validar o código no site, poderá acessar sua conta para fazer a inscrição.<br>
+                <br>
                 <b>ATENÇÃO! Esse cadastro não garante sua vaga ao projeto!</b>
             </center>
             <br>
@@ -38,7 +39,16 @@
                             <b-form-input id="input-2" v-model="user.senha" type="password" required placeholder="Digite sua senha"></b-form-input>
                         </b-form-group>
 
-                        <b-button type="submit" variant="primary">Cadastrar</b-button>
+                        <b-form-group id="input-group-4" label="Confirme sua senha:" label-for="input-2">
+                            <b-form-input id="input-2" v-model="user.confirmaSenha" type="password" required placeholder="Digite sua senha"></b-form-input>
+                        </b-form-group>
+
+                        <center>
+                            <b-button type="submit" variant="primary">Cadastrar</b-button>
+                        </center>
+
+                        <b-alert dismissible :show="senhaDiferente" variant="danger" class="mt-2">A senha está divergente!</b-alert>
+                        
 
                     </b-form>
                 </b-col> 
@@ -57,32 +67,34 @@ export default {
     data() {
         return {
             user: {},
-            ver: true
+            ver: true,
+            senhaDiferente: false
         }
     },
     methods: {
         //this.listarDados();
         addUser(){
             //alert("funcionou")
-            axios.post(config.server()+'cadastraUser', {
-                nome: this.user.nome,
-                sobrenome: this.user.sobrenome,
-                email: this.user.email,
-                senha: this.user.senha
-                //body: this.email
-            })
-            .then((response) =>{
-                console.log(response);
-                
-            // this.listagem = response.data;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-            alert("cadastro realizado com sucesso!")
-            window.location.href = '#/login'
-            //DIRECIONAR O USUARIO PARA AS ETAPAS DE INSCRIÇÃO
-            //TRATAMENTO DE ERRO IMPEDINDO CADASTRO DE DOIS EMAILS
+            if(this.user.senha != this.user.confirmaSenha){
+                this.senhaDiferente = true
+            }
+            else{
+                axios.post(config.server()+'cadastraUser', {
+                    nome: this.user.nome,
+                    sobrenome: this.user.sobrenome,
+                    email: this.user.email,
+                    senha: this.user.senha
+                })
+                .then((response) =>{
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+                alert("Cadastro realizado com sucesso!")//talvez trocar alert por msg de retorno
+                window.location.href = '#/login'
+                }
+            
         }
         
     }

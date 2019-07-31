@@ -2,7 +2,7 @@
   <b-container>
     <h1>ACESSE SUA CONTA</h1>
     <center>
-      Não possui uma conta? Realize o cadastro clicando <a href="/cadastro">AQUI</a> 
+      Não possui uma conta? Realize o cadastro clicando <a href="#/cadastro">AQUI</a> 
     </center>
     <br>
     <b-row align-h="center">
@@ -11,15 +11,19 @@
         <b-form v-on:submit.prevent="loginUser">
 
           <b-form-group id="input-group-1" class="rotulo" label="Email:" label-for="input-1">
-              <b-form-input id="input-1" v-model="user.email" type="email" required placeholder="Digite seu email"></b-form-input>
+            <b-form-input id="input-1" v-model="user.email" type="email" required placeholder="Digite seu email"></b-form-input>
           </b-form-group>
 
           <b-form-group id="input-group-2" class="rotulo" label="Senha:" label-for="input-2">
-              <b-form-input id="input-2" v-model="user.senha" type="password" required placeholder="Digite sua senha"></b-form-input>
+            <b-form-input id="input-2" v-model="user.senha" type="password" required placeholder="Digite sua senha"></b-form-input>
           </b-form-group>
 
-          <b-button type="submit" variant="primary">Entrar</b-button>
+          <a href="#/recuperacao">Esqueceu sua senha?</a>
 
+          <center>
+            <b-button type="submit" class="mt-2" variant="primary">Entrar</b-button>
+          </center>
+          
         </b-form>
       </b-col> 
     </b-row>
@@ -61,7 +65,7 @@ export default {
             //validação de email
             window.localStorage.setItem('id', retornoString[0].id)
             window.localStorage.setItem('nome', retornoString[0].nome)
-            window.location.href = '/valida'
+            window.location.href = '#/valida'
 
           }
           else{

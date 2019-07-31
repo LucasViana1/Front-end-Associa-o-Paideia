@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <h1><center>INSCRIÇÃO</center></h1>
+    <h1><center>INSCRIÇÃO 2º SEMESTRE 2019</center></h1>
 
     <!--fim das inscrições-->
     <b-col v-if="this.listagem[0].fim == 1">

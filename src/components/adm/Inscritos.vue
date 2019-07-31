@@ -24,9 +24,9 @@
                 <td>{{ item.cpf }}</td>
                 <td>{{ item.cidadao }}</td>
                 <td>
-                    <div v-if="item.espera == 1">Em Espera</div>
-                    <div v-if="item.espera == 0">Lista Regular</div>
-                    <!--BLACK LIST: INSCRITO CANCELADO PELO ADM-->
+                    <div v-if="item.espera == 1 && item.cancelado == null">Em Espera</div>
+                    <div v-if="item.espera == 0 && item.cancelado == null">Lista Regular</div>
+                    <div v-if="item.cancelado == 1">Cancelado</div>
                 </td>
                 <td>
                     <!--<a :href="link+item.id">

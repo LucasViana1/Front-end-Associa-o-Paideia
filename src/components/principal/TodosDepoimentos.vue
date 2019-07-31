@@ -31,7 +31,7 @@
                 <div class="separa pt-2"></div>
                 <h3 class="text-center text-sm-left">Ana Silvia</h3>
                 <p class="formacao"><b>Diretora Presidente e Coordenadora Pedagógica do Cursinho Focus</b></p>             
-                <p><b-img :src="ana" class="float-none float-sm-left mx-auto mr-sm-3 mb-2"></b-img>Prestes a completarmos dez anos de existência nós do Focus Vestibulares da Associação Paidéia nutrimos a alegria de termos colaborado com os jovens de Louveira a realizarem o sonho de ingressar em uma universidade. Mais do que colaboradores nos tornamos agentes de uma mudança social e humana na vida daqueles que passaram pelo projeto.</p>
+                <p><b-img :src="ana" class="float-none float-sm-left mx-auto mr-sm-3 mb-2"></b-img>Nós do Focus Vestibulares da Associação Paidéia nutrimos a alegria de termos colaborado com os jovens de Louveira a realizarem o sonho de ingressar em uma universidade. Mais do que colaboradores nos tornamos agentes de uma mudança social e humana na vida daqueles que passaram pelo projeto.</p>
             </b-col>
         </b-row>
     </b-container>
