@@ -405,12 +405,12 @@
                             
                             <b-form-group class="col-sm-6">
                                 <div class="opcaoSelecao"><b>c)</b> Custear/ pagar meus estudos:</div>
-                                <b-form-radio v-model="dados.trab_despesas" value="0 (nenhuma importância)">0 (nenhuma importância)</b-form-radio>
-                                <b-form-radio v-model="dados.trab_despesas" value="1">1</b-form-radio>
-                                <b-form-radio v-model="dados.trab_despesas" value="2">2</b-form-radio>
-                                <b-form-radio v-model="dados.trab_despesas" value="3">3</b-form-radio>
-                                <b-form-radio v-model="dados.trab_despesas" value="4">4</b-form-radio>
-                                <b-form-radio v-model="dados.trab_despesas" value="5 (maior importância)">5 (maior importância)</b-form-radio>
+                                <b-form-radio v-model="dados.trab_p_estudos" value="0 (nenhuma importância)">0 (nenhuma importância)</b-form-radio>
+                                <b-form-radio v-model="dados.trab_p_estudos" value="1">1</b-form-radio>
+                                <b-form-radio v-model="dados.trab_p_estudos" value="2">2</b-form-radio>
+                                <b-form-radio v-model="dados.trab_p_estudos" value="3">3</b-form-radio>
+                                <b-form-radio v-model="dados.trab_p_estudos" value="4">4</b-form-radio>
+                                <b-form-radio v-model="dados.trab_p_estudos" value="5 (maior importância)">5 (maior importância)</b-form-radio>
                             </b-form-group>
                             
                             <b-form-group class="col-sm-6">
