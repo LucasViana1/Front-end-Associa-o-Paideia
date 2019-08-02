@@ -17,7 +17,7 @@
         </thead>
 
         <tbody>
-            <tr v-for="(item,index) in listagem.dados" :key="item">
+            <tr v-for="(item,index) in listagem.dados" :key="index">
                 <td>{{index+1}}</td>
                 <td>{{ item.nome }}</td>
                 <td>{{ item.email }}</td>

@@ -35,7 +35,7 @@
                 <!--<b-tab no-body title="Picture 2">
                     <center><b-img :src="listagem.dados[0].arquivo" fluid></b-img></center>
                 </b-tab>-->
-                <div v-for="imagem in listagem.dados" :key="imagem">
+                <div v-for="(imagem,index) in listagem.dados" :key="index">
                     <b-tab no-body :title="imagem.tipo" v-if="imagem.tipo != 'FOTO'">
                         <center>
                             <b-img :src="imagem.arquivo" fluid></b-img>
