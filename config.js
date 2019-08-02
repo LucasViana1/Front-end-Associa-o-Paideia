@@ -8,6 +8,6 @@ exports.server = function(){
 }
 
 exports.website = function(){
-    return 'http://localhost:8080/#/'
-    //return 'https://infinite-woodland-99670.herokuapp.com/#/'
+    //return 'http://localhost:8080/#/'
+    return 'https://infinite-woodland-99670.herokuapp.com/#/'
 }
