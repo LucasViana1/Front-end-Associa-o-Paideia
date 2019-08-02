@@ -139,7 +139,8 @@ export default {
     methods: {
       //talvez excluir
       proximo(){
-        window.location.href = config.website()+'inscricao/pessoal'
+        //window.location.href = config.website()+'inscricao/pessoal'
+        window.location.href = '#/inscricao/pessoal'
       }
   }
 }

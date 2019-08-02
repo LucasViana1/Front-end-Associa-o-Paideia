@@ -256,7 +256,8 @@ export default {
             .catch((error) => {
                 console.log(error);
             });
-            window.location.href = config.website()+'inscricao/estudos'
+            //window.location.href = config.website()+'inscricao/estudos'
+            window.location.href = '#/inscricao/estudos'
             //alert("registro inserido com sucesso!")
             //DIRECIONAR O USUARIO PARA AS ETAPAS DE INSCRIÇÃO
             //TRATAMENTO DE ERRO IMPEDINDO CADASTRO DE DOIS EMAILS

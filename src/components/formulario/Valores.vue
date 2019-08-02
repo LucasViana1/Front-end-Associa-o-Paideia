@@ -189,7 +189,8 @@ methods: {
         .catch((error) => {
             console.log(error);
         });
-        window.location.href = config.website()+'inscricao/conclui'
+        //window.location.href = config.website()+'inscricao/conclui'
+        window.location.href = '#/inscricao/conclui'
         //alert("registro inserido com sucesso!")
         
     }

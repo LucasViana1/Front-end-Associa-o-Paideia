@@ -300,7 +300,8 @@ export default {
                 .catch((error) => {
                     console.log(error);
                 });
-                window.location.href = config.website()+'inscricao/socioeconomico'
+                //window.location.href = config.website()+'inscricao/socioeconomico'
+                window.location.href = '#/inscricao/socioeconomico'
             }
     
         }

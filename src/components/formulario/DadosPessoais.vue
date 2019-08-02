@@ -151,7 +151,8 @@ export default {
             .catch((error) => {
                 console.log(error);
             });
-            window.location.href = config.website()+'inscricao/arquivos'
+           // window.location.href = config.website()+'inscricao/arquivos'
+            window.location.href = '#/inscricao/arquivos'
             //alert("registro inserido com sucesso!")
             //DIRECIONAR O USUARIO PARA AS ETAPAS DE INSCRIÇÃO
             //TRATAMENTO DE ERRO IMPEDINDO CADASTRO DE DOIS EMAILS

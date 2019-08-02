@@ -69,7 +69,7 @@
   data() {
     return{
       urlRequerimento: config.server()+'requerimento',
-      urlFaq: config.server()+'faq',
+      urlFaq: '#/faq',
       urlEdital: config.server()+'edital',
       urlInfo: config.server()+'informacoes',
 
