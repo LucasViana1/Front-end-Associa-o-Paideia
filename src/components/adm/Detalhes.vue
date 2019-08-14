@@ -8,6 +8,7 @@
                 <ul style="list-style-type: none;">
                     <li><b>E-mail:</b> {{listagem.dados[0].email}}</li>
                     <li><b>Cidade:</b> {{listagem.dados[0].cidade_nasc}} - {{listagem.dados[0].estado_nasc}}</li>
+                    <li><b>Data Nascimento:</b> {{listagem.dados[0].data_nasc}}</li>
                     <li><b>Telefone 1:</b> {{listagem.dados[0].tel1}}</li>
                     <li><b>Telefone 2:</b> {{listagem.dados[0].tel2}}</li>
                     <li><b>CPF:</b> {{listagem.dados[0].cpf}}</li>
