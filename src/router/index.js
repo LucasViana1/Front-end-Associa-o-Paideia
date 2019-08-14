@@ -24,6 +24,7 @@ import ConcluiInscricao from '@/components/formulario/ConcluiInscricao.vue'
 
 import Valida from '@/components/Valida.vue'
 import RecuperaSenha from '@/components/RecuperaSenha.vue'
+import NaoEncontrado from '@/components/NaoEncontrado.vue'
 
 
 Vue.use(Router);
@@ -131,7 +132,11 @@ export default new Router({
           name: 'DadosCompletos',
           path: '/completo',
           component: DadosCompletos
-        }    
+        },{
+          name: 'PaginaNaoEncontrada',
+          path: '*',
+          component: NaoEncontrado,
+        }   
         
         
 
