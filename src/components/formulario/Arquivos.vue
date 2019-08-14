@@ -11,8 +11,16 @@
                 </b-col>
 
                 <b-col sm="12" class="text-center">
+                    <b-alert show variant="warning">
+                        Consegue visualizar claramente as imagens que está nos enviando? Se você não consegue nós tambem não! 
+                        Garanta que as imagens enviadas sejam de fácil visualização.<br><hr>
+                        Seram aceitos apenas imagens com a extensão de arquivo .jpg e .png
+                    </b-alert>
+                </b-col>
+
+                <b-col sm="12" class="text-center">
                     <b-form-group class="">
-                        <div class="opcaoSelecao">Você é menor de idade?</div>
+                        <div class="opcaoSelecao">VOCÊ É MENOR DE IDADE?</div>
                         <b-form-radio v-model="menor" value="sim">Sim</b-form-radio>
                         <b-form-radio v-model="menor" value="nao">Não</b-form-radio>
                     </b-form-group>
@@ -233,34 +241,35 @@ export default {
         },
         enviarArquivos(){
             var idUser = window.localStorage.getItem('id'); 
-            //var rg64 = window.localStorage.getItem('rg');
-            axios.post(config.server()+'insereDadosArquivos', {
-                idUser: idUser,
-                rgCandidato: window.localStorage.getItem('rgCandidato'),
-                cpfCandidato: window.localStorage.getItem('cpfCandidato'),
-
-                historico: window.localStorage.getItem('historico'),
-                bolsa: window.localStorage.getItem('bolsa'),
-                eja: window.localStorage.getItem('eja'),
-                medico: window.localStorage.getItem('medico'),
-                endereco: window.localStorage.getItem('endereco'),
-                foto: window.localStorage.getItem('foto'),
-                cidadao: window.localStorage.getItem('cidadao'),
-                ensinoMedio: window.localStorage.getItem('ensinoMedio'),
-                rgResponsavel: window.localStorage.getItem('rgResponsavel'),
-                cpfResponsavel: window.localStorage.getItem('cpfResponsavel'),
-            })
-            .then((response) =>{
-                console.log(response);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-            //window.location.href = config.website()+'inscricao/estudos'
-            window.location.href = '#/inscricao/estudos'
-            //alert("registro inserido com sucesso!")
-            //DIRECIONAR O USUARIO PARA AS ETAPAS DE INSCRIÇÃO
-            //TRATAMENTO DE ERRO IMPEDINDO CADASTRO DE DOIS EMAILS
+            
+            if(this.menor == ''){
+                alert('INFORME SE VOCÊ É MENOR DE IDADE!')
+            }
+            else{
+                axios.post(config.server()+'insereDadosArquivos', {
+                    idUser: idUser,
+                    rgCandidato: window.localStorage.getItem('rgCandidato'),
+                    cpfCandidato: window.localStorage.getItem('cpfCandidato'),
+                    historico: window.localStorage.getItem('historico'),
+                    bolsa: window.localStorage.getItem('bolsa'),
+                    eja: window.localStorage.getItem('eja'),
+                    medico: window.localStorage.getItem('medico'),
+                    endereco: window.localStorage.getItem('endereco'),
+                    foto: window.localStorage.getItem('foto'),
+                    cidadao: window.localStorage.getItem('cidadao'),
+                    ensinoMedio: window.localStorage.getItem('ensinoMedio'),
+                    rgResponsavel: window.localStorage.getItem('rgResponsavel'),
+                    cpfResponsavel: window.localStorage.getItem('cpfResponsavel'),
+                })
+                .then((response) =>{
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+                window.location.href = '#/inscricao/estudos'
+            }
+            
         }
     }
 }

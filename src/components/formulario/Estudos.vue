@@ -208,7 +208,7 @@
                             ENEM – Exame Nacional do Ensino Médio, FEDERAIS.
                         </b-form-checkbox>
                         <b-form-checkbox  v-model="dados.fatec" value="1" unchecked-value="0">
-                            Centro Paula Souza - Faculdade de Tecnologia de Jundiaí, FATEC.</b-form-radio>
+                            Centro Paula Souza - Faculdade de Tecnologia de Jundiaí, FATEC.
                         </b-form-checkbox>
                     </b-form-group>
                 </b-col>
@@ -264,10 +264,13 @@ export default {
             this.dados.fez_cursinho == null ||
             this.dados.tipo_cursinho == null ||
             this.dados.fez_vestibular == null ||
-            this.dados.superior == null){
+            this.dados.superior == null ||
+            this.dados.area_desejo == null){
                 alert('PREENCHA TODOS OS CAMPOS OBRIGATÓRIOS!')
             }
             else{
+                if(this.dados.cursinho_particular == null)
+                    this.dados.cursinho_particular = 'Não fez cursinho particular'
                 axios.post(config.server()+'insereDadosEstudos', {
                     idUser: idUser,
                     ensino_fundamental: this.dados.ensino_fundamental,

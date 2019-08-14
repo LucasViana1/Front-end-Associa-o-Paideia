@@ -887,11 +887,55 @@ export default {
             this.dados.trab_candidato == null ||
             this.dados.pessoas_renda == null ||
             this.dados.renda_total == null ||
+            this.dados.tv == null ||
+            this.dados.pc == null ||
+            this.dados.geladeira == null ||
+            this.dados.dvd == null ||
+            this.dados.automovel == null ||
+            this.dados.tel_fixo == null ||
+            this.dados.tv_ass == null ||
+            this.dados.radio == null ||
+            this.dados.lava_roupa == null ||
+            this.dados.celular == null ||
+            this.dados.lava_louca == null ||
             this.dados.trab_atual == null ||
             this.dados.eja == null ||
             this.dados.eja_tipo == null ||
             this.dados.tem_internet == null ||
-            this.dados.acesso_internet == null){
+            this.dados.acesso_internet == null ||
+            this.dados.jornal == null ||
+            this.dados.sites == null ||
+            this.dados.manuais == null ||
+            this.dados.ficcao == null ||
+            this.dados.saude == null ||
+            this.dados.religiao == null ||
+            this.dados.humor == null ||
+            this.dados.info_geral == null ||
+            this.dados.nao_ficcao == null ||
+            this.dados.estilo == null ||
+            this.dados.educa == null ||
+            this.dados.adolecente == null ||
+            this.dados.lazer == null ||
+            this.dados.cientifica == null ||
+            this.dados.aval_grupo == null ||
+            this.dados.aval_esporte == null ||
+            this.dados.aval_biblioteca == null ||
+            this.dados.aval_local == null ||
+            this.dados.aval_respeito == null ||
+            this.dados.aval_laboratorio == null ||
+            this.dados.aval_sala == null ||
+            this.dados.aval_lingua == null ||
+            this.dados.aval_interesse == null ||
+            this.dados.aval_ambiental == null ||
+            this.dados.aval_horario == null ||
+            this.dados.aval_segurancao == null ||
+            this.dados.aval_informatica == null ||
+            this.dados.aval_atencao == null ||
+            this.dados.aval_conhecimento_prof == null ||
+            this.dados.aval_dedica_prof == null ||
+            this.dados.aval_passeios == null ||
+            this.dados.aval_acessibilidade == null
+            ){
                 alert('PREENCHA TODOS OS CAMPOS OBRIGATÓRIOS!')
             }
             else{

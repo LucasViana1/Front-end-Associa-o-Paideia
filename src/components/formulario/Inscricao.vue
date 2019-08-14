@@ -9,6 +9,16 @@
       </center>
     </b-col>
 
+    <!--usuario que já fez inscrição e as inscrições ainda não finalizaram para os demais-->
+    <!--<b-col v-if="this.listagem[0].fim != 1 ">
+      <center>
+        <h4>
+          {{this.nome}}, você já realizou a inscrição para o 2º semestre de 2019, acompanhe em seu e-mail a 
+          data para a próxima etapa da matrícula.
+        </h4>
+      </center>
+    </b-col>-->
+
     <!--termo de responsabilidade-->
     <b-col v-if="this.listagem[0].fim == 0">
       <h3>TERMO DE RESPONSABILIDADE - REGRAS DE FREQUÊNCIA E CONDUTA</h3>
@@ -123,7 +133,8 @@ export default {
     data() {
       return {
         listagem: {},
-        aceitar: false
+        aceitar: false,
+        nome: window.localStorage.getItem('nome')
       }
     },
     mounted() {
