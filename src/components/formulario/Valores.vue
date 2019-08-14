@@ -89,13 +89,13 @@
                             Discriminação contra mulheres.
                         </b-form-checkbox>
                         <b-form-checkbox  v-model="dados.pre_lgbt" value="1" unchecked-value="0">
-                             Por ser ou ter sido identificado como LGBTQIA+ (lésbica, gay, bissexual, travesti e transexual, queer, intersexual, assexual e outrxs).
+                            Por terem sido identificados como LGBTQIA+ (lésbica, gay, bissexual, travesti e transexual, queer, intersexual, assexual e outrxs).
                         </b-form-checkbox>
                         <b-form-checkbox  v-model="dados.pre_religiosa" value="1" unchecked-value="0">
                            Discriminação religiosa.
                         </b-form-checkbox>
                         <b-form-checkbox  v-model="dados.pre_origem" value="1" unchecked-value="0">
-                             Por causa do local de seu nascimento (em outra cidade, etc)
+                             Por causa do local de nascimento (em outra cidade, etc)
                         </b-form-checkbox>
                         <b-form-checkbox  v-model="dados.pre_sem_religiao" value="1" unchecked-value="0">
                             Por não ter religião
