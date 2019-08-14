@@ -74,13 +74,13 @@
 
                 <b-col sm="4">
                     <b-form-group label="6) Em que ano concluiu o ENSINO MÉDIO (3º GRAU)?*">
-                        <b-form-radio v-model="dados.ano_medio" name="" value="2017">
+                        <b-form-radio v-model="dados.ano_medio" name="" value="2018">
                            2018.</b-form-radio>
-                        <b-form-radio v-model="dados.ano_medio" name="" value="2016">
+                        <b-form-radio v-model="dados.ano_medio" name="" value="2017">
                             2017.</b-form-radio>
-                        <b-form-radio v-model="dados.ano_medio" name="" value="2015">
+                        <b-form-radio v-model="dados.ano_medio" name="" value="2016">
                             2016.</b-form-radio>
-                        <b-form-radio v-model="dados.ano_medio" name="" value="2014">
+                        <b-form-radio v-model="dados.ano_medio" name="" value="2015">
                             2015.</b-form-radio>
                         <b-form-radio v-model="dados.ano_medio" name="" value="Outro">
                             Outro.</b-form-radio>
@@ -171,7 +171,7 @@
 
                 <b-col sm="12">
                     <b-form-group label="13) Área desejada (Ciências Humanas, Biológicas ou Exatas):*">
-                        <b-form-select v-model="dados.area_desejo" :options="optionsItens" size="sm" class="mt-1"></b-form-select>
+                        <b-form-input v-model="dados.area_desejo" size="sm" class="mt-1" required placeholder="Ex: Humanas e Exatas"> </b-form-input>
                     </b-form-group>
                 </b-col>
 
