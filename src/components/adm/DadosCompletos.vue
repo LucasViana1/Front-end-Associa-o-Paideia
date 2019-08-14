@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <td class="pergunta">Telefone 2</td>
-                    <td>{{listagem.dados[0].tel1}}</td>       
+                    <td>{{listagem.dados[0].tel2}}</td>       
                 </tr>
                 <tr>
                     <td class="pergunta">CPF</td>
