@@ -12,7 +12,7 @@
         <!--Periodo de inscrição:-->
         <b-col v-if="ver">
             <center>
-                O cadastro ao sistema deve ser feito para poder realizar a inscrição no projeto. <br>
+                O cadastro ao sistema deve ser realizado para prosseguir com a inscrição. <br>
                 Após realizar o cadastro, você receberá um e-mail com o código de confirmação, e após validar o código no site, poderá acessar sua conta para fazer a inscrição.<br>
                 <br>
                 <b>ATENÇÃO! Esse cadastro não garante sua vaga ao projeto!</b>
@@ -27,11 +27,11 @@
                             <b-form-input id="input-1" v-model="user.nome" type="text" required placeholder="Digite seu nome"></b-form-input>
                         </b-form-group>
 
-                        <b-form-group id="input-group-2" label="Sobrenome:" label-for="input-1">
+                        <b-form-group id="input-group-2" label="Sobrenome (completo):" label-for="input-1">
                             <b-form-input id="input-1" v-model="user.sobrenome" type="text" required placeholder="Digite seu sobrenome"></b-form-input>
                         </b-form-group>
 
-                        <b-form-group id="input-group-3" label="E-mail:" label-for="input-1">
+                        <b-form-group id="input-group-3" label="E-mail (pessoal e de uso diário):" label-for="input-1">
                             <b-form-input id="input-1" v-model="user.email" type="email" required placeholder="Digite seu e-mail"></b-form-input>
                         </b-form-group>
 
@@ -48,7 +48,9 @@
                         </center>
 
                         <b-alert dismissible :show="senhaDiferente" variant="danger" class="mt-2">A senha está divergente!</b-alert>
-                        
+                        <b-alert dismissible :show="cadastroDuplicado != ''" variant="danger" class="mt-2">
+                            E-mail já está cadastrado! Recupere sua senha clicando <a href="#/recuperacao">AQUI</a>
+                        </b-alert>
 
                     </b-form>
                 </b-col> 
@@ -68,7 +70,8 @@ export default {
         return {
             user: {},
             ver: true,
-            senhaDiferente: false
+            senhaDiferente: false,
+            cadastroDuplicado: ''
         }
     },
     methods: {
@@ -86,14 +89,27 @@ export default {
                     senha: this.user.senha
                 })
                 .then((response) =>{
+                    //CONTINUAR NESSE TRECHO, FAZER COM QUE NOVOS CADASTROS SEJAM RECONHECIDOS NO FRONT
                     console.log(response);
+                    this.cadastroDuplicado = response.data
+
+                    console.log("resposta.data: "+this.cadastroDuplicado)
+
+                    //IF E ELSE ABAIXO DANDO ERRO (CONTINUAR APARTIR DAQ):
+                    if(this.cadastroDuplicado == 'cadastro duplicado!'){
+                        alert("E-mail já possui cadastro")
+                    }
+                    else{
+                        alert("Cadastro realizado com sucesso!")
+                        window.location.href = '#/login'
+                    }
+                    
                 })
                 .catch((error) => {
                     console.log(error);
                 });
-                alert("Cadastro realizado com sucesso!")//talvez trocar alert por msg de retorno
-                window.location.href = '#/login'
-                }
+            
+            }
             
         }
         
