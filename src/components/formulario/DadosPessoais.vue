@@ -125,7 +125,8 @@ export default {
             //etapa: 1,
             dados: {},
             //habilita: true,
-            aceitar: false
+            aceitar: false,
+            idUser: window.localStorage.getItem('id')
         }
     },
     methods: {
@@ -156,6 +157,11 @@ export default {
             //alert("registro inserido com sucesso!")
             //DIRECIONAR O USUARIO PARA AS ETAPAS DE INSCRIÇÃO
             //TRATAMENTO DE ERRO IMPEDINDO CADASTRO DE DOIS EMAILS
+        }
+    }, 
+    mounted(){
+        if(this.idUser == null){
+          window.location.href = '/'
         }
     }
 }

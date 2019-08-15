@@ -235,6 +235,7 @@ export default {
                 { value: 'Humanas', text: 'Humanas' },
                 { value: 'Biológicas', text: 'Biológicas' }
             ],
+            idUser: window.localStorage.getItem('id')
         }
     },
     methods: {
@@ -307,6 +308,11 @@ export default {
                 window.location.href = '#/inscricao/socioeconomico'
             }
     
+        }
+    },
+    mounted(){
+        if(this.idUser == null){
+          window.location.href = '/'
         }
     }
 }

@@ -148,7 +148,8 @@ export default {
             dados: {},
             menor: '',
             rgFile: null,
-            rgFile64: null
+            rgFile64: null,
+            idUser: window.localStorage.getItem('id')
         }
     },
       methods: {
@@ -270,6 +271,11 @@ export default {
                 window.location.href = '#/inscricao/estudos'
             }
             
+        }
+    },
+    mounted(){
+        if(this.idUser == null){
+          window.location.href = '/'
         }
     }
 }

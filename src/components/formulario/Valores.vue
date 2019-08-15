@@ -131,75 +131,81 @@ import axios from 'axios';
 import config from '../../../config'
 
 export default {
-name: 'Valores',
-data() {
-    return {
-        dados: {}
-    }
-},
-methods: {
-    enviarValores(){
-        var idUser = window.localStorage.getItem('id'); 
-        var email = window.localStorage.getItem('email'); 
-        var nome = window.localStorage.getItem('nome'); 
-       
-        if(this.dados.racista == null){
-            alert('A PERGUNTA 43 É OBRIGATÓRIA!')
+    name: 'Valores',
+    data() {
+        return {
+            dados: {},
+            idUser: window.localStorage.getItem('id')
         }
-        else{
-            axios.post(config.server()+'insereDadosValores', {//ALTERAR LINK DE INSERÇÃO
-                //email: this.email,
-                //nome: this.nome,
-                idUser: idUser,
-                racista: this.dados.racista,
-                parente: this.dados.parente,
-                amigo: this.dados.amigo,
-                vizinho: this.dados.vizinho,
-                prof: this.dados.prof,
-                pessoa: this.dados.pessoa,
+    },
+    methods: {
+        enviarValores(){
+            var idUser = window.localStorage.getItem('id'); 
+            var email = window.localStorage.getItem('email'); 
+            var nome = window.localStorage.getItem('nome'); 
+        
+            if(this.dados.racista == null){
+                alert('A PERGUNTA 43 É OBRIGATÓRIA!')
+            }
+            else{
+                axios.post(config.server()+'insereDadosValores', {//ALTERAR LINK DE INSERÇÃO
+                    //email: this.email,
+                    //nome: this.nome,
+                    idUser: idUser,
+                    racista: this.dados.racista,
+                    parente: this.dados.parente,
+                    amigo: this.dados.amigo,
+                    vizinho: this.dados.vizinho,
+                    prof: this.dados.prof,
+                    pessoa: this.dados.pessoa,
 
-                sofreu_econo: this.dados.sofreu_econo,
-                sofreu_etnica: this.dados.sofreu_etnica,
-                sofreu_genero: this.dados.sofreu_genero,
-                sofreu_lgbt: this.dados.sofreu_lgbt,
-                sofreu_religiao: this.dados.sofreu_religiao,
+                    sofreu_econo: this.dados.sofreu_econo,
+                    sofreu_etnica: this.dados.sofreu_etnica,
+                    sofreu_genero: this.dados.sofreu_genero,
+                    sofreu_lgbt: this.dados.sofreu_lgbt,
+                    sofreu_religiao: this.dados.sofreu_religiao,
 
-                sofreu_sem_religiao: this.dados.sofreu_sem_religiao,
-                sofreu_origem: this.dados.sofreu_origem,
-                sofreu_idade: this.dados.sofreu_idade,
-                sofreu_deficiencia: this.dados.sofreu_deficiencia,
-                sofreu_aparencia: this.dados.sofreu_aparencia,
-                sofreu_moradia: this.dados.sofreu_moradia,
+                    sofreu_sem_religiao: this.dados.sofreu_sem_religiao,
+                    sofreu_origem: this.dados.sofreu_origem,
+                    sofreu_idade: this.dados.sofreu_idade,
+                    sofreu_deficiencia: this.dados.sofreu_deficiencia,
+                    sofreu_aparencia: this.dados.sofreu_aparencia,
+                    sofreu_moradia: this.dados.sofreu_moradia,
 
-                pre_econo: this.dados.pre_econo,
-                pre_etnica: this.dados.pre_etnica,
-                pre_mulher: this.dados.pre_mulher,
-                pre_lgbt: this.dados.pre_lgbt,
+                    pre_econo: this.dados.pre_econo,
+                    pre_etnica: this.dados.pre_etnica,
+                    pre_mulher: this.dados.pre_mulher,
+                    pre_lgbt: this.dados.pre_lgbt,
 
-                pre_religiosa: this.dados.pre_religiosa,
-                pre_origem: this.dados.pre_origem,
-                pre_sem_religiao: this.dados.pre_sem_religiao,
-                pre_jovens: this.dados.pre_jovens,
-                pre_idosos: this.dados.pre_idosos,
-                pre_deficiencia: this.dados.pre_deficiencia,
-                pre_fisica: this.dados.pre_fisica,
-                pre_moradia: this.dados.pre_moradia,
-    
-            })
-            .then((response) =>{
-                console.log(response);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-            //window.location.href = config.website()+'inscricao/conclui'
-            window.location.href = '#/inscricao/conclui'
-            //alert("registro inserido com sucesso!")
+                    pre_religiosa: this.dados.pre_religiosa,
+                    pre_origem: this.dados.pre_origem,
+                    pre_sem_religiao: this.dados.pre_sem_religiao,
+                    pre_jovens: this.dados.pre_jovens,
+                    pre_idosos: this.dados.pre_idosos,
+                    pre_deficiencia: this.dados.pre_deficiencia,
+                    pre_fisica: this.dados.pre_fisica,
+                    pre_moradia: this.dados.pre_moradia,
+        
+                })
+                .then((response) =>{
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+                //window.location.href = config.website()+'inscricao/conclui'
+                window.location.href = '#/inscricao/conclui'
+                //alert("registro inserido com sucesso!")
+            }
+            
+            
         }
-        
-        
+    },
+    mounted(){
+        if(this.idUser == null){
+          window.location.href = '/'
+        }
     }
-}
 }
 </script>
 

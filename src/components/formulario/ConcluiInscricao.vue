@@ -5,3 +5,22 @@
         </center>
     </b-container>
 </template>
+
+<script>
+export default {
+    name: 'ConcluiInscricao',
+    data(){
+        return{
+            idUser: window.localStorage.getItem('id')
+        }
+    },
+    mounted(){
+        if(this.idUser == null){
+          window.location.href = '/'
+        }
+    }
+}
+
+
+</script>
+

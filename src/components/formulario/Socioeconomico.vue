@@ -868,7 +868,8 @@ export default {
                 { value: 'Bom a excelente', text: 'Bom a excelente' }
             ],
             //curso: [], // Must be an array reference!
-            dados: {}
+            dados: {},
+            idUser: window.localStorage.getItem('id')
         }
     },
     methods: {
@@ -1038,6 +1039,11 @@ export default {
             //DIRECIONAR O USUARIO PARA AS ETAPAS DE INSCRIÇÃO
             //TRATAMENTO DE ERRO IMPEDINDO CADASTRO DE DOIS EMAILS
             }
+        }
+    },
+    mounted(){
+        if(this.idUser == null){
+          window.location.href = '/'
         }
     }
 }

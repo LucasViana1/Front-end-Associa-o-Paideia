@@ -134,13 +134,19 @@ export default {
       return {
         listagem: {},
         aceitar: false,
-        nome: window.localStorage.getItem('nome')
+        nome: window.localStorage.getItem('nome'),
+        idUser: window.localStorage.getItem('id')
       }
     },
     mounted() {
       axios.get(config.server()+'inscricao')
       .then((response) =>{
+        if(this.idUser == null){
+          window.location.href = '/'
+        }
+        else{
           this.listagem = response.data;   
+        }
                 
       })
       .catch((error) => {
