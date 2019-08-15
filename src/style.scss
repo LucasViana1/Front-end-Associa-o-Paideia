@@ -5,18 +5,17 @@ $verdeEscuro: #527A25;
 $cinzaMedio: #E0E0E0;
 $verdeDark: rgb(51, 88, 9);
 
-h1, h2{
-    color: $rosa;
-}
 body{
     font-family: Menco light, Arthura Thin, Arial, Helvetica, sans-serif;
 }
-h1{
+div h1{
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
+    color: $rosa;
 }
 h2{
     margin-top: 22px;
     margin-bottom: 18px;
+    color: $rosa;
 }

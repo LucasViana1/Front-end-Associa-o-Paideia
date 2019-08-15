@@ -64,5 +64,6 @@ export default {
         margin-right: auto;
         margin-bottom: 10px;*/
     }
+    
 </style>
 
