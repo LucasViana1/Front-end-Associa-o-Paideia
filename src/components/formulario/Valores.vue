@@ -143,6 +143,9 @@ export default {
             var idUser = window.localStorage.getItem('id'); 
             var email = window.localStorage.getItem('email'); 
             var nome = window.localStorage.getItem('nome'); 
+
+            window.localStorage.removeItem('arquivosJaEnviados')
+            //alert(window.localStorage.getItem('arquivosJaEnviados'))
         
             if(this.dados.racista == null){
                 alert('A PERGUNTA 43 É OBRIGATÓRIA!')
