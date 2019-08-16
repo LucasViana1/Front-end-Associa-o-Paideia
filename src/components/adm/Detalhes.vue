@@ -25,8 +25,11 @@
             </b-col>
 
             <!--AJUSTAR MARGIN NESSE TRECHO-->
+            <!--<b-col sm="3" class="desktop-img-col" v-for="(foto,index) in listagem.dados" :key="index">
+                <b-img v-if="foto.tipo == 'FOTO'" :src="foto.arquivo" fluid class="desktop-img"></b-img>
+            </b-col>-->
             <b-col class="desktop-img-col">
-                <b-img :src="listagem.dados[0].arquivo" fluid class="desktop-img"></b-img>
+                <b-img :src="this.perfil" fluid class="desktop-img"></b-img>
             </b-col>
         </b-row>
         
@@ -68,7 +71,8 @@ export default {
             listagem: {},
             adm: window.localStorage.getItem('nivel'),
             nomeUser: window.localStorage.getItem('nome'),
-            link: '#/completo/'
+            link: '#/completo/',
+            perfil: ''
         }
     },
     methods: {
@@ -125,7 +129,19 @@ export default {
             else{
                 console.log(response.data);
                 this.listagem = response.data;   
-            }          
+            }
+            
+            for(let i = 0; i < 30; i++){
+                console.log(this.listagem.dados[i].tipo)
+                if(this.listagem.dados[i].tipo == 'FOTO'){
+                    this.perfil = this.listagem.dados[i].arquivo
+                    //console.log("perfil: " +this.perfil)
+                    break;
+                }
+            }
+
+            //console.log(this.listagem.dados[0].tipo)
+                    
         })
         .catch((error) => {
             console.log(error);
@@ -147,6 +163,7 @@ li b{
 }
 .desktop-img{
     height: 230px;
+    width: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
