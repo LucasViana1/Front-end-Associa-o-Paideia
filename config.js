@@ -1,6 +1,7 @@
 exports.server = function(){
     //return 'http://localhost:3000/'
-    return 'https://fast-reef-93216.herokuapp.com/'
+    //return 'https://fast-reef-93216.herokuapp.com/'
+    return "https://backend.associacaopaideia.org.br/"
 }
 
 /*exports.website = function(){
