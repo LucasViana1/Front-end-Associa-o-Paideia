@@ -2,15 +2,18 @@
     <b-container>
         <b-form v-on:submit.prevent="enviarEstudosFormacao">
             <!--formação e estudos-->
-            <b-col sm="12">
-                <center>
-                    <h2>FORMAÇÃO E ESTUDOS</h2>
-                </center> 
-            </b-col>
+            
             <b-row class="pl-5 pr-5">
+                <b-col sm="12">
+                    <center>
+                        <h2>FORMAÇÃO E ESTUDOS</h2>
+                    </center> 
+                </b-col>
+
                 <b-col sm=12 class="campo-obrigatorio mb-3">
                     <u><i>* Campo Obrigatório</i></u>
                 </b-col>
+                
                 <b-col sm="4">
                     <b-form-group label="1) Como fez seus estudos de ensino fundamental (1º ao 9º ano)?*">
                         <b-form-radio v-model="dados.ensino_fundamental" name="" value="Integralmente em escola pública">

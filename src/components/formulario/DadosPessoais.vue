@@ -7,7 +7,7 @@
                     <h2>DADOS PESSOAIS</h2>
                 </center>                  
             </b-col>
-            <b-row class="pessoalForm">
+            <b-row>
 
                 <b-col sm="12">
                     <center>
@@ -76,7 +76,7 @@
                 </b-col>
             </b-row>
             <center>
-                <b-button class="pessoalForm mt-2" type="submit" variant="primary">Salvar Dados Pessoais</b-button>
+                <b-button class="mt-2" type="submit" variant="primary">Salvar Dados Pessoais</b-button>
             </center>
             
         </b-form>
@@ -176,12 +176,4 @@ export default {
     font-weight: bold;
 }
 
-.pessoalForm{
-    margin-left: 58px;
-}
-@media (max-width: 767px){
-    #pessoalForm{
-        margin-left: auto;
-    }
-  }
 </style>

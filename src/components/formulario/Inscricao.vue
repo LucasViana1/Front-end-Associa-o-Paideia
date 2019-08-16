@@ -21,7 +21,7 @@
 
     <!--termo de responsabilidade-->
     <b-col v-if="this.listagem[0].fim == 0">
-      <h3>TERMO DE RESPONSABILIDADE - REGRAS DE FREQUÊNCIA E CONDUTA</h3>
+      <h3 class="text-center">TERMO DE RESPONSABILIDADE - REGRAS DE FREQUÊNCIA E CONDUTA</h3>
       <b>Ao se inscrever no CURSINHO FOCUS da ASSOCIAÇÃO PAIDEIA, o (a) aluno (a) assume a responsabilidade de cumprir e
          respeitar as seguintes normas:</b> 
       <b-col id="termo">
