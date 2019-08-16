@@ -149,11 +149,13 @@ export default {
             menor: '',
             rgFile: null,
             rgFile64: null,
-            idUser: window.localStorage.getItem('id')
+            idUser: window.localStorage.getItem('id'),
+            arquivosJaEnviados: window.localStorage.getItem('arquivosJaEnviados')
         }
     },
       methods: {
         encodeImageFileAsURL(elemento, cont){
+            //alert(this.arquivosJaEnviados)
             var filesSelected = document.getElementById(elemento).files;
             if (filesSelected.length > 0) {
             var fileToLoad = filesSelected[0];
@@ -268,6 +270,7 @@ export default {
                 .catch((error) => {
                     console.log(error);
                 });
+                window.localStorage.setItem('arquivosJaEnviados', 1)
                 window.location.href = '#/inscricao/estudos'
             }
             
@@ -275,7 +278,10 @@ export default {
     },
     mounted(){
         if(this.idUser == null){
-          window.location.href = '/'
+            window.location.href = '/'
+        }
+        if(this.arquivosJaEnviados == 1){
+            window.location.href = '#/inscricao/estudos'
         }
     }
 }
