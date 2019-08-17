@@ -19,7 +19,8 @@
             <b-form-input id="input-2" v-model="user.senha" type="password" required placeholder="Digite sua senha"></b-form-input>
           </b-form-group>
 
-          <a href="#/recuperacao">Esqueceu sua senha?</a>
+          <!--LIBERAR POSTERIORMENTE
+            <a href="#/recuperacao">Esqueceu sua senha?</a>-->
 
           <center>
             <b-button type="submit" class="mt-2" variant="primary">Entrar</b-button>
