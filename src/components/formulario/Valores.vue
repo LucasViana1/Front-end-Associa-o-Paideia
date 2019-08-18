@@ -208,6 +208,7 @@ export default {
         if(this.idUser == null){
           window.location.href = '/'
         }
+        window.scrollTo(0, 0);
     }
 }
 </script>

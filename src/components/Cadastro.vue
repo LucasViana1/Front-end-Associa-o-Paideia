@@ -2,7 +2,7 @@
     <b-container>
         <h1>CADASTRO AO SISTEMA</h1> 
 
-        <!--Periodo de pré-inscrição:-->
+        <!--Periodo de pré-inscrição (alterar texto para pós inscrição):-->
         <b-col v-if="!ver">
             <center>
                 O cadastro ao sistema será permitido apenas durante o período de inscrição, maiores informações em breve! 
