@@ -12,9 +12,9 @@
 
                 <b-col sm="12" class="text-center">
                     <b-alert show variant="warning">
-                        Consegue visualizar claramente as imagens que está nos enviando? Se você não consegue nós tambem não! 
-                        Garanta que as imagens enviadas sejam de fácil visualização.<br><hr>
-                        Seram aceitos apenas imagens com a extensão de arquivo .jpg e .png
+                        IMPORTANTE! Verifique se a qualidade da imagem que você está enviando e garanta que estarão claras para visualização, 
+                        para que não haja problemas na verificação de sua documentação.<br><hr>
+                        Os arquivos deverão estar nos seguintes formatos: .jpg e/ou .png.
                     </b-alert>
                 </b-col>
 
@@ -82,7 +82,7 @@
 
                <b-col sm="5">
                     <b-form-group label="Foto:" class="labelCampo" label-for="">
-                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('foto', 8)" id="foto"></b-form-file>
+                        <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('foto', 8)" id="foto" required></b-form-file>
                     </b-form-group>
                </b-col>
 
@@ -283,6 +283,7 @@ export default {
         if(this.arquivosJaEnviados == 1){
             window.location.href = '#/inscricao/estudos'
         }
+        window.scrollTo(0, 0);
     }
 }
 </script>
