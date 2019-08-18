@@ -268,7 +268,6 @@
                     </b-form-group>
                 </b-col>
 
-                <!--CONTINUAR DAQ-->
                 <b-form-group sm="12" label="30) Quais e quantos dos itens abaixo há em sua casa?*" label-for=""></b-form-group>
                 <b-col sm="12">
                     <b-row>

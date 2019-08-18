@@ -147,7 +147,7 @@
                 <b-col sm="4">
                     <b-form-group label="11) Quantas vezes você já prestou concurso vestibular?*">
                         <b-form-radio v-model="dados.fez_vestibular" name="" value="Nenhuma">
-                           Nenhuma.</b-form-radio>
+                            Nenhuma.</b-form-radio>
                         <b-form-radio v-model="dados.fez_vestibular" name="" value="Uma vez">
                             Uma vez.</b-form-radio>
                         <b-form-radio v-model="dados.fez_vestibular" name="" value="Duas vezes">
@@ -162,7 +162,7 @@
                 <b-col sm="4">
                     <b-form-group label="12) Você já iniciou algum curso superior?*">
                         <b-form-radio v-model="dados.superior" name="" value="Sim, mas não conclui">
-                           Sim, mas não conclui.</b-form-radio>
+                            Sim, mas não conclui.</b-form-radio>
                         <b-form-radio v-model="dados.superior" name="" value="Sim, estou cursando">
                             Sim, estou cursando.</b-form-radio>
                         <b-form-radio v-model="dados.superior" name="" value="Sim, mas já conclui">
@@ -174,7 +174,17 @@
 
                 <b-col sm="12">
                     <b-form-group label="13) Área desejada (Ciências Humanas, Biológicas ou Exatas):*">
-                        <b-form-input v-model="dados.area_desejo" size="sm" class="mt-1" required placeholder="Ex: Humanas e Exatas"> </b-form-input>
+
+                        <b-form-checkbox  v-model="dados.biologica" value="1" unchecked-value="0">
+                            Biológicas
+                        </b-form-checkbox>
+                        <b-form-checkbox  v-model="dados.exatas" value="1" unchecked-value="0">
+                            Exatas.
+                        </b-form-checkbox>
+                        <b-form-checkbox  v-model="dados.humanas" value="1" unchecked-value="0">
+                            Humanas.
+                        </b-form-checkbox>
+                    
                     </b-form-group>
                 </b-col>
 
@@ -270,8 +280,7 @@ export default {
             this.dados.fez_cursinho == null ||
             this.dados.tipo_cursinho == null ||
             this.dados.fez_vestibular == null ||
-            this.dados.superior == null ||
-            this.dados.area_desejo == null){
+            this.dados.superior == null){
                 alert('PREENCHA TODOS OS CAMPOS OBRIGATÓRIOS!')
             }
             else{
@@ -291,7 +300,10 @@ export default {
                     cursinho_particular: this.dados.cursinho_particular,
                     fez_vestibular: this.dados.fez_vestibular,
                     superior: this.dados.superior,
-                    area_desejo: this.dados.area_desejo,
+                    //area_desejo: this.dados.area_desejo,
+                    biologica: this.dados.biologica,
+                    exatas: this.dados.exatas,
+                    humanas: this.dados.humanas,
                     curso_univ1: this.dados.curso_univ1,
                     curso_univ2: this.dados.curso_univ2,
                     curso_univ3: this.dados.curso_univ3,
