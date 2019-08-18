@@ -213,6 +213,8 @@
                         <b-form-checkbox  v-model="dados.fatec" value="1" unchecked-value="0">
                             Centro Paula Souza - Faculdade de Tecnologia de Jundiaí, FATEC.
                         </b-form-checkbox>
+                        <div class="mt-1">Outro?</div>
+                        <b-form-input class="mt-1" v-model="dados.outro_curso_uni" type="text" placeholder="Nome do vestibular"></b-form-input>
                     </b-form-group>
                 </b-col>
             </b-row>
@@ -298,7 +300,8 @@ export default {
                     comvest: this.dados.comvest,
                     vunesp: this.dados.vunesp,
                     enem: this.dados.enem,
-                    fatec: this.dados.fatec
+                    fatec: this.dados.fatec,
+                    outro_curso_uni: this.dados.outro_curso_uni
  
                 })
                 .then((response) =>{
@@ -317,6 +320,7 @@ export default {
         if(this.idUser == null){
           window.location.href = '/'
         }
+        window.scrollTo(0, 0);
     }
 }
 </script>
