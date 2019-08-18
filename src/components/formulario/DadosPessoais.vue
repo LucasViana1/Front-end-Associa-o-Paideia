@@ -69,9 +69,9 @@
                 </b-col>
 
                 <b-col sm="4">
-                    <b-form-group label="Cartão Cidadão:" class="labelCampo" label-for="">
-                        <b-form-input v-model="dados.cidadao" type="text" required v-mask="'###########'" placeholder=""></b-form-input>
-                        <b-form-text>O cartão não pode estar vencido, se estiver, toda inscrição será invalidada.</b-form-text>
+                    <b-form-group label="Cartão Cidadão (Louveira):" class="labelCampo" label-for="">
+                        <b-form-input v-model="dados.cidadao" type="text" required v-mask="'#############'" placeholder=""></b-form-input>
+                        <b-form-text>Caso o cartão esteja inválido por quaisquer motivos, você deverá entrar em contato direto com o Cartão Cidadão ou seguir até um posto mais próximo.</b-form-text>
                     </b-form-group>
                 </b-col>
             </b-row>
@@ -163,6 +163,7 @@ export default {
         if(this.idUser == null){
           window.location.href = '/'
         }
+        window.scrollTo(0, 0);
     }
 }
 </script>
