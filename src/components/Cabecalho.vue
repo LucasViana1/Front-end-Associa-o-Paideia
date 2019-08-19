@@ -13,9 +13,7 @@
           <!--<b-nav-item href="/inscricao">Inscrição</b-nav-item>TALVEZ REMOVER-->
           <b-nav-item href="#/inscricao" v-if="adm != null">Inscrições 2º semestre 2019</b-nav-item><!--Apenas candidato e ADM-->
           <b-nav-item href="#/inscritos" v-if="adm == 1">Administrador</b-nav-item><!--Apenas ADM-->
-          <!--LIBERAR ESSE TRECHO FUTURAMENTE
           <b-nav-item href="#/cadastro" v-if="adm == null">Cadastre-se</b-nav-item>
-          -->
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">

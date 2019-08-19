@@ -1,14 +1,13 @@
 <template>
   <b-container>
     <h1>ACESSE SUA CONTA</h1>
-    <!--LIBERAR POSTERIORMENTE
       <center>
       Não possui uma conta? Realize o cadastro clicando <a href="#/cadastro">AQUI</a> 
-    </center>-->
+      </center>
     <br>
     <b-row align-h="center">
       <b-col sm="6" align-v="center">
-       <!-- <center><b-alert show variant="danger">Cadastro válido somente durante o periodo de inscrição!</b-alert></center><br>-->
+        <center><b-alert show variant="danger">Cadastro válido somente durante o período de inscrição!</b-alert></center><br>
         <b-form v-on:submit.prevent="loginUser">
 
           <b-form-group id="input-group-1" class="rotulo" label="Email:" label-for="input-1">
@@ -19,8 +18,7 @@
             <b-form-input id="input-2" v-model="user.senha" type="password" required placeholder="Digite sua senha"></b-form-input>
           </b-form-group>
 
-          <!--LIBERAR POSTERIORMENTE
-            <a href="#/recuperacao">Esqueceu sua senha?</a>-->
+          <a href="#/recuperacao">Esqueceu sua senha?</a>
 
           <center>
             <b-button type="submit" class="mt-2" variant="primary">Entrar</b-button>

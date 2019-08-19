@@ -4,9 +4,8 @@
 
         <!--Periodo de pré-inscrição (alterar texto para pós inscrição):-->
         <b-col v-if="!ver">
-            <center>
-                O cadastro ao sistema será permitido apenas durante o período de inscrição, maiores informações em breve! 
-            </center>
+            <p class="text-center"><b>O período de inscrições iniciarão no dia 19/08/2019 a partir das 10:00 horas.</b></p>
+            <p class="text-center"><b>Antes de se inscrever, leia o edital <a href="https://backend.associacaopaideia.org.br/edital">AQUI</a></b></p>
         </b-col>
 
         <!--Periodo de inscrição:-->
@@ -69,7 +68,7 @@ export default {
     data() {
         return {
             user: {},
-            ver: true,
+            ver: false,
             senhaDiferente: false,
             cadastroDuplicado: ''
         }
