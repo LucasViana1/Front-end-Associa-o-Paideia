@@ -1,5 +1,5 @@
 <template>
-  <b-container  class="footer">
+  <b-container  class="footer noprint">
       <b-row align-v='center'>
         <b-col cols="8" align-v='center'>
             Copyright © Associação Paideia - Todos os direitos reservados
@@ -46,6 +46,11 @@ export default {
     width: 100%;
     padding: 15px;
     margin-top: 50px;
+}
+@media print {
+  .noprint{
+    visibility: hidden;
+  }
 }
   /*#rodape{
     background-color: $verdeClaro;

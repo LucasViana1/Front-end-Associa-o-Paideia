@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <h1><center>BEM VINDO(A) {{nomeUser}}</center></h1>
+    <h1 class="noprint"><center>BEM VINDO(A) {{nomeUser}}</center></h1>
     <br>
 
     <table class="table table-striped table-dark">
@@ -89,3 +89,11 @@ export default {
 
 }
 </script>
+
+<style>
+@media print {
+  .noprint{
+    visibility: hidden;
+  }
+}
+</style>
