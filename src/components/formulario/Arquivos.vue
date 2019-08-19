@@ -243,10 +243,20 @@ export default {
           }
         },
         enviarArquivos(){
+            //minimos arquivos obrigatorios: rg,cpf,historico escolar,cidadao,comprovante de endereço, foto
             var idUser = window.localStorage.getItem('id'); 
+            var rgCandidato = window.localStorage.getItem('rgCandidato'); 
+            var cpfCandidato = window.localStorage.getItem('cpfCandidato'); 
+            var historico = window.localStorage.getItem('historico'); 
+            var cidadao = window.localStorage.getItem('cidadao'); 
+            var endereco = window.localStorage.getItem('endereco'); 
+            var foto = window.localStorage.getItem('foto'); 
             
             if(this.menor == ''){
                 alert('INFORME SE VOCÊ É MENOR DE IDADE!')
+            }
+            else if(rgCandidato == null || cpfCandidato == null || historico == null || cidadao == null || endereco == null || foto == null){
+                alert('Ficou faltando seu RG, CPF, Histótico Escolar, Cartão Cidadão, Comprovante de Endereço ou Foto, favor verificar!')
             }
             else{
                 axios.post(config.server()+'insereDadosArquivos', {
