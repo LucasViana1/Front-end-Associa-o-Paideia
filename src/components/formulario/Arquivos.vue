@@ -12,7 +12,7 @@
 
                 <b-col sm="12" class="text-center">
                     <b-alert show variant="warning">
-                        IMPORTANTE! Verifique se a qualidade da imagem que você está enviando e garanta que estarão claras para visualização, 
+                        IMPORTANTE! Verifique a qualidade da imagem que você está enviando e garanta que estarão claras para visualização, 
                         para que não haja problemas na verificação de sua documentação.<br><hr>
                         Os arquivos deverão estar nos seguintes formatos: .jpg e/ou .png.
                     </b-alert>
