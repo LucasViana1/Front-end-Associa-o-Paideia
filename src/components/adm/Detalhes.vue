@@ -21,6 +21,10 @@
                     <li>
                         <b-button v-on:click="cancelaInscrito()" variant="danger" class="mt-3 ml-4">CANCELAR</b-button>
                     </li>
+                    <br>
+                    <li>
+                        <b-button v-on:click="pdfOuImg()" variant="dark" class="mt-3 ml-4">{{this.pdfImg}}</b-button>
+                    </li>
                 </ul>
             </b-col>
 
@@ -34,7 +38,7 @@
         </b-row>
         
 
-        <b-card no-body class="mt-3">
+        <b-card no-body class="mt-3 container_arquivo">
             <b-tabs card >
                 <!--<b-tab no-body title="Picture 2">
                     <center><b-img :src="listagem.dados[0].arquivo" fluid></b-img></center>
@@ -42,7 +46,8 @@
                 <div v-for="(imagem,index) in listagem.dados" :key="index">
                     <b-tab no-body :title="imagem.tipo" v-if="imagem.tipo != 'FOTO'">
                         <center>
-                            <b-img :src="imagem.arquivo" fluid></b-img>
+                            <b-img v-if="pdfImg == 'IMAGEM'" :src="imagem.arquivo" fluid></b-img>
+                            <object v-if="pdfImg == 'PDF'" class="arquivo" :data="imagem.arquivo"></object>
                         </center>
                     </b-tab>
                 </div>
@@ -72,11 +77,20 @@ export default {
             adm: window.localStorage.getItem('nivel'),
             nomeUser: window.localStorage.getItem('nome'),
             link: '#/completo/',
-            perfil: ''
+            perfil: '',
+            pdfImg: 'PDF'
+            //pdfImg: true
         }
     },
     methods: {
-        
+        pdfOuImg(){
+            if(this.pdfImg == 'PDF'){
+                this.pdfImg = 'IMAGEM'
+            }
+            else{
+                this.pdfImg = 'PDF'
+            }
+        },
         cancelaInscrito(){
             if(confirm("Tem certeza que deseja cancelar este inscrito?")){
                 axios.post(config.server()+'cancelaInscrito', {
@@ -154,7 +168,14 @@ export default {
 </script>
 
 <style lang="scss">
-
+.container_arquivo{
+    height: 500px;
+}
+.arquivo{
+    margin-top: 20px;
+    height: 300px;
+    width: 600px;
+}
 li b{
     font-size: 110%;
 }
