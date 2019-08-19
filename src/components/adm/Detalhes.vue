@@ -78,7 +78,7 @@ export default {
             nomeUser: window.localStorage.getItem('nome'),
             link: '#/completo/',
             perfil: '',
-            pdfImg: 'PDF'
+            pdfImg: 'IMAGEM'
             //pdfImg: true
         }
     },
