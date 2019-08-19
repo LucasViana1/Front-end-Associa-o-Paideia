@@ -7,7 +7,7 @@
     <br>
     <b-row align-h="center">
       <b-col sm="6" align-v="center">
-        <center><b-alert show variant="danger">Cadastro válido somente durante o período de inscrição!</b-alert></center><br>
+        <!--<center><b-alert show variant="danger">Cadastro válido somente durante o período de inscrição!</b-alert></center><br>-->
         <b-form v-on:submit.prevent="loginUser">
 
           <b-form-group id="input-group-1" class="rotulo" label="Email:" label-for="input-1">

@@ -68,7 +68,7 @@ export default {
     data() {
         return {
             user: {},
-            ver: false,
+            ver: true,
             senhaDiferente: false,
             cadastroDuplicado: ''
         }
