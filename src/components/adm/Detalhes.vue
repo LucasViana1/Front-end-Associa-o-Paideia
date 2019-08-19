@@ -38,7 +38,7 @@
         </b-row>
         
 
-        <b-card no-body class="mt-3 container_arquivo">
+        <b-card no-body class="mt-3">
             <b-tabs card >
                 <!--<b-tab no-body title="Picture 2">
                     <center><b-img :src="listagem.dados[0].arquivo" fluid></b-img></center>
