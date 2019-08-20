@@ -256,7 +256,7 @@ export default {
                 alert('INFORME SE VOCÊ É MENOR DE IDADE!')
             }
             else if(rgCandidato == null || cpfCandidato == null || historico == null || cidadao == null || endereco == null || foto == null){
-                alert('Ficou faltando seu RG, CPF, Histótico Escolar, Cartão Cidadão, Comprovante de Endereço ou Foto, favor verificar!')
+                alert('Ficou faltando seu RG, CPF, Histórico Escolar, Cartão Cidadão, Comprovante de Endereço ou Foto, favor verificar!')
             }
             else{
                 axios.post(config.server()+'insereDadosArquivos', {
