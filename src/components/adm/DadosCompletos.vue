@@ -520,8 +520,8 @@
                     <td class="pergunta align-middle">Faça uma avaliação da escola em que você realiza ou realizou o Ensino Médio.</td>
                     <td>
                         <table >
-                            <th class="sub_cabecalho">Leitura</th>
-                            <th class="sub_cabecalho">Frequência </th>
+                            <th class="sub_cabecalho">Atividades</th>
+                            <th class="sub_cabecalho">Frequência</th>
                             <tr>
                                 <td>a) Trabalho de grupo:</td>
                                 <td>{{listagem.dados[0].aval_grupo}}</td>
