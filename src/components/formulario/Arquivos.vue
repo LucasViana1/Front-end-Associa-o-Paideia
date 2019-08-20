@@ -43,7 +43,7 @@
                 </b-col>
 
                <b-col sm="5">
-                    <b-form-group label="Histórico Escolar:" class="labelCampo" label-for="">
+                    <b-form-group label="Histórico Escolar (Ou Declaração de Matrícula):" class="labelCampo" label-for="">
                         <b-form-file class="mt-3 form-control-sm" style="color: black;" plain v-on:change="encodeImageFileAsURL('historico', 3)" id="historico" required></b-form-file>
                     </b-form-group>
                </b-col>
