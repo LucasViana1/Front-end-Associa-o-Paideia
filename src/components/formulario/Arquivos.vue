@@ -256,7 +256,29 @@ export default {
                 alert('INFORME SE VOCÊ É MENOR DE IDADE!')
             }
             else if(rgCandidato == null || cpfCandidato == null || historico == null || cidadao == null || endereco == null || foto == null){
-                alert('Ficou faltando seu RG, CPF, Histórico Escolar, Cartão Cidadão, Comprovante de Endereço ou Foto, favor verificar!')
+                let resposta = ''
+
+                if(rgCandidato == null){
+                    resposta = resposta + "\n RG"
+                }
+                if(cpfCandidato == null){
+                    resposta = resposta + "\n CPF"
+                }
+                if(historico == null){
+                    resposta = resposta + "\n Histórico Escolar (Ou Declaração de Matrícula)"
+                }
+                if(cidadao == null){
+                    resposta = resposta + "\n Cartão cidadão"
+                }
+                if(endereco == null){
+                    resposta = resposta + "\n Comprovante de endereço"
+                }
+                if(foto == null){
+                    resposta = resposta + "\n Foto"
+                }
+                
+                alert("Ficou faltando os seguintes arquivos (Favor verificar!):"+resposta)
+                //alert("teste")
             }
             else{
                 axios.post(config.server()+'insereDadosArquivos', {
