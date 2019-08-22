@@ -63,7 +63,7 @@
 
                 <b-col sm="4">
                     <b-form-group label="RG:" class="labelCampo" label-for="">
-                        <b-form-input v-model="dados.rg" type="text" required v-mask="'##.###.###-#'" placeholder="00.000.000-0"></b-form-input>
+                        <b-form-input v-model="dados.rg" type="text" required v-mask="'##.###.###-##'" placeholder="00.000.000-0"></b-form-input>
                         <b-form-text>Caso o dígito do seu RG termine em "x", coloque "0" no lugar.</b-form-text>
                     </b-form-group>
                 </b-col>
