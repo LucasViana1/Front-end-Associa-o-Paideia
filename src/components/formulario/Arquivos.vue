@@ -19,6 +19,13 @@
                 </b-col>
 
                 <b-col sm="12" class="text-center">
+                    <b-alert show variant="danger">
+                        ATENÇÃO! Caso não conseguir enviar os arquivos tente comprimi-los através do site <a href="https://www.websiteplanet.com/pt-br/webtools/imagecompressor/">https://www.websiteplanet.com/pt-br/webtools/imagecompressor/</a><br>
+                        CASO O ERRO CONTINUE ENTRE EM CONTATO URGENTE contato@associacaopaideia.org.br
+                    </b-alert>
+                </b-col>
+
+                <b-col sm="12" class="text-center">
                     <b-form-group class="">
                         <div class="opcaoSelecao">VOCÊ É MENOR DE IDADE?</div>
                         <b-form-radio v-model="menor" value="sim">Sim</b-form-radio>
