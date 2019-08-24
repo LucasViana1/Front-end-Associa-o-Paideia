@@ -112,6 +112,10 @@ export default {
             
         }
         
+    },
+    mounted(){
+        //BLOQUEIA ROTA QUANDO NÃO ESTÁ NO PERIODO DE INSCRIÇÃO
+        window.location.href = '/'
     }
 }
 </script>
