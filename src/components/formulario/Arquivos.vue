@@ -262,7 +262,7 @@ export default {
             if(this.menor == ''){
                 alert('INFORME SE VOCÊ É MENOR DE IDADE!')
             }
-            else if(rgCandidato == null || cpfCandidato == null || historico == null || cidadao == null || endereco == null || foto == null){
+            /*else if(rgCandidato == null || cpfCandidato == null || historico == null || cidadao == null || endereco == null || foto == null){
                 let resposta = ''
 
                 if(rgCandidato == null){
@@ -286,7 +286,7 @@ export default {
                 
                 alert("Ficou faltando os seguintes arquivos (Favor verificar!):"+resposta)
                 //alert("teste")
-            }
+            }*/
             else{
                 axios.post(config.server()+'insereDadosArquivos', {
                     idUser: idUser,
