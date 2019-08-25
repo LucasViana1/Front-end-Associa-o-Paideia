@@ -7,6 +7,7 @@
         <thead>
             <tr>
                 <th>Nº</th>
+                <th>Matrícula</th>
                 <th>Nome</th>
                 <th>E-mail</th>
                 <th>CPF</th>
@@ -19,6 +20,7 @@
         <tbody>
             <tr v-for="(item,index) in listagem.dados" :key="index">
                 <td>{{index+1}}</td>
+                <td>{{ item.matricula }}</td>
                 <td>{{ item.nome }}</td>
                 <td>{{ item.email }}</td>
                 <td>{{ item.cpf }}</td>
