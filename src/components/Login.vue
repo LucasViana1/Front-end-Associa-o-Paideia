@@ -1,9 +1,10 @@
 <template>
   <b-container>
     <h1>ACESSE SUA CONTA</h1>
-      <center>
+      <!--BLOQUEIA LINK DE CADASTRO ENQUANTO ESTIVER FORA DO PERIODO DE INSCRIÇÃO-->
+      <!--<center>
       Não possui uma conta? Realize o cadastro clicando <a href="#/cadastro">AQUI</a> 
-      </center>
+      </center>-->
     <br>
     <b-row align-h="center">
       <b-col sm="6" align-v="center">
