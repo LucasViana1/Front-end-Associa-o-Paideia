@@ -12,6 +12,8 @@ import Inscritos from '@/components/adm/Inscritos.vue'
 import Cadastro from '@/components/Cadastro.vue'
 import Detalhes from '@/components/adm/Detalhes.vue'
 import DadosCompletos from '@/components/adm/DadosCompletos.vue'
+import CadastroSimulado from '@/components/adm/CadastroSimulado.vue'
+import IntroSimula from '@/components/simulado/IntroSimula.vue'
 
 import TodosDepoimentos from '@/components/principal/TodosDepoimentos.vue'
 
@@ -132,11 +134,25 @@ export default new Router({
           name: 'DadosCompletos',
           path: '/completo',
           component: DadosCompletos
-        },{
+        },
+        {
           name: 'PaginaNaoEncontrada',
           path: '*',
           component: NaoEncontrado,
-        }   
+        },
+        {
+          name: 'CadastroSimulado',
+          path: '/cadastraSimulado',
+          component: CadastroSimulado,
+        },
+        {
+          name: 'IntroSimula',
+          path: '/simulado',
+          component: IntroSimula,
+        }     
+
+
+        
         
         
 
