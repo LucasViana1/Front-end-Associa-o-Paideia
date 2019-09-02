@@ -69,7 +69,7 @@ export default {
             window.location.href = '#/valida'
 
           }
-          else if(retornoString[0].ativo == 1 && retornoString[0].inscrito_atual == 1){
+          else if((retornoString[0].ativo == 1 && retornoString[0].inscrito_atual == 1) || retornoString[0].adm == 1){
             //guardar na sessao nome e nivel de acesso
             window.localStorage.setItem('id', retornoString[0].id)
             window.localStorage.setItem('nome', retornoString[0].nome)
