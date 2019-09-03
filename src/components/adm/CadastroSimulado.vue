@@ -5,6 +5,8 @@
         <b-form v-on:submit.prevent="enviarPergunta" align-v='center'>
             <div class="">Questão {{listagem.dados[0].qtdPerguntas + 1}}</div>
             <b-form-select v-model="dados.materia" :options="optionsMateria" required></b-form-select>
+            <div>Possui imagem? Se sim coloque o link no campo abaixo:</div>
+            <b-form-input v-model="dados.linkImg" type="text" placeholder="link da imagem"></b-form-input>
             <b-form-group label="Enunciado">
                 <b-form-textarea v-model="dados.enunciado" type="text" rows="10" required placeholder="Escreva a pergunta aqui."></b-form-textarea>
             </b-form-group>
@@ -97,6 +99,7 @@ export default {
                 resp_d: this.dados.resp_d,
                 resp_e: this.dados.resp_e,
                 correta: this.dados.correta,
+                img: this.dados.linkImg
 
             }).then((response) =>{
                 console.log(response);
