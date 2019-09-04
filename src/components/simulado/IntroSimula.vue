@@ -312,6 +312,9 @@ export default {
         }
     },
     mounted() {
+        if(this.idUser == null){
+          window.location.href = '/'
+        }
         //TRECHO COMENTADO PARA TESTE
         let linkSimulaServer = config.server()+'simulado/'+this.idUser
         let linkGabariServer = config.server()+'gabarito/'//talvez parametro é nº modelo e nº pergunta
