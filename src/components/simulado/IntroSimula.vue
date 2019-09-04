@@ -26,17 +26,17 @@
                     </li>
                     <li>
                         <div style="font-weight: initial;">
-                            O simulado é parte de um Processo de Autoavaliação. É vedada a utilização de livros, impressos, apontamentos, aparelhos eletrônicos para consulta online ou quaisquer outros meios que possam ser usados como fonte de pesquisa para a realização do simulado.
+                            O simulado é parte de um <b><u>Processo de Autoavaliação</u></b>. É vedada a utilização de livros, impressos, apontamentos, aparelhos eletrônicos para consulta online ou quaisquer outros meios que possam ser usados como fonte de pesquisa para a realização do simulado.
                         </div>
                     </li>
                     <li>
                         <div style="font-weight: initial;">
-                            O simulado terá a duração de 2 (duas) horas. ATENÇÃO: A realização do simulado não admite interrupção. Uma vez iniciado o simulado é acionado, automaticamente, o cronometro que contabiliza o tempo de execução já pré-estabelecido. Ao final do tempo programado para a resolução do simulado ele será bloqueado e não haverá mais possibilidade de respondê-lo. 
+                            O simulado terá a duração de <b>2 (duas) horas. ATENÇÃO:</b> A realização do simulado não admite interrupção. Uma vez iniciado o simulado é acionado, automaticamente, o cronometro que contabiliza o tempo de execução já pré-estabelecido. Ao final do tempo programado para a resolução do simulado ele será bloqueado e não haverá mais possibilidade de respondê-lo. 
                         </div>
                     </li>
                     <li>
                         <div style="font-weight: initial;">
-                            O simulado online não admite que o usuário faça uso da função “retroceder” (voltar a uma questão anterior). Caso o usuário tente fazer uso desta função, voltando a uma questão anterior, será bloqueada a tela do simulado.
+                            O simulado online não admite que o usuário faça uso da função <b>“retroceder”</b> (voltar a uma questão anterior). Caso o usuário tente fazer uso desta função, voltando a uma questão anterior, será bloqueada a tela do simulado.
                         </div>
                     </li>
                     <li>
@@ -46,7 +46,7 @@
                     </li>
                     <li>
                         <div style="font-weight: initial;">
-                            Recomendamos que na resolução dos exercícios deste primeiro simulado sejam gastos em média 5 minutos por questão. 
+                            Recomendamos que na resolução dos exercícios deste primeiro simulado sejam gastos em média <b>5 minutos</b> por questão. 
                         </div>
                     </li>
                     <li>
