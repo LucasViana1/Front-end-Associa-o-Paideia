@@ -247,7 +247,7 @@ export default {
             this.botConfirmaAvanca = false
 
             //COLOCAR Nº ULTIMA PERGUNTA, E DIRECIONAR ALUNO AO GABARITO SIMPLIFICADO
-            if(this.listagem.dados[0].pergunta == 4){
+            if(this.listagem.dados[0].pergunta == 2){
                 //alert("aquiii")
                 window.location.href = '#/gabaritosimples'
             }
