@@ -1,6 +1,7 @@
 <template>
     <!--oncontextmenu: click botao direita sobre elemento-->
-    <b-container oncontextmenu="return false" ondragstart="return false" onselectstart="return false"><!--impede copia dos textos-->
+    <!--<b-container oncontextmenu="return false" ondragstart="return false" onselectstart="return false">--><!--impede copia dos textos-->
+    <b-container><!--impede copia dos textos-->
         <h1>Simulado</h1>
 
         <!--normas e procedimentos simulado-->
@@ -63,7 +64,7 @@
             </b-col>
             <p>Caso ainda tenha alguma dúvida referente ao simulado, entre em contato conosco: <em>contato@associacaopaideia.org.br</em></p>
 
-            <!--<b-button variant="success" @click.prevent="liberaPerguntas()">Começar</b-button>-->
+            <b-button v-if="this.idUser == 3" variant="primary" @click.prevent="liberaPerguntas()">Começar</b-button>
         </b-col>
         <!--{{listagem.dados}}-->
         <b-col v-if="bloco">
@@ -76,11 +77,11 @@
                     <tr class="row mx-1">
                         <th class="col-2 bordas text-center">Questão {{listagem.dados[0].pergunta}}</th>
                         <td class="col-10 bordas">
-                            <b-card no-body class="mt-3">
+                            <b-card no-body class="">
                                 <b-tabs card >
                                     <b-tab no-body :title="listagem.dados[0].materia">
                                     <!--<center><b-img :src="listagem.dados[0].arquivo" fluid></b-img></center>-->
-                                    <div>
+                                    <div class="p-2">
                                         {{listagem.dados[0].enunciado}}
                                         <b-img :src="listagem.dados[0].img" fluid></b-img>
                                     </div>
@@ -169,18 +170,18 @@
                 </tbody>         
             </table>
 
-            <b-alert :show="certo" variant="success" class="mt-1">Você Acertou!</b-alert>
-            <b-alert :show="errado" variant="danger" class="mt-1">Você Errou!</b-alert>
+            <!--<b-alert :show="certo" variant="success" class="mt-1">Você Acertou!</b-alert>
+            <b-alert :show="errado" variant="danger" class="mt-1">Você Errou!</b-alert>-->
 
             <b-col v-if="botConfirmaAvanca" class="text-center">
-                <b-button class="mt-3" variant="primary" disabled v-if="this.dados.correta == null">Confirmar</b-button>
-                <b-button class="mt-3" variant="primary" @click.prevent="confirmaQuestao()" v-else>Confirmar</b-button>
+                <b-button class="mt-3" variant="success" disabled v-if="this.dados.correta == null">Confirmar</b-button>
+                <b-button class="mt-3" variant="success" @click.prevent="confirmaQuestao()" v-else>Confirmar</b-button>
             </b-col>
 
-            <b-col v-if="!botConfirmaAvanca" class="text-center">
+            <!--<b-col v-if="!botConfirmaAvanca" class="text-center">
                 <b-button class="mt-3" variant="primary" disabled v-if="this.dados.correta == null">Próxima Pergunta</b-button>
                 <b-button class="mt-3" variant="primary" @click.prevent="proximaPergunta()" v-else>Próxima Pergunta</b-button>
-            </b-col>
+            </b-col>-->
                     
         </b-col>
 
@@ -192,8 +193,8 @@
 </template>
 
 <script>
-import axios from 'axios'
-import config from '../../../config'
+    import axios from 'axios'
+    import config from '../../../config'
 
 export default {
     data(){
@@ -202,13 +203,15 @@ export default {
             dados: {},
             listagem: {},
             tempo: {},
-            idUser: window.localStorage.getItem('id'),
-            certo: false,
-            errado: false,
+                
+            //certo: false,
+            //errado: false,
             botConfirmaAvanca: true,
             iniTempo: '',
             fimTempo: '',
-            numModelo: {},
+            //numModelo: {},
+            numModelo: '',
+            idUser: window.localStorage.getItem('id'),
 
             //TALVEZ REMOVER ABAIXO:
             inicialTempo: '',
@@ -229,37 +232,39 @@ export default {
 
             })
             .then((response) =>{
-                console.log(""+response.data);
+                console.log("resp ao enviar resposta: "+response.data);
                 //INDICAR AQUI QUAL ALERTA EXIBIR
-                if(response.data == 's'){
+                /*if(response.data == 's'){
                     this.certo = true
                 }
                 else{
                     this.errado = true
-                }
+                }*/
             })
             .catch((error) => {
                 console.log(error);
             });
             this.botConfirmaAvanca = false
+
+            //COLOCAR Nº ULTIMA PERGUNTA, E DIRECIONAR ALUNO AO GABARITO SIMPLIFICADO
+            if(this.listagem.dados[0].pergunta == 4){
+                //alert("aquiii")
+                window.location.href = '#/gabaritosimples'
+            }
+
+            window.scrollTo(0, 0);
+            window.location.reload()
         },
         liberaPerguntas(){
             //alert('ok')
             this.bloco = true;
             
-            //define sequencialmente o nº do modelo da prova
-            axios.get(config.server()+'modelo')
-            .then((response) =>{
-                this.numModelo = response.data
-                //window.localStorage.setItem('modelo',this.numModelo[0].fim)      
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+            
 
             //let linkSimulaServerQ1 = config.server()+'simuladoq1/'+'1'//DEIXAR DINAMICO O NUMERO DO MODELO
-            let linkSimulaServerQ1 = config.server()+'simuladoq1/'+this.numModelo[0].fim
+            //let linkSimulaServerQ1 = config.server()+'simuladoq1/'+this.numModelo[0].fim
             //let linkSimulaServerQ1 = config.server()+'simuladoq1/'+window.localStorage.getItem('modelo')
+            let linkSimulaServerQ1 = config.server()+'simuladoq1/'+this.numModelo
             //window.localStorage.removeItem('modelo')
             //let linkSimulaTempo = config.server()+'alunosimulado/'+this.idUser
             axios.get(linkSimulaServerQ1).then((response) =>{            
@@ -290,9 +295,10 @@ export default {
             });
 
         },
-        proximaPergunta(){
+        /*proximaPergunta(){
             window.location.reload()
-        },
+        },*/
+
         //modelos:
         tempo(){
             //setInterval("conta();",1000);
@@ -315,6 +321,7 @@ export default {
         if(this.idUser == null){
           window.location.href = '/'
         }
+
         //TRECHO COMENTADO PARA TESTE
         let linkSimulaServer = config.server()+'simulado/'+this.idUser
         let linkGabariServer = config.server()+'gabarito/'//talvez parametro é nº modelo e nº pergunta
@@ -346,6 +353,16 @@ export default {
             console.log(error);
         });
 
+        //define sequencialmente o nº do modelo da prova, USADO APENAS NO MOMENTO QUE É INICIADO O FORMULARIO
+        axios.get(config.server()+'modelo')
+        .then((response) =>{
+            this.numModelo = response.data
+            //alert(response.data)
+            //window.localStorage.setItem('modelo',this.numModelo[0].fim)      
+        })
+        .catch((error) => {
+            console.log(error);
+        });
         window.scrollTo(0, 0);
     }
 }
