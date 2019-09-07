@@ -266,8 +266,9 @@ export default {
                 console.log("TOTAL PERGUNTAS ATINGIDAS")
             }
 
-            window.scrollTo(0, 0);
+            
             window.location.reload()
+            window.scrollTo(0, 0);
         },
         liberaPerguntas(){
             //alert('ok')
@@ -309,7 +310,7 @@ export default {
                 console.log(error);
             });
 
-            window.scrollTo(0, 0);
+            //window.scrollTo(0, 0);
 
         },
         /*proximaPergunta(){
@@ -364,16 +365,14 @@ export default {
             this.tempo = response.data;
             this.iniTempo = this.tempo.dados[0].horaInicio
             this.fimTempo = this.tempo.dados[0].horaFimMax
-            //alert("ok")    
-            //this.listagem = response.data; 
+
             //verificando se alno já estourou o tempo
-            let data = new Date()
+           /* let data = new Date()
             this.tempoAtual = data.getHours() + ':' + data.getMinutes() + ':' + data.getSeconds()
-            //this.tempoAtual = '25:40:11'//PARA TESTES
             if(this.tempoAtual > this.fimTempo && this.fimTempo != ''){
                 window.location.href = '#/gabaritosimples'
                 console.log("TEMPO MAXIMO ATINGIDO")
-            }      
+            }    */  
         }).catch((error) => {
             console.log(error);
         });
@@ -421,7 +420,7 @@ export default {
         }*/
         //console.log("hora atual "+this.tempoAtual)
 
-        window.scrollTo(0, 0);
+        //window.scrollTo(0, 0);
     }
 }
 </script>
