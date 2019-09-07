@@ -369,7 +369,7 @@ export default {
             let data = new Date()
             this.tempoAtual = data.getHours() + ':' + data.getMinutes() + ':' + data.getSeconds()
             //this.tempoAtual = '25:40:11'//PARA TESTES
-            if(this.tempoAtual > this.fimTempo){
+            if(this.tempoAtual > this.fimTempo && this.fimTempo != ''){
                 window.location.href = '#/gabaritosimples'
             }      
         }).catch((error) => {
