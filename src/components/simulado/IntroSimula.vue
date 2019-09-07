@@ -79,16 +79,18 @@
         <!--{{listagem.dados}}-->
         <b-col v-if="bloco">
             <!--info tempo-->
-            <div>Você iniciou o simulado as {{this.iniTempo}}</div>
-            <div class="mt-1"><u><b>ATENÇÃO!</b> O simulado deve ser concluído antes das <b>{{this.fimTempo}}</b></u></div> 
+            <center>
+                <div>Você iniciou o simulado as {{this.iniTempo}}</div>
+                <div class="mt-1"><u><b>ATENÇÃO!</b> O simulado deve ser concluído antes das <b>{{this.fimTempo}}</b></u></div>
+            </center> 
             <br>
             <table class="table table-bordered table-hover bordas container-fluid" style="">
                 <thead class="">
                     <tr class="row mx-1">
-                        <th class="col-2 bordas text-center questao"><u>Questão {{listagem.dados[0].pergunta}}</u></th>
+                        <th class="col-2 bordas text-center questao"><u><div class="ques">Questão</div> {{listagem.dados[0].pergunta}}</u></th>
                         <td class="col-10 bordas">
                             <b-card no-body class="">
-                                <b-tabs card >
+                                <b-tabs>
                                     <b-tab no-body :title="listagem.dados[0].materia">
                                     <!--<center><b-img :src="listagem.dados[0].arquivo" fluid></b-img></center>-->
                                     <div class="p-2">
@@ -108,7 +110,7 @@
                         <td class="col-2 align-middle text-center m-auto tamanho_quadro">
                             <b-row>
                                 <div class="float-left col-6 alternativa">a)</div>
-                                <b-form-radio class="col-2" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="a"></b-form-radio>
+                                <b-form-radio class="col-2 radio" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="a"></b-form-radio>
                             </b-row>              
                         </td>
                         <td class="col-10">
@@ -123,7 +125,7 @@
                         <td class="col-2 align-middle text-center m-auto tamanho_quadro">
                             <b-row>
                                 <div class="float-left col-6 alternativa">b)</div>
-                                <b-form-radio class="col-2" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="b"></b-form-radio>
+                                <b-form-radio class="col-2 radio" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="b"></b-form-radio>
                             </b-row>
                         </td>
                         <td class="col-10">
@@ -138,7 +140,7 @@
                         <td class="col-2 align-middle text-center m-auto tamanho_quadro">
                             <b-row>
                                 <div class="float-left col-6 alternativa">c)</div>
-                                <b-form-radio class="col-2" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="c"></b-form-radio>
+                                <b-form-radio class="col-2 radio" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="c"></b-form-radio>
                             </b-row>
                         </td>
                         <td class="col-10">
@@ -153,7 +155,7 @@
                         <td class="col-2 align-middle text-center m-auto tamanho_quadro">
                             <b-row>
                                 <div class="float-left col-6 alternativa">d)</div>
-                                <b-form-radio class="col-2" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="d"></b-form-radio>
+                                <b-form-radio class="col-2 radio" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="d"></b-form-radio>
                             </b-row>                            
                         </td>
                         <td class="col-10">
@@ -168,7 +170,7 @@
                         <td class="col-2 align-middle text-center m-auto tamanho_quadro">
                             <b-row>
                                 <div class="float-left col-6 alternativa">e)</div>
-                                <b-form-radio class="col-2" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="e"></b-form-radio>
+                                <b-form-radio class="col-2 radio" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="e"></b-form-radio>
                             </b-row>
                         </td>
                         <td class="col-10">
@@ -458,6 +460,18 @@ ol{
 .questao{
     font-size: 115%;
 }
+.radio{
+    margin-left: 1px;
+}
+@media (max-width: 767px){
+    .radio{
+        margin-left: 12px;
+    }
+    .ques{
+        visibility: hidden;
+    }
+}
+
 /*AJUSTAR CLASSE ABAIXO PARA MOBILE*/
 .tamanho_quadro{
     padding: 3.5% !important;
