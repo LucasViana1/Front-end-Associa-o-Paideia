@@ -263,6 +263,7 @@ export default {
             if(this.listagem.dados[0].pergunta == 30){
                 //alert("aquiii")
                 window.location.href = '#/gabaritosimples'
+                console.log("TOTAL PERGUNTAS ATINGIDAS")
             }
 
             window.scrollTo(0, 0);
@@ -371,6 +372,7 @@ export default {
             //this.tempoAtual = '25:40:11'//PARA TESTES
             if(this.tempoAtual > this.fimTempo && this.fimTempo != ''){
                 window.location.href = '#/gabaritosimples'
+                console.log("TEMPO MAXIMO ATINGIDO")
             }      
         }).catch((error) => {
             console.log(error);
@@ -401,6 +403,7 @@ export default {
             //IGUAL AO NUMERO DE PERGUNTAS
             if(cont == 30){
                 window.location.href = '#/gabaritosimples'
+                console.log("OUTRO")
             }
             console.log("valor de cont "+cont)
 
