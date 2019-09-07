@@ -81,9 +81,15 @@ export default {
             listagem: {},
             optionsMateria: [
                 { value: 'Matemática', text: 'Matemática' },
-                { value: 'Portugues', text: 'Portugues' },
-                { value: 'História', text: 'História' },
+                { value: 'Química', text: 'Química' },
+                { value: 'Física', text: 'Física' },
+                { value: 'Biologia', text: 'Biologia' },
                 { value: 'Geografia', text: 'Geografia' },
+                { value: 'História', text: 'História' },
+                { value: 'Gramática', text: 'Gramática' },
+                { value: 'Literatura', text: 'Literatura' },
+                { value: 'Inglês', text: 'Inglês' },
+                
             ],
         }
     },

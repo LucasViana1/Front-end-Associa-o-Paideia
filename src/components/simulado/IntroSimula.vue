@@ -1,8 +1,13 @@
 <template>
     <!--oncontextmenu: click botao direita sobre elemento-->
-    <!--<b-container oncontextmenu="return false" ondragstart="return false" onselectstart="return false">--><!--impede copia dos textos-->
-    <b-container><!--impede copia dos textos-->
+    <b-container oncontextmenu="return false" ondragstart="return false" onselectstart="return false"><!--impede copia dos textos-->
+    <!--<b-container>-->
         <h1>Simulado</h1>
+
+        <b-alert :show="true" variant="warning" class="mt-2">
+            LIBERAÇÃO do simulado online: 07/09/2019 as 10:00 / 
+            FECHAMENTO do simulado online: 07/09/2019 as 22:00
+        </b-alert>
 
         <!--normas e procedimentos simulado-->
         <b-col v-if="!bloco">
@@ -47,7 +52,7 @@
                     </li>
                     <li>
                         <div style="font-weight: initial;">
-                            Recomendamos que na resolução dos exercícios deste primeiro simulado sejam gastos em média <b>5 minutos</b> por questão. 
+                            Recomendamos que na resolução dos exercícios deste primeiro simulado sejam gastos em média <b>3 minutos</b> por questão. 
                         </div>
                     </li>
                     <li>
@@ -64,25 +69,31 @@
             </b-col>
             <p>Caso ainda tenha alguma dúvida referente ao simulado, entre em contato conosco: <em>contato@associacaopaideia.org.br</em></p>
 
+            <!--LIBERAR ESSE TRECHO A TODOS NO DIA DO SIMULADO-->
             <b-button v-if="this.idUser == 3" variant="primary" @click.prevent="liberaPerguntas()">Começar</b-button>
+            <!--<center>
+                <b-button variant="primary" @click.prevent="liberaPerguntas()">Começar</b-button>
+            </center>-->
+            
         </b-col>
         <!--{{listagem.dados}}-->
         <b-col v-if="bloco">
             <!--info tempo-->
             <div>Você iniciou o simulado as {{this.iniTempo}}</div>
-            <div>O simulado deve ser concluído antes das <b>{{this.fimTempo}}</b></div> 
+            <div class="mt-1"><u><b>ATENÇÃO!</b> O simulado deve ser concluído antes das <b>{{this.fimTempo}}</b></u></div> 
             <br>
             <table class="table table-bordered table-hover bordas container-fluid" style="">
                 <thead class="">
                     <tr class="row mx-1">
-                        <th class="col-2 bordas text-center">Questão {{listagem.dados[0].pergunta}}</th>
+                        <th class="col-2 bordas text-center questao"><u>Questão {{listagem.dados[0].pergunta}}</u></th>
                         <td class="col-10 bordas">
                             <b-card no-body class="">
                                 <b-tabs card >
                                     <b-tab no-body :title="listagem.dados[0].materia">
                                     <!--<center><b-img :src="listagem.dados[0].arquivo" fluid></b-img></center>-->
                                     <div class="p-2">
-                                        {{listagem.dados[0].enunciado}}
+                                        <div v-html="listagem.dados[0].enunciado"></div>
+                                        <!--{{listagem.dados[0].enunciado}}-->
                                         <b-img :src="listagem.dados[0].img" fluid></b-img>
                                     </div>
                                     </b-tab>
@@ -96,14 +107,14 @@
                     <tr class="row mx-1">
                         <td class="col-2 align-middle text-center m-auto tamanho_quadro">
                             <b-row>
-                                <div class="float-left col-6">a)</div>
+                                <div class="float-left col-6 alternativa">a)</div>
                                 <b-form-radio class="col-2" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="a"></b-form-radio>
                             </b-row>              
                         </td>
                         <td class="col-10">
                             <!--<b-form-textarea plaintext size="sm" :value="'a) '+listagem.dados[0].resp_a"></b-form-textarea>-->
-                            <b-card size="sm">
-                                {{listagem.dados[0].resp_a}}
+                            <b-card class="sem_borda" size="sm">
+                                <div v-html="listagem.dados[0].resp_a"></div>
                             </b-card>
                         </td>
                     </tr>
@@ -111,14 +122,14 @@
                     <tr class="row mx-1">
                         <td class="col-2 align-middle text-center m-auto tamanho_quadro">
                             <b-row>
-                                <div class="float-left col-6">b)</div>
+                                <div class="float-left col-6 alternativa">b)</div>
                                 <b-form-radio class="col-2" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="b"></b-form-radio>
                             </b-row>
                         </td>
                         <td class="col-10">
                             <!--<b-form-textarea plaintext size="sm" :value="'b) '+listagem.dados[0].resp_b"></b-form-textarea>-->
-                            <b-card size="sm">
-                                {{listagem.dados[0].resp_b}}
+                            <b-card class="sem_borda" size="sm">
+                                <div v-html="listagem.dados[0].resp_b"></div>
                             </b-card>
                         </td>
                     </tr>
@@ -126,14 +137,14 @@
                     <tr class="row mx-1">
                         <td class="col-2 align-middle text-center m-auto tamanho_quadro">
                             <b-row>
-                                <div class="float-left col-6">c)</div>
+                                <div class="float-left col-6 alternativa">c)</div>
                                 <b-form-radio class="col-2" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="c"></b-form-radio>
                             </b-row>
                         </td>
                         <td class="col-10">
                            <!-- <b-form-textarea plaintext size="sm" :value="'c) '+listagem.dados[0].resp_c"></b-form-textarea>-->
-                           <b-card size="sm">
-                                {{listagem.dados[0].resp_c}}
+                           <b-card class="sem_borda" size="sm">
+                               <div v-html="listagem.dados[0].resp_c"></div>
                             </b-card>
                         </td>
                     </tr>
@@ -141,14 +152,14 @@
                     <tr class="row mx-1">
                         <td class="col-2 align-middle text-center m-auto tamanho_quadro">
                             <b-row>
-                                <div class="float-left col-6">d)</div>
+                                <div class="float-left col-6 alternativa">d)</div>
                                 <b-form-radio class="col-2" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="d"></b-form-radio>
                             </b-row>                            
                         </td>
                         <td class="col-10">
                             <!--<b-form-textarea plaintext size="sm" :value="'d) '+listagem.dados[0].resp_d"></b-form-textarea>-->
-                            <b-card size="sm">
-                                {{listagem.dados[0].resp_d}}
+                            <b-card class="sem_borda" size="sm">
+                                <div v-html="listagem.dados[0].resp_d"></div>
                             </b-card>
                         </td>
                     </tr>
@@ -156,14 +167,14 @@
                     <tr class="row mx-1">
                         <td class="col-2 align-middle text-center m-auto tamanho_quadro">
                             <b-row>
-                                <div class="float-left col-6">e)</div>
+                                <div class="float-left col-6 alternativa">e)</div>
                                 <b-form-radio class="col-2" :disabled="!botConfirmaAvanca" v-model="dados.correta" value="e"></b-form-radio>
                             </b-row>
                         </td>
                         <td class="col-10">
                             <!--<b-form-textarea plaintext size="sm" :value="'e) '+listagem.dados[0].resp_e"></b-form-textarea>-->
-                            <b-card size="sm">
-                                {{listagem.dados[0].resp_e}}
+                            <b-card class="sem_borda" size="sm">
+                                <div v-html="listagem.dados[0].resp_e"></div>
                             </b-card>
                         </td>
                     </tr>
@@ -209,9 +220,11 @@ export default {
             botConfirmaAvanca: true,
             iniTempo: '',
             fimTempo: '',
+            tempoAtual: '',
             //numModelo: {},
             numModelo: '',
             idUser: window.localStorage.getItem('id'),
+            lista: {},//controle de quantidade de respostas enviadas pelo aluno
 
             //TALVEZ REMOVER ABAIXO:
             inicialTempo: '',
@@ -247,7 +260,7 @@ export default {
             this.botConfirmaAvanca = false
 
             //COLOCAR Nº ULTIMA PERGUNTA, E DIRECIONAR ALUNO AO GABARITO SIMPLIFICADO
-            if(this.listagem.dados[0].pergunta == 2){
+            if(this.listagem.dados[0].pergunta == 30){
                 //alert("aquiii")
                 window.location.href = '#/gabaritosimples'
             }
@@ -258,9 +271,6 @@ export default {
         liberaPerguntas(){
             //alert('ok')
             this.bloco = true;
-            
-            
-
             //let linkSimulaServerQ1 = config.server()+'simuladoq1/'+'1'//DEIXAR DINAMICO O NUMERO DO MODELO
             //let linkSimulaServerQ1 = config.server()+'simuladoq1/'+this.numModelo[0].fim
             //let linkSimulaServerQ1 = config.server()+'simuladoq1/'+window.localStorage.getItem('modelo')
@@ -277,6 +287,10 @@ export default {
             });
             //registrar hora de inicio e calcular data limite
             let data = new Date()
+            /*let horas = data.getHours()
+            let minutos = data.getMinutes()
+            //if(horas.lenght())
+            console.log("tamanho: "+minutos.length)*/
             this.iniTempo = data.getHours() + ':' + data.getMinutes() + ':' + data.getSeconds()
             this.fimTempo = (data.getHours()+2) + ':' + data.getMinutes() + ':' + data.getSeconds()
             axios.post(config.server()+'alunosimulado', {
@@ -293,6 +307,8 @@ export default {
             .catch((error) => {
                 console.log(error);
             });
+
+            window.scrollTo(0, 0);
 
         },
         /*proximaPergunta(){
@@ -348,7 +364,14 @@ export default {
             this.iniTempo = this.tempo.dados[0].horaInicio
             this.fimTempo = this.tempo.dados[0].horaFimMax
             //alert("ok")    
-            //this.listagem = response.data;         
+            //this.listagem = response.data; 
+            //verificando se alno já estourou o tempo
+            let data = new Date()
+            this.tempoAtual = data.getHours() + ':' + data.getMinutes() + ':' + data.getSeconds()
+            //this.tempoAtual = '25:40:11'//PARA TESTES
+            if(this.tempoAtual > this.fimTempo){
+                window.location.href = '#/gabaritosimples'
+            }      
         }).catch((error) => {
             console.log(error);
         });
@@ -363,6 +386,38 @@ export default {
         .catch((error) => {
             console.log(error);
         });
+
+        //caso aluno já tenha respondido todas as questoes
+        let linkGabaritoSimples = config.server()+'gabaritosimples/'+this.idUser
+        axios.get(linkGabaritoSimples).then((response) =>{
+            
+            this.lista = response.data;  
+            //O VALOR DE CONT DEVE SER IGUAL AO NUMERO DE PERGUNTAS
+            let cont = 0
+            this.lista.dados.forEach(item => {
+                console.log("retorno: "+item.materia)
+                cont++
+            }); 
+            //IGUAL AO NUMERO DE PERGUNTAS
+            if(cont == 30){
+                window.location.href = '#/gabaritosimples'
+            }
+            console.log("valor de cont "+cont)
+
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+        //verificando se alno já estourou o tempo
+        /*let data = new Date()
+        //this.tempoAtual = data.getHours() + ':' + data.getMinutes() + ':' + data.getSeconds()
+        this.tempoAtual = '20:55:11'//PARA TESTES
+        if(this.tempoAtual > this.fimTempo){
+            window.location.href = '#/gabaritosimples'
+        }*/
+        //console.log("hora atual "+this.tempoAtual)
+
         window.scrollTo(0, 0);
     }
 }
@@ -388,8 +443,18 @@ ol{
 
 .bordas{
     border-color: black; 
-    border-width: 2px; 
+    border-width: 1px; 
     border-style:groove;
+}
+.sem_borda{
+    border: none;
+}
+.alternativa{
+    font-size: 107%;
+    font-weight: bold;
+}
+.questao{
+    font-size: 115%;
 }
 /*AJUSTAR CLASSE ABAIXO PARA MOBILE*/
 .tamanho_quadro{
