@@ -70,10 +70,10 @@
             <p>Caso ainda tenha alguma dúvida referente ao simulado, entre em contato conosco: <em>contato@associacaopaideia.org.br</em></p>
 
             <!--LIBERAR ESSE TRECHO A TODOS NO DIA DO SIMULADO-->
-            <b-button v-if="this.idUser == 3" variant="primary" @click.prevent="liberaPerguntas()">Começar</b-button>
-            <!--<center>
+            <!--<b-button v-if="this.idUser == 3" variant="primary" @click.prevent="liberaPerguntas()">Começar</b-button>-->
+            <center>
                 <b-button variant="primary" @click.prevent="liberaPerguntas()">Começar</b-button>
-            </center>-->
+            </center>
             
         </b-col>
         <!--{{listagem.dados}}-->
