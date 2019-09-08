@@ -50,6 +50,12 @@
         </table>
 
         <div>TOTAL: {{this.total}} de 30</div>
+        <br>
+        <center>
+            <div>
+                <h4>EM BREVE SERÁ LIBERADO O GABARITO COMPLETO!</h4>
+            </div>
+        </center>
     </b-container>
 </template>
 
