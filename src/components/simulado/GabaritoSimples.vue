@@ -48,7 +48,7 @@
                 </tr>
             </tbody>
         </table>
-
+        
         <div>TOTAL: {{this.total}} de 30</div>
         <br>
         <center>
@@ -66,7 +66,7 @@ import config from '../../../config'
 export default {
     data() {
         return{
-            idUser: window.localStorage.getItem('id'),
+            idUser: window.localStorage.getItem('id') || window.localStorage.getItem('idDetalhes'),
             lista: {},
             mat: 0,
             qui: 0,
