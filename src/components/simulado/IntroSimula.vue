@@ -338,6 +338,10 @@ export default {
         }
     },
     mounted() {
+
+        //BLOQUEIA O SIMULADO E LIBERA APENAS O SIMULADO SIMPLES
+        window.location.href = '#/gabaritosimples'
+
         if(this.idUser == null){
           window.location.href = '/'
         }
