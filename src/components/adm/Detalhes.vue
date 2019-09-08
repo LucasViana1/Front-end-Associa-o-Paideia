@@ -16,6 +16,9 @@
                     <li><b>Cartão Cidadão:</b> {{listagem.dados[0].cidadao}}</li>
                     <!--IMPLEMENTAR AÇÃO DO BOTÃO ABAIXO-->
                     <li>
+                        <a href="#/gabaritosimples" class="btn btn-info mt-3 ml-4">GABARITO</a> 
+                    </li>
+                    <li>
                         <a :href="link" class="btn btn-primary mt-3 ml-4">DADOS COMPLETOS</a> 
                     </li>
                     <li>

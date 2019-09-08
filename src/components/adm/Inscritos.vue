@@ -14,6 +14,7 @@
                 <th>Cartão Cidadão</th>
                 <th>Status</th>
                 <th>Detalhes</th>
+                <th>Gabarito</th>
             </tr>
         </thead>
 
@@ -40,6 +41,11 @@
                         </a>                    
                     <!--</b-button>-->
                     <!--<p :onclick="detalhes(item.id)">detalhes</p>-->
+                </td>
+                <td>
+                    <a v-on:click="detalhes(item.id)" href="#/gabaritoAdm">
+                        gabarito
+                    </a>   
                 </td>
             </tr>
         </tbody>
