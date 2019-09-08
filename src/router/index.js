@@ -13,6 +13,7 @@ import Cadastro from '@/components/Cadastro.vue'
 import Detalhes from '@/components/adm/Detalhes.vue'
 import DadosCompletos from '@/components/adm/DadosCompletos.vue'
 import CadastroSimulado from '@/components/adm/CadastroSimulado.vue'
+import GabaritoAdm from '@/components/adm/GabaritoAdm.vue'
 import IntroSimula from '@/components/simulado/IntroSimula.vue'
 import GabaritoSimples from '@/components/simulado/GabaritoSimples.vue'
 
@@ -155,13 +156,14 @@ export default new Router({
           name: 'GabaritoSimples',
           path: '/gabaritosimples',
           component: GabaritoSimples,
-        }       
-
-
+        },
+        {
+          name: 'GabaritoAdm',
+          path: '/gabaritoAdm',
+          component: GabaritoAdm,
+        }  
         
         
-        
-
         
       ]   
 });
