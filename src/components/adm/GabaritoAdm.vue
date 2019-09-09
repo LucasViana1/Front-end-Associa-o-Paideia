@@ -12,7 +12,7 @@
                     <th class="cabecalho">CORRETA</th>
                     <th class="cabecalho">SELECIONOU</th>
                     <th class="cabecalho">ACERTOU?</th>
-                    <th class="cabecalho">HORA ENVIO</th>
+                <th class="cabecalho">HORA ENVIO</th>
                 </tr>
             </thead>
 
@@ -178,7 +178,7 @@ export default {
             let removeDiaMilesimos = d.substring(11, 19)
             let hora = removeDiaMilesimos.substring(0,2)
             hora = parseInt(hora)
-            hora = hora - 3
+            //hora = hora - 3
             let semHora = removeDiaMilesimos.substring(2,8)
             let resp = hora + semHora
 
