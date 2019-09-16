@@ -12,7 +12,8 @@
           <b-nav-item href="#/faq">Perguntas Frequentes</b-nav-item>
           <!--<b-nav-item href="/inscricao">Inscrição</b-nav-item>TALVEZ REMOVER-->
           <!--<b-nav-item href="#/inscricao" v-if="adm != null">Inscrições 2º semestre 2019</b-nav-item>--><!--Apenas candidato e ADM-->
-          <b-nav-item href="#/simulado" v-if="adm != null">Simulado</b-nav-item><!--Apenas candidato e ADM-->
+          <b-nav-item href="#/gabaritocompleto" v-if="adm != null">Simulado</b-nav-item><!--EXIBINDO GABARITO COMPLETO-->
+         <!-- <b-nav-item href="#/simulado" v-if="adm != null">Simulado</b-nav-item>--><!--Apenas candidato e ADM-->
           <b-nav-item href="#/inscritos" v-if="adm == 1">Administrador</b-nav-item><!--Apenas ADM-->
           <!--BLOQUEIA OPÇÃO DE CADASTRO QUANDO ESTIVER FORA DO PERIODO DE INSCRIÇÃO-->
           <!--<b-nav-item href="#/cadastro" v-if="adm == null">Cadastre-se</b-nav-item>-->
