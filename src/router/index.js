@@ -16,6 +16,7 @@ import CadastroSimulado from '@/components/adm/CadastroSimulado.vue'
 import GabaritoAdm from '@/components/adm/GabaritoAdm.vue'
 import IntroSimula from '@/components/simulado/IntroSimula.vue'
 import GabaritoSimples from '@/components/simulado/GabaritoSimples.vue'
+import GabaritoCompleto from '@/components/simulado/GabaritoCompleto.vue'
 
 import TodosDepoimentos from '@/components/principal/TodosDepoimentos.vue'
 
@@ -161,6 +162,11 @@ export default new Router({
           name: 'GabaritoAdm',
           path: '/gabaritoAdm',
           component: GabaritoAdm,
+        },
+        {
+          name: 'GabaritoCompleto',
+          path: '/gabaritocompleto',
+          component: GabaritoCompleto,
         }  
         
         
