@@ -24,7 +24,7 @@
                 <b-img :src="editalIcon"></b-img>
               </b-col>
               <b-col cols="12" class="mt-2">
-                EDITAL/MANUAL
+                MANUAL DO CANDIDATO
               </b-col>   
             </a>
           </center>
