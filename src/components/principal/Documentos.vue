@@ -1,7 +1,7 @@
 <template>
     <b-container class="mt-4 border" id="painel">
       <b-col cols="12" class="mt-2">
-        <center><h2>Processo Seletivo 2019</h2></center>
+        <center><h2>Processo Seletivo 2020</h2></center>
       </b-col>
       <b-row align-h="center">
         <b-col sm="4" class="mt-5">
